@@ -1,0 +1,19 @@
+{
+    "header": {
+        "name": "Giordano Souza",
+        "projects": "Projects",
+        "skills": "Skills",
+        "about": "About",
+        "actionbutton": "Contact"
+    },
+    "hero": {
+        "availableLabel": "Available for hire",
+        "title": "Creative Developer & Problem Solver",
+        "summary": "I build innovative web applications with modern technologies. Turning complex problems into elegant solutions.",
+        "actionButton1": "Let's work together",
+        "actionButton2": "Download CV",
+        "actionButton3": "Know more about me",
+        "actionButton4": "See my work"
+    }
+}
+  

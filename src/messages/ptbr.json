@@ -1,0 +1,18 @@
+{
+    "header": {
+        "name": "Giordano Souza",
+        "projects": "Projetos",
+        "skills": "Habilidades e competências",
+        "about": "Sobre mim",
+        "actionbutton": "Contato"
+    },
+    "callingCard": {
+        "availableLabel": "Disponível para trabalho",
+        "title": "Desenvolvedor Criativo & Solucionador de Problemas",
+        "summary": "Eu construo aplicações web inovadoras com tecnologias modernas. Transformando problemas complexos em soluções elegantes.",
+        "actionButton1": "Vamos trabalhar juntos?",
+        "actionButton2": "Baixar CV",
+        "actionButton3": "Conheça mais sobre mim",
+        "actionButton4": "Veja meu trabalho"
+    }
+}
