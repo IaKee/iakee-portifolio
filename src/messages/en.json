@@ -1,8 +1,29 @@
 {
+    "about": {
+        "title": "About Me",
+        "description": "I'm a Computer Engineering student at the Federal University of Rio Grande do Sul (UFRGS) with experience in freelance development. I'm passionate about problem-solving and creating efficient, user-friendly applications. I'm adaptable, a quick learner, and comfortable working both independently and in collaborative team environments.",
+        "skills": [
+            {
+                "title": "Software Development",
+                "description": "Building standalone applications and integrated modules with attention to detail."
+            },
+            {
+                "title": "Technical Support",
+                "description": "Providing troubleshooting, installations, and technical assistance for software applications."
+            },
+            {
+                "title": "Web Development",
+                "description": "Creating responsive and dynamic websites with modern technologies."
+            }
+        ],
+        "toolsTitle": "Tools I use",
+        "toolsDescription": "I use a variety of tools to create and maintain my projects."
+    },
     "header": {
         "name": "Giordano Souza",
         "projects": "Projects",
         "skills": "Skills",
+        "resume": "Resume",
         "about": "About",
         "actionbutton": "Contact"
     },
@@ -14,6 +35,145 @@
         "actionButton2": "Download CV",
         "actionButton3": "Know more about me",
         "actionButton4": "See my work"
+    },
+    "featured":
+    {
+        "title": "Featured Projects",
+        "description": "Here are my most notable projects, between academy, professional and personal projects, each one with its own unique challenges and solutions.",
+        "actionButton1": "See all projects",
+        "actionButton2": "Suggest or order a project",
+        "projects": 
+        {
+            "runelingual":
+            {
+                "title": "RuneLingual",
+                "description": "All-in-one translation plugin for OSRS. Powered by RuneLite API.",
+                "tags": [
+                    "Java", 
+                    "Open Source",
+                    "Spring Boot",
+                    "RuneLite API", 
+                    "Old School RuneScape", 
+                    "Translation"
+                ],
+                "actionButton1": "Source Code",
+                "actionHook1": "https://github.com/IaKee/RuneLingual",
+                "actionButton2": "Discord",
+                "actionHook2": "https://discord.gg/sXnnzQ8kma"
+            },
+            "syncwizard":
+            {
+                "title": "SyncWizard",
+                "description": "A lightweight UNIX-based file synchronization service.",
+                "tags": [
+                    "C++", 
+                    "Open Source",
+                    "File Synchronization",
+                    "Server-Client Architecture", 
+                    "UNIX"
+                ],
+                "actionButton1": "Source Code",
+                "actionHook1": "https://github.com/IaKee/File-Synchronization",
+                "actionButton2": "Demo",
+                "actionHook2": ""
+            },
+            "iam":
+            {
+                "title": "IaKee's Avatar Manager (IAM)",
+                "description": "Avatar management software for streamers with installer, modifier, uninstaller, launcher, and standalone modules",
+                "tags": [
+                    "Python", 
+                    "Tcl/Tk",
+                    "Windows",
+                    "Software Development"
+                ],
+                "actionButton1": "Demo",
+                "actionHook1": ""
+            },
+            "portfolio":
+            {
+                "title": "Portifolio Website",
+                "description": "My personal portfolio website (this one). It showcases my skills, projects, and experience.",
+                "tags": [
+                    "JavaScript", 
+                    "React",
+                    "Next.js"
+                ],
+                "actionButton1": "Code",
+                "actionHook1": "https://github.com/IaKee/portfolio"
+            }
+        }
+    },
+    "hover":{
+        "github": {
+            "title": "GitHub - IaKee",
+            "description": "Check out my latest projects and contributions on my GitHub profile.",
+            "stats": [
+                {
+                    "label": "Repositories",
+                    "value": "20+"
+                },
+                {
+                    "label": "Contributions",
+                    "value": "200+"
+                },
+                {
+                    "label": "Stars",
+                    "value": "8"
+                }
+            ]
+        },
+        "fiverr": {
+            "title": "Fiverr - giordano_gi",
+            "description": "Developer and designer on Fiverr. I help clients build their ideas into reality.",
+            "stats": [
+                {
+                    "label": "Sales",
+                    "value": "40+"
+                },
+                {
+                    "label": "Reviews",
+                    "value": "20+"
+                },
+                {
+                    "label": "Rating",
+                    "value": "4.6/5"
+                }
+
+            ]
+        },
+        "linkedin": {
+            "title": "LinkedIn - Giordano Souza",
+            "description": "BSc. in Information Systems (In progress). Explore more abouts my carreer and connect with me on LinkedIn.",
+            "stats": [
+                {
+                    "label": "Connections",
+                    "value": "90+"
+                }
+            ]
+        }
+    },
+    "contact": {
+        "title": "Get in touch",
+        "description": "I'm always open to new opportunities and collaborations. Feel free to reach out to me.",
+        "contactInfoTitle": "Contact Information",
+        "contactInfoDescription": "Feel free to reach out through the form or directly via email or social media.",
+        "contactStatusTitle": "Current status",
+        "contactStatusDescription": "I'm currently open to new opportunities and collaborations.",
+        "form": {
+            "senderName": "Name",
+            "senderNameDescription": "your name here",
+            "senderEmail": "Email",
+            "senderEmailDescription": "your email here",
+            "subject": "Subject",
+            "subjectDescription": "subject here",
+            "message": "Message",
+            "messageDescription": "your message here",
+            "submitButton": "Send message"
+        }
+    },
+    "footer": {
+        "copyrightNotice": "© 2025 Giordano Souza. All rights reserved."
     }
 }
   

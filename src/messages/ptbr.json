@@ -1,12 +1,13 @@
 {
     "header": {
         "name": "Giordano Souza",
+        "resume": "Meu currículo",
         "projects": "Projetos",
         "skills": "Habilidades e competências",
         "about": "Sobre mim",
         "actionbutton": "Contato"
     },
-    "callingCard": {
+    "hero": {
         "availableLabel": "Disponível para trabalho",
         "title": "Desenvolvedor Criativo & Solucionador de Problemas",
         "summary": "Eu construo aplicações web inovadoras com tecnologias modernas. Transformando problemas complexos em soluções elegantes.",
@@ -14,5 +15,112 @@
         "actionButton2": "Baixar CV",
         "actionButton3": "Conheça mais sobre mim",
         "actionButton4": "Veja meu trabalho"
+    },
+    "featured":
+    {
+        "title": "Projetos em destaque",
+        "description": "Aqui estão meus principais projetos, dentre acadêmicos, profissionais e pessoais, cada um com seus próprios desafios e soluções únicas.",
+        "actionButton1": "Ver todos os meus projetos",
+        "actionButton2": "Sugerir ou encomendar um projeto",
+        "projects": 
+        {
+            "runelingual":
+            {
+                "title": "RuneLingual",
+                "description": "Plugin de tradução autocontido para OSRS. Desenvolvido utilizando a poderosa API do cliente RuneLite.",
+                "tags": [
+                    "Java", 
+                    "Codigo Aberto",
+                    "Spring Boot",
+                    "RuneLite API", 
+                    "Old School RuneScape", 
+                    "Tradução"
+                ],
+                "actionButton1": "Código fonte",
+                "actionHook1": "https://github.com/IaKee/RuneLingual",
+                "actionButton2": "Discord",
+                "actionHook2": "https://discord.gg/sXnnzQ8kma"
+            },
+            "syncwizard":
+            {
+                "title": "SyncWizard",
+                "description": "Uma aplicação de sincronização de arquivos minimalista baseada em UNIX.",
+                "tags": [
+                    "C++", 
+                    "Codigo Aberto",
+                    "Sincronização de Arquivos",
+                    "Servidor-Cliente", 
+                    "Arquitetura UNIX"
+                ],
+                "actionButton1": "Código fonte",
+                "actionHook1": "https://github.com/IaKee/File-Synchronization",
+                "actionButton2": "Demo",
+                "actionHook2": ""
+            },
+            "iam":
+            {
+                "title": "IaKee's Avatar Manager (IAM)",
+                "description": "Software gerenciador de avatares para streamers. Possui instalador, modificador, desinstalador, lançador e módulos independentes.",
+                "tags": [
+                    "Python", 
+                    "Tcl/Tk",
+                    "Windows",
+                    "Desenvolvimento de Software"
+                ],
+                "actionButton1": "Demonstação",
+                "actionHook1": ""
+            },
+            "portfolio":
+            {
+                "title": "Portifolio Website",
+                "description": "Meu site pessoal de portfólio (este aqui). Com meus projetos, habilidades e experiências.",
+                "tags": [
+                    "JavaScript", 
+                    "React",
+                    "Next.js"
+                ],
+                "actionButton1": "Codigo fonte",
+                "actionHook1": "https://github.com/IaKee/portfolio"
+            }
+        }
+    },
+    "hover":{
+        "github": {
+            "title": "GitHub - IaKee",
+            "description": "Confira meus projetos mais recentes e contribuições no meu GitHub.",
+            "stats": [
+                {
+                    "label": "Repositorios",
+                    "value": "20+"
+                },
+                {
+                    "label": "Contribuições",
+                    "value": "200+"
+                },
+                {
+                    "label": "Estrelas",
+                    "value": "8"
+                }
+            ]
+        },
+        "fiverr": {
+            "title": "Fiverr - giordano_gi",
+            "description": "Desenvolvedor e designer no Fiverr. Trabalho transformando ideias dos meus clientes em realidade.",
+            "stats": [
+                {
+                    "label": "Vendas",
+                    "value": "40+"
+                },
+                {
+                    "label": "Avaliações",
+                    "value": "20+"
+                },
+                {
+                    "label": "Nota do serviço",
+                    "value": "4.6/5"
+                }
+
+            ]
+        }
     }
 }

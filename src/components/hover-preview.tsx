@@ -8,19 +8,23 @@ import { motion, AnimatePresence } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
 
 interface HoverPreviewProps {
-  children: React.ReactNode
-  preview: {
-    title: string
-    description: string
-    image?: string
-    stats?: Array<{
-      label: string
-      value: string
+  children: React.ReactNode,
+  title: string
+  description: string
+  image?: string
+  stats?: Array<{
+    label: string
+    value: string
     }>
-  }
 }
 
-export default function HoverPreview({ children, preview }: HoverPreviewProps) {
+export default function HoverPreview(
+    { 
+        children, 
+        title, 
+        description, 
+        image, 
+        stats }: HoverPreviewProps) {
   const [isHovered, setIsHovered] = useState(false)
 
   return (
@@ -38,29 +42,44 @@ export default function HoverPreview({ children, preview }: HoverPreviewProps) {
           >
             <Card className="w-64 shadow-lg">
               <CardContent className="p-3">
-                {preview.image && (
+                {image && (
                   <div className="relative w-full h-32 mb-3 overflow-hidden rounded-md">
                     <Image
-                      src={preview.image || "/placeholder.svg"}
-                      alt={preview.title}
+                      src={image || "/placeholder.svg"}
+                      alt={title}
                       fill
                       className="object-cover"
                     />
                   </div>
                 )}
-                <h3 className="font-semibold text-sm">{preview.title}</h3>
-                <p className="text-xs text-muted-foreground mt-1 mb-2">{preview.description}</p>
+                <h3 className="font-semibold text-sm">{title}</h3>
+                <p className="text-xs text-muted-foreground mt-1 mb-2">{description}</p>
 
-                {preview.stats && (
-                  <div className="grid grid-cols-2 gap-2 mt-2">
-                    {preview.stats.map((stat, index) => (
-                      <div key={index} className="text-center p-1 bg-muted rounded-md">
-                        <p className="text-xs font-medium">{stat.label}</p>
-                        <p className="text-xs">{stat.value}</p>
-                      </div>
-                    ))}
+                {stats && (
+                  <div className="grid gap-2 mt-2">
+                    {
+                      stats.map((stat, index) => {
+                        const isLastSingle = stats.length % 2 !== 0 && index === stats.length - 1;
+                        
+                        return (
+                          <div 
+                            key={index} 
+                            className={`text-center p-1 bg-muted rounded-md ${isLastSingle || stats.length === 1 ? "col-span-2" : "col-span-1"}`}>
+
+                              <p className="text-xs font-medium">
+                                {stat.label}
+                              </p>
+
+                              <p className="text-xs">
+                                {stat.value}
+                              </p>
+                          </div>
+                        );
+                      })
+                    }
                   </div>
-                )}
+                  )
+                }
               </CardContent>
             </Card>
           </motion.div>
@@ -69,4 +88,3 @@ export default function HoverPreview({ children, preview }: HoverPreviewProps) {
     </div>
   )
 }
-

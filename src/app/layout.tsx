@@ -1,19 +1,22 @@
 import type { Metadata } from 'next'
-import './globals.css'
+import '@/styles/globals.css'
 
 import { LanguageProvider } from '@/context/language-content'
+import { Inter } from 'next/font/google'
+import { ReactNode } from 'react'
+const inter = Inter({ subsets: ['latin'] })
+
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
-  generator: 'v0.dev',
+  title: `Giordano's Portfolio`,	
+  description: 'A detailed portfolio website showcasing my work, projects and skills.'
 }
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) 
+export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) 
 {
   return (
-    <html lang="en">
-      <body>
+    <html lang="en" suppressHydrationWarning>
+      <body className='font-sans'>
         <LanguageProvider>
           {children}
         </LanguageProvider>

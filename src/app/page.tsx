@@ -1,12 +1,12 @@
 import Link from "next/link"
 
-
-
 import Header from "@/components/header"
 import HeroSection from "@/components/hero-section"
 
-import { LanguageProvider } from "@/context/language-content"
 import { Github, Linkedin, Twitter } from "lucide-react"
+import AboutTab from "@/components/about-tab"
+import FeaturedProjects from "@/components/featured-projects"
+import Skills from "@/components/skills"
 
 export default function Home() {
   return (
@@ -14,6 +14,12 @@ export default function Home() {
       <Header />
 
       <HeroSection />
+
+      {/*<AboutTab />*/}
+
+      <FeaturedProjects />
+
+      <Skills />
      
       <footer className="w-full border-t py-6 md:py-0">
         <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
