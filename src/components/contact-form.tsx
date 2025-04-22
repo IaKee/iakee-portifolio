@@ -1,7 +1,8 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { useForm } from "react-hook-form"
+import { useSearchParams } from "next/navigation";
+import { useState, useEffect, useRef } from "react"
+import { useForm, FormProvider } from 'react-hook-form';
 import { zodResolver } from "@hookform/resolvers/zod"
 import * as z from "zod"
 import { Loader2 } from "lucide-react"
@@ -11,6 +12,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { toast } from "@/hooks/use-toast"
+
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -39,11 +41,38 @@ export default function ContactForm() {
       message: "",
     },
   })
+  const inputRef = useRef<HTMLTextAreaElement | null>(null)
+
+  const searchParams = useSearchParams();
+  const prefillMessage = searchParams.get('prefillMessage');
+  useEffect(
+    () => {
+      const prefill =
+        prefillMessage || (typeof window !== "undefined" ? localStorage.getItem("prefillMessage") : null);
+      
+      if (prefill) {
+        console.log("pegou a mensagem")
+        form.setValue('message', prefill);
+        console.log("mensagem preenchida automaticamente:", prefill)
+      }
+  }, [form, prefillMessage]);
+
+  
+  useEffect(
+    () => {
+      console.log("tentei pegar a mensagem")
+      const prefill = typeof window !== 'undefined' && window.localStorage.getItem('prefillMessage')
+      if (prefill) {
+        form.setValue('message', prefill)
+      }
+    },
+    [form]
+  )
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true)
 
-    // Simulate form submission
+    // TODO: pop up a notification here
     setTimeout(() => {
       console.log(values)
       setIsSubmitting(false)
@@ -97,21 +126,32 @@ export default function ContactForm() {
               </FormControl>
               <FormMessage />
             </FormItem>
-          )}
-        />
+          )}/>
+          
         <FormField
           control={form.control}
           name="message"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Message</FormLabel>
+              <FormLabel>
+                Message
+              </FormLabel>
+
               <FormControl>
-                <Textarea placeholder="Your message" className="min-h-[150px] resize-none" {...field} />
+                <Textarea 
+                  placeholder="Your message" 
+                  className="min-h-[150px] resize-none" 
+                  {...field} 
+                  ref={
+                    (el) => {
+                      field.ref(el)
+                      inputRef.current = el
+                    }
+                  }/>
               </FormControl>
               <FormMessage />
             </FormItem>
-          )}
-        />
+          )}/>
         <Button type="submit" className="w-full" disabled={isSubmitting}>
           {isSubmitting ? (
             <>

@@ -1,4 +1,17 @@
 {
+    "about": {
+        "title": "Sobre mim",
+        "description": "Sou um estudante de Engenharia de Computação na Universidade Federal do Rio Grande do Sul (UFRGS) com experiência em desenvolvimento freelancer. Sou apaixonado por resolver problemas e criar aplicações eficientes e amigáveis ao usuário. Sou adaptável, um aprendiz rápido e confortável trabalhando tanto de forma independente quanto em ambientes de equipe colaborativos.",
+        "skill1Title": "Desenvolvimento de Software",
+        "skill1Description": "Tenho experiência na construção de aplicações autônomas e módulos integrados, com foco em detalhes e experiência do usuário.",
+        "skill2Title": "Suporte Técnico",
+        "skill2Description": "Forneço solução de problemas, instalações e assistência técnica para aplicativos de software, garantindo operação suave e satisfação do usuário.",
+        "skill3Title": "Desenvolvimento Web",
+        "skill3Description": "Crio sites responsivos e dinâmicos usando tecnologias modernas, garantindo uma experiência de usuário perfeita em todos os dispositivos.",
+        "usedToolsTitle": "Aqui estão as linguagens de programação mais usadas nos meus projetos recentes",
+        "usedToolsDescription": "Dinamicamente gerado pelos meus repositórios públicos, infelizmente os repositorios privados que trabalhei não puderam ser incluídos nessas métricas.",
+        "locale": "pt-br"
+    },
     "header": {
         "name": "Giordano Souza",
         "resume": "Meu currículo",
@@ -12,7 +25,7 @@
         "title": "Desenvolvedor Criativo & Solucionador de Problemas",
         "summary": "Eu construo aplicações web inovadoras com tecnologias modernas. Transformando problemas complexos em soluções elegantes.",
         "actionButton1": "Vamos trabalhar juntos?",
-        "actionButton2": "Baixar CV",
+        "actionButton2": "Acessar CV",
         "actionButton3": "Conheça mais sobre mim",
         "actionButton4": "Veja meu trabalho"
     },
@@ -122,5 +135,9 @@
 
             ]
         }
+    },
+    "footer": {
+        "name": "Giordano Souza",
+        "reserved": "Todos os direitos reservados."
     }
 }

@@ -30,40 +30,74 @@ export default function AboutTab() {
               <ul className="grid gap-6">
               
                 {/* Key professional skills */}
-                {skills.map((element: any, index: number) => (
-                  <li className="flex items-center gap-3">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">
-                     <Code className="h-5 w-5 text-primary" />
-                    </div>
+                <li className="flex items-center gap-3">
+                  <div className="flex aspect-square h-10 items-center justify-center rounded-full bg-primary/10">
+                    <Code className="h-5 w-5 text-primary" />
+                  </div>
 
-                    <div>
-                      <h3 className="font-semibold">
-                       {element.title}
-                      </h3>
+                  <div>
+                    <h3 className="font-semibold">
+                      {t('about.skill1Title')}
+                    </h3>
 
-                      <p className="text-sm text-muted-foreground">
-                       {element.description}
-                      </p>
-                    </div>
-                  </li>
-                ))}
+                    <p className="text-sm text-muted-foreground">
+                      {t('about.skill1Description')}
+                    </p>
+                  </div>
+                </li>
+
+                <li className="flex items-center gap-3">
+                  <div className="flex aspect-square h-10 items-center justify-center rounded-full bg-primary/10">
+                    <Code className="h-5 w-5 text-primary" />
+                  </div>
+
+                  <div>
+                    <h3 className="font-semibold">
+                      {t('about.skill2Title')}
+                    </h3>
+
+                    <p className="text-sm text-muted-foreground">
+                      {t('about.skill2Description')}
+                    </p>
+                  </div>
+                </li>
+
+                <li className="flex items-center gap-3">
+                  <div className="flex aspect-square h-10 items-center justify-center rounded-full bg-primary/10">
+                    <Code className="h-5 w-5 text-primary" />
+                  </div>
+
+                  <div>
+                    <h3 className="font-semibold">
+                      {t('about.skill3Title')}
+                    </h3>
+
+                    <p className="text-sm text-muted-foreground">
+                      {t('about.skill3Description')}
+                    </p>
+                  </div>
+                </li>
               </ul>
             </div>
 
-            <div className="space-y-4">
-              <div className="space-y-2">
-                <div className="flex items-center justify-between">
-                  <h3 className="font-medium">
-                    {t('about.toolsTitle')}
-                  </h3>
-
-                </div>
-
-                {/* programming tool icons here */}
-                icons here
+            <div className="space-y-4 text-center">
+              <p className="md:text font-semibold">
+                {t('about.usedToolsTitle')}
+              </p>
               
+              <div className="mx-auto w-[90%] max-w-mdc space-y-2">
+                <img 
+                  className = "w-full h-auto object-contain"
+                  src={`https://github-readme-stats.vercel.app/api/top-langs?username=iakee&show_icons=true&locale=${t("about.locale")}&layout=compact`}
+                  alt="If you are reading this, my stats tab is broken."/>
+                
+                <p className="text-sm text-muted-foreground">
+                  {t('about.usedToolsDescription')}
+                </p>
               </div>
+
             </div>
+
           </div>
         </div>
       </section>

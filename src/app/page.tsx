@@ -1,62 +1,68 @@
-import Link from "next/link"
+"use client";
+
+import { useEffect, useRef } from "react"
+import { useSearchParams } from "next/navigation"
+import { animate } from "framer-motion"
 
 import Header from "@/components/header"
 import HeroSection from "@/components/hero-section"
 
-import { Github, Linkedin, Twitter } from "lucide-react"
 import AboutTab from "@/components/about-tab"
 import FeaturedProjects from "@/components/featured-projects"
-import Skills from "@/components/skills"
+import Footer from "@/components/footer"
+import ContactTab from "@/components/contact-tab"
 
 export default function Home() {
+  const contactRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const searchParams = useSearchParams();
+
+  useEffect(
+    () => {
+      {/* checks if there is queued message to be sent */}
+      const shouldScroll = localStorage.getItem("prefillMessage")
+
+      
+      if (shouldScroll?.length! > 0 && contactRef.current) {
+        const top = contactRef.current!.getBoundingClientRect().top + window.scrollY;
+        
+        {/* removes queued message from local storage */}
+        localStorage.removeItem("prefillMessage");
+        setTimeout(
+          () => {
+            animate(
+              window.scrollY, 
+              top,
+              {
+                duration: 1.2,
+                onUpdate: (latest) => window.scrollTo(0, latest),
+                onComplete: () => {
+                  inputRef.current?.focus();
+                  inputRef.current?.select();
+                }
+              }
+              
+            )
+          }, 300
+        )
+      }
+    },
+    [])
+
   return (
+
     <div className="flex min-h-screen flex-col">
       <Header />
 
       <HeroSection />
 
-      {/*<AboutTab />*/}
+      <AboutTab />
 
       <FeaturedProjects />
 
-      <Skills />
-     
-      <footer className="w-full border-t py-6 md:py-0">
-        <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
-          <p className="text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} DevName. All rights reserved.
-          </p>
-          <div className="flex items-center gap-4">
-            <Link
-              href="https://github.com"
-              target="_blank"
-              rel="noreferrer"
-              className="text-muted-foreground hover:text-foreground"
-            >
-              <Github className="h-5 w-5" />
-              <span className="sr-only">GitHub</span>
-            </Link>
-            <Link
-              href="https://twitter.com"
-              target="_blank"
-              rel="noreferrer"
-              className="text-muted-foreground hover:text-foreground"
-            >
-              <Twitter className="h-5 w-5" />
-              <span className="sr-only">Twitter</span>
-            </Link>
-            <Link
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noreferrer"
-              className="text-muted-foreground hover:text-foreground"
-            >
-              <Linkedin className="h-5 w-5" />
-              <span className="sr-only">LinkedIn</span>
-            </Link>
-          </div>
-        </div>
-      </footer>
+      <ContactTab ref = {contactRef} />
+
+      <Footer />
     </div>
   )
 }
