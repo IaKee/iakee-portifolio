@@ -13,13 +13,43 @@ export default function LanguageToggle() {
     setLocale(newLanguage);
   };
 
-  var ptbr = <>Português { <img src={'https://flagcdn.com/w20/br.png'} alt='BR' className="ml-auto"/> }</>
-  var en = <>English { <img src={'https://flagcdn.com/w20/us.png'} alt='US' className="ml-auto"/> }</>
+  var ptbr = 
+    <>
+      Português 
+      {
+        <img 
+          src={'https://flagcdn.com/w20/br.png'} 
+          alt='BR' 
+          className="ml-auto"/> 
+      }
+    </>
+  var en = 
+    <>
+      English 
+      { 
+        <img 
+          src={'https://flagcdn.com/w20/us.png'} 
+          alt='US' 
+          className="ml-auto"/> 
+      }
+    </>
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline">
+        <Button 
+          variant="outline"
+          className="
+            flex 
+            items-center 
+            rounded-full 
+            gap-2 
+            border-2
+            border-primary/254
+            hover:bg-primary/32
+            hover:scale-[1.05]
+            transition-all">
+          
           {locale === 'en' ? en : ptbr}
         </Button>
       </DropdownMenuTrigger>

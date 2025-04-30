@@ -3,8 +3,8 @@
 import { useEffect, useState } from "react"
 import Image from "next/image"
 import { motion } from "framer-motion"
-import { Calendar, ChevronDown, ChevronUp, ExternalLink, Github, Link, Linkedin, Mail, MapPin, Phone, Shield } from "lucide-react"
-
+import { Calendar, ChevronDown, ChevronUp, Github, Linkedin, Mail, MapPin, Phone, Shield } from "lucide-react"
+import { FaWhatsapp } from "react-icons/fa";
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { useLanguage } from "@/context/language-content"
@@ -14,6 +14,7 @@ export default function ProfessionalCard() {
   const { t } = useLanguage();
   const [revealContact, setRevealContact] = useState(true);
   const [captchaVerified, setCaptchaVerified] = useState(false);
+  const [loadedContact, setLoadedContact] = useState(false);
 
   const [contactInfo, setContactInfo] = useState<{
     phone?: string,
@@ -29,21 +30,21 @@ export default function ProfessionalCard() {
       { method: 'POST' })
       .then(res => res.json())
       .then(data => {
-        console.log("Dados de contato:", data);
-        setContactInfo(data); // <-- Aqui tu armazena
+        setContactInfo(data);
       })
       .catch(err => {
         console.error("Erro ao buscar dados de contato:", err);
       });
   };
 
-  {/* TODO: remove this */}
+  {/* TODO: remove this! */}
   if(!captchaVerified) {
-    handleCaptchaSuccess()
-    setCaptchaVerified(true)}
+    handleCaptchaSuccess();
+    setCaptchaVerified(true)
+  }
 
   return (
-    <Card className="w-full mx-auto shadow-lg border-2 my-6">
+    <Card className="w-full flex mx-auto my-10 rounded-2xl">
       <div className="w-[80%] items-center flex-col justify-center mx-auto">
         <CardHeader className="
           p-4 
@@ -71,8 +72,8 @@ export default function ProfessionalCard() {
         </CardHeader>
 
         <CardContent className="w-[65%] items-center justify-center mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-            {/* opens github on a new tab */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-6">
+            {/* github */}
             <Button
               variant="outline"
               size="lg"
@@ -91,7 +92,8 @@ export default function ProfessionalCard() {
                 GitHub
               </span>
             </Button>
-
+            
+            {/* linkedin */}
             <Button
               variant="outline"
               size="lg"
@@ -103,14 +105,17 @@ export default function ProfessionalCard() {
                 hover:bg-primary/5 
                 hover:scale-[1.05]
                 transition-all"
-              onClick={() => window.open("https://www.linkedin.com/in/giordanogi/", "_blank")}>
+              onClick={() => window.open(
+                "https://www.linkedin.com/in/giordanogi/", 
+                "_blank")}>
               
               <Linkedin className="h-5 w-5" />
               <span>
                 LinkedIn
               </span>
             </Button>
-
+            
+            {/* schedule call */}
             <Button
               variant="default"
               size="lg"
@@ -134,7 +139,7 @@ export default function ProfessionalCard() {
             </Button>
           </div>
 
-          <div className="mt-2">
+          <div>
             <Button
               onClick={() => setRevealContact(!revealContact)}
               variant="outline"
@@ -144,6 +149,7 @@ export default function ProfessionalCard() {
                 justify-center 
                 rounded-full 
                 gap-2
+
                 w-full 
                 hover:bg-muted/50 
                 hover:scale-[1.05]
@@ -163,8 +169,7 @@ export default function ProfessionalCard() {
                     bg-muted/50
                     hover:scale-[1.1]`
                 }`
-              }
-            >
+              }>
               <span>
                 {revealContact 
                   ? t("resume.hideContact") 
@@ -182,7 +187,7 @@ export default function ProfessionalCard() {
                 animate={{ opacity: 1, height: "auto" }}
                 exit={{ opacity: 0, height: 0 }}
                 transition={{ duration: 0.3 }}
-                className="mt-4 border rounded-lg overflow-hidden">
+                className="border rounded-lg overflow-hidden mt-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
                   <div className="space-y-4">
                     <h3 className="font-medium text-lg border-b pb-2">
@@ -192,10 +197,11 @@ export default function ProfessionalCard() {
                     <div className="space-y-3">
                       <a 
                         href="mailto:giordano.s.mail@gmail.com" 
+                        target="_blank"
                         className="
                           flex 
                           items-center 
-                          gap-3 
+                          gap-2 
                           hover:underline 
                           hover:scale-[1.05]
                           transition-all">
@@ -211,7 +217,7 @@ export default function ProfessionalCard() {
                           className="
                             flex  
                             items-center
-                            gap-3
+                            gap-2
                             hover:underline
                             hover:scale-[1.05]	
                             transition-all">
@@ -242,9 +248,7 @@ export default function ProfessionalCard() {
                           text-[12px]
                           text-muted-foreground 
                           text-justify
-
                           items-center
-
                           gap-1">
                           <Shield/>
                           {t('resume.captchaDescription')}
@@ -258,20 +262,22 @@ export default function ProfessionalCard() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.3 }}
                         className="space-y-3">
-             
+                        
+                        {/* phone */}
                         <a 
                           href={`tel:+${contactInfo.phone?.replace(/\D/g, '')}`} 
                           className="
                             flex  
                             items-center
-                            gap-3
+                            gap-2
                             hover:underline
                             hover:scale-[1.05]	
                             transition-all">
                           <Phone className="h-5 w-5 text-primary" />
                           {contactInfo.phone}
                         </a>
-                
+
+                        {/* whatsapp */}
                         <div className="flex items-center gap-3">
                           <a 
                             href={`https://wa.me/${contactInfo.phone?.replace(/\D/g, '')}`}
@@ -281,10 +287,7 @@ export default function ProfessionalCard() {
                               gap-2 
                               hover:scale-[1.05] hover:underline
                               transition-all">
-                          <img 
-                            className="h-5 w-5 text-primary"
-                            src="whatsapp.png"
-                            alt="wplogo" />
+                            <FaWhatsapp className="h-5 w-5 text-primary"/>
                           
                             {t('resume.whatsappDirect')}
                           </a>

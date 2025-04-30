@@ -182,6 +182,10 @@
         "moreInformation": "More options",
         "captchaDescription": "Please kindly fill out the captcha verification above to reveal more contact information.",
         "whatsappDirect": "Reach me on WhatsApp",
+        "workExperience": "Work Experience",
+        "searchPlaceholder": "Search for a specific skill or experience..",
+        "searchResults": "Results found:",
+        "searchResultsEmpty": "No results found for ",
         "sections": {
             "about": "About",
             "experience": "Experience",
@@ -192,72 +196,339 @@
         "skills": [
             { 
                 "name": "Python", 
-                "level": 90 
+                "selfEvaluation": 9,
+                "icon": {
+                    "title": "FaPython",
+                    "package": "react-icons/fa" 
+                },
+                "notableProjects": 
+                [
+                    {
+                        "description": "IaKee's Avatar Manager",
+                        "hook": "",
+                        "preview": ""
+                    },
+                    {
+
+                        "description": "Installer system",
+                        "hook": "",
+                        "preview": ""
+                    },
+                    {
+                        "description": "Lightweight chatting service",
+                        "hook": "",
+                        "preview": ""
+                    }
+                ],
+                "category": "languages"
             },
             { 
                 "name": "Java", 
-                "level": 85 
+                "selfEvaluation": 8,
+                "icon": {
+                    "title": "FaJava",
+                    "package": "react-icons/fa" 
+                },
+                "notableProjects": 
+                [
+                    {
+
+                        "description": "RuneLingual",
+                        "hook": "",
+                        "preview": ""
+                    },
+                    {
+                        "description": "Text-based music editor",
+                        "hook": "",
+                        "preview": ""
+                    }
+                ],
+                "category": "languages"
             },
             { 
                 "name": "C/C++", 
-                "level": 80 
+                "selfEvaluation": 8,
+                "icon": {
+                    "title": "SiCplusplus",
+                    "package": "react-icons/si" 
+                },
+                "notableProjects": 
+                [
+                    {
+                        "description": "SyncWizard",
+                        "hook": "",
+                        "preview": ""
+                    },
+                    {
+                        "description": "OPENGL-Based physics simulator",
+                        "hook": "",
+                        "preview": ""
+                    },
+                    {
+                        "description": "nUndertale",
+                        "hook": "",
+                        "preview": ""
+                    }
+                ],
+                "category": "languages"
             },
             { 
                 "name": "PHP", 
-                "level": 75 
+                "selfEvaluation": 6,
+                "icon": {
+                    "title": "FaPhp",
+                    "package": "react-icons/fa" 
+                },
+                "notableProjects": 
+                [
+                    {
+                        "description": "An earlier version of this portfolio",
+                        "hook": "",
+                        "preview": ""
+                    },
+                    {
+                        "description": "Laravel-based web applications",
+                        "hook": "",
+                        "preview": ""
+                    }
+                ],
+                "category": "languages"
             },
             { 
-                "name": "Assembly", 
-                "level": 70 
+                "name": "Assembly",
+                "selfEvaluation": 7, 
+                "icon": {
+                    "title": "GiProcessor",
+                    "package": "react-icons/gi" 
+                },
+                "notableProjects": 
+                [
+                    {
+                        "description": "Implementation of a custom didatic CPU architecture",
+                        "hook": "",
+                        "preview": ""
+                    },
+                    {
+                        "description": "Implemented a DOS-based file viewer",
+                        "hook": "",
+                        "preview": ""
+                    }
+                ],
+                "category": "languages"
             },
             { 
-                "name": "Tkinter", 
-                "level": 85 
+                "name": "Tkinter/Tcl", 
+                "selfEvaluation": 8,
+                "icon": {
+                    "title": "FaFeatherAlt",
+                    "package": "react-icons/fa" 
+                },
+                "notableProjects": 
+                [
+                    {
+                        "description": "IaKee's Avatar Manager",
+                        "hook": "",
+                        "preview": ""
+                    },
+                    {
+                        "description": "Installer system",
+                        "hook": "",
+                        "preview": ""
+                    }
+                ],
+                "category": "frameworks"
             },
             { 
                 "name": "Django", 
-                "level": 80 
+                "selfEvaluation": 6,
+                "notableProjects": 
+                [
+                    {
+                        "description": "An earlier version of this portfolio",
+                        "hook": "",
+                        "preview": ""
+                    },
+                    {
+                        "description": "Login system for a web application",
+                        "hook": "",
+                        "preview": ""
+                    }
+                ],
+                "category": "frameworks"
             },
             { 
                 "name": "Laravel", 
-                "level": 75 
+                "selfEvaluation": 5,
+                "notableProjects": 
+                [
+                    {
+                        "description": "An earlier version of this portfolio",
+                        "hook": "",
+                        "preview": ""
+                    },
+                    {
+                        "description": "To do list web application",
+                        "hook": "",
+                        "preview": ""
+                    }       
+                ],
+                "category": "frameworks"
             },
             { 
                 "name": "Pandas", 
-                "level": 85 
+                "selfEvaluation": 4,
+                "notableProjects": 
+                [
+                    {
+                        "description": "Data analysis for soccer player statistics",
+                        "hook": "",
+                        "preview": ""
+                    }
+                ],
+                "category": "tools"
             },
             { 
                 "name": "Git", 
-                "level": 90 
+                "selfEvaluation": 6, 
+                "notableProjects": 
+                [
+                    {
+                        "description": "Version control for all my projects",
+                        "hook": "",
+                        "preview": ""
+                    },
+                    {
+                        "description": "RuneLingual, an open-source project with multiple contributors",
+                        "hook": "",
+                        "preview": ""
+                    }
+                ],
+                "category": "tools"
             },
             { 
                 "name": "SQL", 
-                "level": 85 
+                "selfEvaluation": 5, 
+                "icon": {
+                    "title": "FaDatabase",
+                    "package": "react-icons/fa" 
+                },
+                "notableProjects": 
+                [
+                    {
+                        "description": "Modeled DB and implementation for a theoretical social network",
+                        "hook": "",
+                        "preview": ""
+                    }
+                ],
+                "category": "languages"
             },
             { 
                 "name": "Photoshop", 
-                "level": 70 
+                "selfEvaluation": 7,
+                "notableProjects": 
+                [
+                    {
+                        "description": "Designed multiple Twitch overlays",
+                        "hook": "",
+                        "preview": ""
+                    },
+                    {
+                        "description": "Illustrated sprites for IAM comissions for streamers",
+                        "hook": "",
+                        "preview": ""
+                    }
+                ],
+                "category": "tools"
             },
             { 
                 "name": "WordPress", 
-                "level": 75 
+                "selfEvaluation": 5,
+                "notableProjects": 
+                [
+                    {
+                        "description": "An earlier version of this portfolio",
+                        "hook": "",
+                        "preview": ""
+                    },
+                    {
+                        "description": "A feature-rich e-commerce website for testing purposes",
+                        "hook": "",
+                        "preview": ""
+                    }
+                ],
+                "category": "CMS"
             },
             { 
                 "name": "MS Office", 
-                "level": 80 
+                "selfEvaluation": 9, 
+                "notableProjects": 
+                [
+                    {
+                        "description": "Created multiple spreadsheets for lead management for Saenz Global LLC",
+                        "hook": "",
+                        "preview": ""
+                    },
+                    {
+                        "description": "Developed SOPs and custom invoice templates for Saenz Global LLC",
+                        "hook": "",
+                        "preview": ""
+                    }
+                ],
+                "category": "tools"
             }
         ],
+        "skillLevels": 
+        {
+            "begginer": "Beginner",
+            "intermediate": "Intermediate",
+            "advanced": "Advanced",
+            "expert": "Expert"
+        },
+        "categories": {
+            "languages": {
+                "label": "Languages",
+                "description": "Programming languages I have experience with."
+            },
+            "frameworks": {
+                "label": "Frameworks",
+                "description": "Frameworks and libraries I have experience with."
+            },
+            "tools": {
+                "label": "Tools",
+                "description": "Tools and software I have experience with."
+            },
+            "cms": {
+                "label": "CMS",
+                "description": "Content Management Systems I have experience with."
+            }
+        },
         "professionalExperience": 
         [
+            {
+                "title": "IT Assistant | Roofing projects Admin",
+                "company": "Saenz Global LLC",
+                "period": "OCT/2024 – MAR/2025",
+                "hook": "https://www.saenzglobal.com/about",
+                "icon": "/sg.png",
+                "roleFunctions": 
+                [
+                    "Supported IT operations, ensured internal tool functionality.",
+                    "Developed multiple automations with Zapier to connect internal tools and customer CRMs, allowing for a more efficient workflow.",
+                    "Provided technical support for the Admin team, assisting with software installations, automation maintenance, and documentation.",
+                    "Managed documents (contacts, invoices and estimates), CRMs, email inboxes, schedules and materials for construction projects.",
+                    "Worked with contractor's leads from the first contract to the final payment, ensuring schedules and documents were up to date."
+                ]
+            },
             {
                 "title": "Freelance Developer",
                 "company": "Fiverr",
                 "period": "NOV/2021 – AUG/2024",
+                "hook": "https://www.fiverr.com/giordano_gi",
                 "roleFunctions": 
                 [
                     "Developed standalone visual applications and integrated modules for streamers.",
                     "Designed dynamically animated characters and their interactions with streamers' hardware (keyboard, mouse, microphone, joysticks, etc.).",
-                    "Maintained detailed documentation and high organization in my software, even working independently.",
+                    "Maintained detailed documentation and high organization in my software.",
                     "Managed the entire development cycle as a freelancer, from client communication, requirement gathering, and sales, ensuring client satisfaction."
                 ]
             },
@@ -265,10 +536,12 @@
                 "title": "Technical Support",
                 "company": "Veloce.Tech",
                 "period": "DEC/2020 – MAR/2021",
+                "hook": "https://www.veloce.tech/",
                 "roleFunctions": 
                 [
                     "Provided technical support for a suite of POS (Point of Sale) applications by Veloce, handling troubleshooting, installations, documentation, and technical requests.",
-                    "Collaborated with development teams to resolve issues and improve product functionality."
+                    "Provided training and support to new user teams, including sales, and administrative staff.",
+                    "Collaborated with development team to resolve issues and improve the supported product's functionality."
                 ]
             }
         ],

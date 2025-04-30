@@ -2,11 +2,11 @@
 
 import { useLanguage } from '@/context/language-content'
 
-import { ArrowRight, Code, } from "lucide-react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import ThemeToggle from "@/components/theme-toggle"
 import LanguageToggle from './locale-toggle';
+import { IoTerminal } from "react-icons/io5";
 
 
 export default function Header() {
@@ -17,47 +17,96 @@ export default function Header() {
       backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className='container mx-auto px-4'>
         <div className="container flex h-16 items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <img 
-              src="/terminal_icon.png" 
-              alt="icon" 
-              className="h-6 w-6" />
-            <span className="text-lg font-bold">
+          
+          {/* title logo and text */}
+          <a 
+            href="/"
+            className="
+            flex 
+            items-center 
+            space-x-4
+            hover:scale-[1.05]
+            transition-all">
+            <IoTerminal className="h-5 w-5"/>
+
+            <span className="
+              lg:text-2xl 
+              font-bold">
               {t('header.name')}
             </span>
-          </div>
+          </a>
 
+          {/* navigation links */}
           <nav className="hidden md:flex items-center gap-6">
             <Link 
               href = "/resume" 
-              className = "text-sm font-medium hover:underline underline-offset-4">
+              className="
+                font-small 
+                hover:underline 
+                hover:scale-[1.1]
+                transition-all
+                underline-offset-4">
               {t('header.resume')}
             </Link>
             
             <Link 
               href="/projects" 
-              className="text-sm font-medium hover:underline underline-offset-4">
+              className="
+              font-small 
+                hover:underline 
+                hover:scale-[1.1]
+                transition-all
+                underline-offset-4">
               {t('header.projects')}
             </Link>
 
             <Link 
               href="#skills" 
-              className="text-sm font-medium hover:underline underline-offset-4">
+              className="
+                font-small 
+                hover:underline 
+                hover:scale-[1.1]
+                transition-all
+                underline-offset-4">
               {t('header.skills')}
             </Link>
             
             <Link 
               href="#about" 
-              className="text-sm font-medium hover:underline underline-offset-4">
+              className="
+                font-small 
+                hover:underline 
+                hover:scale-[1.1]
+                transition-all
+                underline-offset-4">
               {t('header.about')}
             </Link>
           </nav>
-
-          <div className="flex items-center gap-2">
+          
+            
+          {/* action buttons */}
+          <div className="flex items-center gap-4">
+            {/* language selection dropdown button */}
             <LanguageToggle/>
+            
+              
+            {/* lighing selection toggle button */}
             <ThemeToggle />
+              
+              
+            {/* contact - main button */}
             <Link href="#contact" target="_blank" >
-              <Button>
+              <Button
+                size="lg"
+                className="
+                flex 
+                items-center 
+                rounded-full 
+                gap-2 
+                hover:bg-primary/32
+                hover:scale-[1.05]
+                transition-all">
+
                 {t('header.actionbutton')}
               </Button>
             </Link>
