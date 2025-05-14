@@ -8,6 +8,13 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "*.{js,ts,jsx,tsx,mdx}"
   ],
+		safelist: [
+    'text-red-500',
+    'text-orange-500',
+    'text-yellow-500',
+    'text-blue-500',
+    'text-green-500',
+  ],
   theme: {
 		container:
 		{

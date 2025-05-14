@@ -13,8 +13,8 @@ export default function Header() {
   const { t } = useLanguage();
 
   return(
-    <header className="sticky top-0 z-40 w-full border-b bg-background/95 
-      backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-40 w-full border-b bg-background
+      backdrop-blur supports-[backdrop-filter]:bg-background">
       <div className='container mx-auto px-4'>
         <div className="container flex h-16 items-center justify-between">
           
@@ -39,6 +39,17 @@ export default function Header() {
           {/* navigation links */}
           <nav className="hidden md:flex items-center gap-6">
             <Link 
+              href = "/" 
+              className="
+                font-small 
+                hover:underline 
+                hover:scale-[1.1]
+                transition-all
+                underline-offset-4">
+              {t('header.home')}
+            </Link>
+            
+            <Link 
               href = "/resume" 
               className="
                 font-small 
@@ -52,7 +63,7 @@ export default function Header() {
             <Link 
               href="/projects" 
               className="
-              font-small 
+                font-small 
                 hover:underline 
                 hover:scale-[1.1]
                 transition-all
@@ -70,29 +81,15 @@ export default function Header() {
                 underline-offset-4">
               {t('header.skills')}
             </Link>
-            
-            <Link 
-              href="#about" 
-              className="
-                font-small 
-                hover:underline 
-                hover:scale-[1.1]
-                transition-all
-                underline-offset-4">
-              {t('header.about')}
-            </Link>
           </nav>
           
-            
           {/* action buttons */}
           <div className="flex items-center gap-4">
-            {/* language selection dropdown button */}
-            <LanguageToggle/>
+            {/* lighing selection toggle button - disabled */}
+            {/*<ThemeToggle />*/}
             
-              
-            {/* lighing selection toggle button */}
-            <ThemeToggle />
-              
+            {/* language selection dropdown button */}
+            <LanguageToggle />  
               
             {/* contact - main button */}
             <Link href="#contact" target="_blank" >
@@ -103,6 +100,7 @@ export default function Header() {
                 items-center 
                 rounded-full 
                 gap-2 
+                cursor-pointer
                 hover:bg-primary/32
                 hover:scale-[1.05]
                 transition-all">

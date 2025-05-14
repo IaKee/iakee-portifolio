@@ -5,20 +5,20 @@ import { useState } from "react"
 import { ChevronDown, ChevronUp, Building } from "lucide-react"
 import { useLanguage } from "@/context/language-content";
 import { FaExternalLinkAlt } from "react-icons/fa";
-
-interface ExperienceCardProps {
-  experience: {
-    title: string
-    company: string
+                
+interface CourseCardProps {
+  course: {
+    degree: string
+    institution: string
     period: string
     hook: string
     icon: string
-    roleFunctions: string[]
+    courses: string[]
   }
   index: number
 }
 
-export default function ExperienceCard({ experience, index }: ExperienceCardProps) {
+export default function ExperienceCard({ course, index }: CourseCardProps) {
   
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -34,7 +34,7 @@ export default function ExperienceCard({ experience, index }: ExperienceCardProp
         {/* role details */}
         <div className="flex gap-4 items-center">
           
-          {/* company logo */}
+          {/* school logo */}
           <div className="
             flex 
             h-12
@@ -42,10 +42,10 @@ export default function ExperienceCard({ experience, index }: ExperienceCardProp
             items-center 
             justify-center">
             {
-              experience.icon
+              course.icon
                 ? <img 
-                    src={experience.icon} 
-                    alt={experience.company} 
+                    src={course.icon} 
+                    alt={course.institution} 
                     className="flex h-8 w-8 rounded-full bg:primary-foreground border-primary border-3" /> 
                 : <Building className="flex h-8 w-8 rounded-full bg:primary-foreground border-primary border-3" />
             }
@@ -53,14 +53,14 @@ export default function ExperienceCard({ experience, index }: ExperienceCardProp
           
           <div onClick={() => setIsExpanded(true)}>
             <h3 className="text-xl font-bold">
-              {experience.title}
+              {course.degree}
             </h3>
             <p>
-              {experience.company}
+              {course.institution}
             </p>
             
             <p className="text-sm">
-              {experience.period}
+              {course.period}
             </p>
           </div>
         </div>
@@ -73,7 +73,7 @@ export default function ExperienceCard({ experience, index }: ExperienceCardProp
               rounded-full
               hover:scale-[1.5]
               transition-all"
-            href={experience.hook}
+            href={course.hook}
             target="_blank">
             <FaExternalLinkAlt size={14}/>
           </motion.a>
@@ -102,7 +102,7 @@ export default function ExperienceCard({ experience, index }: ExperienceCardProp
         style={{ overflow: "hidden" }}>
         <ul className="list-disc list-inside space-y-2">
           {
-            experience.roleFunctions.map(
+            course.courses.map(
               (item, i) => (
                 <motion.li
                   key={i}

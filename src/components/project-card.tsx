@@ -3,12 +3,15 @@
 import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { ExternalLink, FileCode, Github } from "lucide-react"
 import { motion } from "framer-motion"
+
+import { ExternalLink, FileCode } from "lucide-react"
+import { TbBrandGithubFilled } from "react-icons/tb";
 
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { useLanguage } from "@/context/language-content"
 
 interface ProjectCardProps {
   title: string
@@ -33,26 +36,40 @@ export default function ProjectCard(
     actionHook2 }: ProjectCardProps) {
   const [isHovered, setIsHovered] = useState(false)
 
+  const { t } = useLanguage();
   return (
     <motion.div
-      whileHover={{ y: -5 }}
+      whileHover={{ scale: 1.03 }}
       transition={{ duration: 0.3 }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}>
     
-      <Card className="h-full flex flex-col overflow-hidden">
+      <Card className="
+        h-full 
+        flex 
+        flex-col 
+        overflow-hidden 
+        border-2
+        rounded-4xl 
+        bg-muted/15
+        hovershadow-2xl
+        hover:shadow-[0_0_10px_rgba(255,255,255,0.2)]
+        transition-all">
+        
+        {/* project preview image */}
         <div className="relative aspect-video overflow-hidden">
           {
             image ? 
             <Image
-              src = {image || "/placeholder.svg"}
+              src = {image}
               alt = {title}
               fill
               className={`object-cover transition-transform duration-500 ${isHovered ? "scale-110" : "scale-100"}`}/>
             : <FileCode className={`h-full w-full p-5 object-cover transition-transform duration-500 ${isHovered ? "scale-110" : "scale-100"}`}/>
-        }
+          }
         </div>
-
+        
+        {/* project title and description */}
         <CardHeader>
           <CardTitle>
             {title}
@@ -62,7 +79,8 @@ export default function ProjectCard(
             {description}
           </CardDescription>
         </CardHeader>
-
+        
+        {/* project tags */}
         <CardContent>
           <div className="flex flex-wrap gap-2">
             {/* Iterates over projects listed on language file */}
@@ -77,26 +95,72 @@ export default function ProjectCard(
             }
           </div>
         </CardContent>
+        
+        {/* action buttons */}
+        <CardFooter className="
+          mt-auto 
+          flex 
+          justify-center 
+          items-center 
+          gap-2">
           
-        <CardFooter className="flex justify-between">
-          <Button variant="outline" size="sm" asChild>
-            <Link href={actionHook1} target="_blank" rel="noreferrer">
-              <Github className="mr-2 h-4 w-4" />
-                {actionButton1}
-            </Link>
-          </Button>
-          
+
+          {/* main action button */}
           {
+            actionButton1 === "Demo"
+              ? (
+                <Link href="">
+                  <Button 
+                    variant={actionButton2 && actionHook2 ? "outline" : "default"}
+                    className="
+                      rounded-full 
+                      cursor-pointer 
+                      hover:ring-2 
+                      hover:bg-bg 
+                      hover:ring-primary 
+                      hover:ring-offset-2 
+                      transition-all"
+                    onClick={
+                      () => {
+                        localStorage.setItem("prefillMessage", t("prefill.demonstration"))
+                        window.location.href = "/"
+                      }
+                    }>
+                    <TbBrandGithubFilled className="h-5 w-5" />
+                    {actionButton1}
+                  </Button>
+                </Link>)
+              : (
+                <Link href={actionHook1} target="_blank" rel="noreferrer">
+                  <Button 
+                    variant={actionButton2 && actionHook2 ? "outline" : "default"}
+                    className="
+                      rounded-full 
+                      cursor-pointer 
+                      hover:ring-2 
+                      hover:bg-bg 
+                      hover:ring-primary 
+                      hover:ring-offset-2 
+                      transition-all" >
+                    <TbBrandGithubFilled className="h-5 w-5" />
+                    {actionButton1}
+                  </Button>
+                </Link>
+              )
+          }
+          
+          { /* secondary action button */
             actionButton2 && actionHook2 && (
               <Link href={actionHook2} target="_blank" rel="noreferrer">
-                <Button size="sm">
-                  <ExternalLink className="mr-2 h-4 w-4" />
+                <Button size="sm" className="rounded-full cursor-pointer hover:ring-2 hover:ring-primary hover:ring-offset-2 transition-all">
+                  <ExternalLink className="h-5 w-5" />
                   {actionButton2}
                 </Button>
               </Link>
             )
           }
         </CardFooter>
+   
       </Card>
     </motion.div>
   )

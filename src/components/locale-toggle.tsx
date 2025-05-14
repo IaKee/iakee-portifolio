@@ -45,21 +45,32 @@ export default function LanguageToggle() {
             rounded-full 
             gap-2 
             border-2
-            border-primary/254
+            border-primary
             hover:bg-primary/32
             hover:scale-[1.05]
+            cursor-pointer
             transition-all">
           
           {locale === 'en' ? en : ptbr}
         </Button>
       </DropdownMenuTrigger>
 
-      <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick = {() => changeLocale('ptbr')}>
+      {/* dropdown menu content */}
+      <DropdownMenuContent 
+        align="end"
+        className="bg-primary-foreground rounded-xl">
+        
+        {/* portuguese button */}
+        <DropdownMenuItem 
+          onClick = {() => changeLocale('ptbr')}
+          className="flex items-center justify-between rounded-xl">
           {ptbr}
         </DropdownMenuItem>
         
-        <DropdownMenuItem onClick={() => changeLocale('en')}>
+        {/* english button */}
+        <DropdownMenuItem 
+          onClick={() => changeLocale('en')}
+          className="flex items-center justify-between rounded-xl">
           {en}
         </DropdownMenuItem>
       </DropdownMenuContent>

@@ -1,7 +1,9 @@
 'use client'
 
-import { Github, Linkedin, Twitter } from "lucide-react";
 import Link from "next/link";
+import { TbBrandFiverr } from "react-icons/tb";
+import { FaLinkedinIn } from "react-icons/fa";
+import { TbBrandGithubFilled } from "react-icons/tb";
 
 import { useLanguage } from '@/context/language-content'
 
@@ -23,7 +25,7 @@ export default function Footer() {
             rel="noreferrer" 
             className="hover:text-foreground">
           
-            <Github className="h-5 w-5" />
+            <TbBrandGithubFilled className="h-5 w-5" />
           
             <span className="sr-only">
               GitHub
@@ -36,7 +38,7 @@ export default function Footer() {
             rel="noreferrer" 
             className="hover:text-foreground">
             
-            <Linkedin className="h-5 w-5" />
+            <FaLinkedinIn className="h-5 w-5" />
             
             <span className="sr-only">
               LinkedIn
@@ -49,7 +51,7 @@ export default function Footer() {
             rel="noreferrer" 
             className="hover:text-foreground">
 
-            <img src="fiverr_icon.png" alt="fiverr.logo" className="h-5 w-5" />
+            <TbBrandFiverr className="h-5 w-5" />
 
             <span className="sr-only">
               Fiverr

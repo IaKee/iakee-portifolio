@@ -5,7 +5,8 @@ import { ExternalLink, Link, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 import DynamicFaIcon from "./dynamic-fa-icon"
-import clsx from "clsx"
+import ProjectBrowser from "./project-browser"
+import { useLanguage } from "@/context/language-content"
 
 export default function SkillCard(
   {
@@ -38,6 +39,8 @@ export default function SkillCard(
   const currentProject = skill.notableProjects[activeProjectIndex];
   const cardId = `skill-${skill.name.toLowerCase().replace(/\s+/g, "-")}`;
   const isPreviewActive = activePreview === cardId;
+
+  const { t } = useLanguage();
   
   const navigateProjects = (direction: "next" | "prev") => {
     // counts as activity, resets inactivity timer so this panel won't close
@@ -73,12 +76,14 @@ export default function SkillCard(
       clearTimeout(inactivityTimer);
     }
     
+    // allows for 15 seconds of inactivity before closing the preview
+    // TODO: change this
     const timer = setTimeout(
       () => {
         setIsExpanded(false);
         setActiveProjectIndex(0);
       }, 
-      15000) // 15 seconds of inactivity before closing the preview
+      150000) 
     
     setInactivityTimer(timer);
   }
@@ -95,6 +100,16 @@ export default function SkillCard(
     [inactivityTimer]
   )
 
+  useEffect(
+    () => {
+      return () => {
+        // TODO: remove this after implementation
+        if(isExpanded) {
+          window.location.href = "/"
+        }
+      }
+    }
+  )
   const hasMultipleProjects = skill.notableProjects.length > 1;
 
   return (
@@ -139,14 +154,18 @@ export default function SkillCard(
                     h-10`
               }>
               
-              {/* default language icon - TODO: replace with actual icon*/}
+              {/* default language icon */}
               {
-                skill.icon 
+                skill.icon && expertiseColor
                   ? (
                     <DynamicFaIcon 
                       iconName={skill.icon.title} 
                       iconPackage={skill.icon.package}
-                      className={`w-10 h-10 text-${expertiseColor}`} />
+                      className={`
+                        w-10 
+                        h-10 
+                        fill-${expertiseColor}
+                        text-${expertiseColor} `} />
                   ) : (
                     <span className="font-bold text-lg">
                       {skill.name.charAt(0)}
@@ -197,65 +216,16 @@ export default function SkillCard(
             {
               isExpanded 
               ? (
-                <motion.div
-                  key="expanded"
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: "auto" }}
-                  exit={{ opacity: 0, height: 0 }}
-                  className=" rounded-lg p-3 border border-[#333]">
-                
-                  <h4 className="font-medium text-sm mb-2 text-white">
-                    {currentProject.description.split(" ").slice(0, 4).join(" ")}...
-                  </h4>
-
-                  <div className="flex flex-col gap-3">
-                    {
-                      currentProject.preview && (
-                        <div className="relative w-full h-32 rounded overflow-hidden">
-                          <img
-                            src={currentProject.preview || "/placeholder.svg"}
-                            alt={`Preview de ${skill.name}`}
-                            className="object-cover"/>
-                        </div>
-                      )
-                    }
-
-                    <p className="text-sm text-gray-300">
-                      {currentProject.description}
-                    </p>
-
-                    {
-                      currentProject.hook && (
-                        <Link
-                          href={currentProject.hook}
-                          target="_blank"
-                          className="
-                            text-sm 
-                            text-blue-400 
-                            flex 
-                            items-center 
-                            gap-1 
-                            hover:text-blue-300 
-                            transition-colors 
-                            self-end 
-                            mt-1">
-                          
-                          Ver projeto 
-                          <ExternalLink size={14} />
-                        </Link>
-                      )
-                    }
-                  </div>
-                </motion.div>
+                <ProjectBrowser projects={skill.notableProjects} activeProjectId={null} activeProject={null} />
               ) 
               : (
+                // TODO: change this to expand project on click
                 <motion.div
                   key="collapsed"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  className="text-sm text-gray-300 line-clamp-3 cursor-pointer"
-                  onClick={expandProject}>
+                  className="text-sm text-gray-300 line-clamp-3 cursor-pointer">
 
                   {/* list of notable projects */}
                   <ul className="flex flex-col gap-1">
@@ -267,14 +237,35 @@ export default function SkillCard(
                             initial={{ opacity: 0, x: -10 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: i * 0.05 + 0.3 }}
-                            className="flex items-start gap-2">
+                            className="
+                              flex 
+                              rounded-full
+                              px-2
+                              items-center 
+                              gap-2
+                              hover:py-1
+                              hover:bg-accent/50
+                              transition-all">
                             
                             {/* topic icon */}
-                            <div className="w-2 h-2 rounded-full bg-gray-500 mt-1"/>
+                            <div className={`
+                              h-2.5 
+                              w-2.5
+                              rounded-full 
+                              bg-${expertiseColor}
+                              flex 
+                              items-center 
+                              justify-center`}/>
+                              
                             
                             {/* topic label */}
-                            <span>
-                              {project.description}
+                            <span className="
+                              hover:underline 
+                              hover:scale-[1.05] 
+                              origin-left 
+                              transition-all 
+                              cursor-pointer">
+                              {project.title}
                             </span>
                           
                         </motion.li>
@@ -310,8 +301,8 @@ export default function SkillCard(
                       }
                       onClick={
                         () => {
-                          setActiveProjectIndex(i)
-                          expandProject()
+                          //setActiveProjectIndex(i)
+                          //expandProject()
                         }
                       }/>
                   )
@@ -346,15 +337,17 @@ export default function SkillCard(
 
         {/* numeric indicator */}
         <div className="text-right mt-1">
-          <span className="text-xs text-gray-400">
+          <span className="flex flex-row justify-end text-xs text-gray-400">
             {/* TODO: this */}
-            Self evaluation: {skill.selfEvaluation}/10
+            {t('resume.selfEvaluation')}
+            <p>: </p> 
+            {skill.selfEvaluation}/10
           </span>
         </div>
       </div>
 
       {/* side navigation buttons */}
-      {
+      {/*
         hasMultipleProjects && isExpanded && (
           <>
             <button
@@ -443,7 +436,7 @@ export default function SkillCard(
             </button>
           </>
         )
-      } 
+      */} 
     </motion.div>
   )
 }

@@ -12,7 +12,7 @@ import ReCAPTCHA from "react-google-recaptcha"
 
 export default function ProfessionalCard() {
   const { t } = useLanguage();
-  const [revealContact, setRevealContact] = useState(true);
+  const [revealContact, setRevealContact] = useState(false);
   const [captchaVerified, setCaptchaVerified] = useState(false);
   const [loadedContact, setLoadedContact] = useState(false);
 
@@ -37,7 +37,7 @@ export default function ProfessionalCard() {
       });
   };
 
-  {/* TODO: remove this! */}
+  {/* TODO: remove this to enable captcha - or not im not your dad */}
   if(!captchaVerified) {
     handleCaptchaSuccess();
     setCaptchaVerified(true)
@@ -72,7 +72,7 @@ export default function ProfessionalCard() {
         </CardHeader>
 
         <CardContent className="w-[65%] items-center justify-center mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             {/* github */}
             <Button
               variant="outline"
@@ -139,167 +139,174 @@ export default function ProfessionalCard() {
             </Button>
           </div>
 
-          <div>
-            <Button
-              onClick={() => setRevealContact(!revealContact)}
-              variant="outline"
-              className={`
-                flex 
-                items-center 
-                justify-center 
-                rounded-full 
-                gap-2
+        </CardContent>
+        <div className="w-[70%] flex flex-col items-center justify-center mx-auto">
+          <Button
+            onClick={() => setRevealContact(!revealContact)}
+            variant="outline"
+            className={`
+              flex 
+              items-center 
+              justify-center 
+              rounded-full 
+              gap-2
 
-                w-full 
-                hover:bg-muted/50 
-                hover:scale-[1.05]
-                transition-all
-                ${!revealContact
-                  ? `animate-pulse-border 
-                  relative 
-                  after:absolute 
-                  after:inset-0 
-                  after:rounded-full
-                  after:border-2 
-                  after:border-primary 
-                  after:opacity-0 
-                  after:animate-[pulse_1.5s_ease-in-out_infinite]`
-                  : `
-                    scale-[1.05]
-                    bg-muted/50
-                    hover:scale-[1.1]`
-                }`
-              }>
-              <span>
-                {revealContact 
-                  ? t("resume.hideContact") 
-                  : t("resume.revealContact")}
-                </span>
-              
+              w-full 
+              hover:bg-muted/50 
+              hover:scale-[1.05]
+              transition-all
+              ${!revealContact
+                ? `animate-pulse-border 
+                mb-6
+                relative 
+                after:absolute 
+                after:inset-0 
+                after:rounded-full
+                after:border-2 
+                after:border-primary 
+                after:opacity-0 
+                after:animate-[pulse_1.5s_ease-in-out_infinite]`
+                : `
+                  scale-[1.05]
+                  bg-muted/50
+                  hover:scale-[1.1]`
+              }`
+            }>
+            <span>
               {revealContact 
-                ? <ChevronUp className="h-4 w-4" /> 
-                : <ChevronDown className="h-4 w-4" />}
-            </Button>
+                ? t("resume.hideContact") 
+                : t("resume.revealContact")}
+              </span>
+            
+            {revealContact 
+              ? <ChevronUp className="h-4 w-4" /> 
+              : <ChevronDown className="h-4 w-4" />}
+          </Button>
 
-            {revealContact && (
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: "auto" }}
-                exit={{ opacity: 0, height: 0 }}
-                transition={{ duration: 0.3 }}
-                className="border rounded-lg overflow-hidden mt-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
-                  <div className="space-y-4">
-                    <h3 className="font-medium text-lg border-b pb-2">
-                      {t("resume.mainInformation")}
-                    </h3>
+          {revealContact && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
+              className="border rounded-2xl overflow-hidden my-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
+                <div className="space-y-4">
+                  <h3 className="font-medium text-lg border-b pb-2">
+                    {t("resume.mainInformation")}
+                  </h3>
 
-                    <div className="space-y-3">
-                      <a 
-                        href="mailto:giordano.s.mail@gmail.com" 
-                        target="_blank"
-                        className="
-                          flex 
-                          items-center 
-                          gap-2 
-                          hover:underline 
-                          hover:scale-[1.05]
-                          transition-all">
-                        <Mail className="h-5 w-5 text-primary" />
+                  <div className="space-y-3">
+                    <a 
+                      href="mailto:giordano.s.mail@gmail.com" 
+                      target="_blank"
+                      className="
+                        flex 
+                        items-center 
+                        gap-2 
+                        hover:underline 
+                        hover:scale-[1.05]
+                        transition-all">
+                      <Mail className="h-5 w-5 text-primary" />
+                      <p className="tracking-tighter">
                         giordano.s.mail@gmail.com
-                      </a>
-        
-                      <div className="flex items-center gap-3 hover:scale-[1.05] transition-all">
-                        <a
-                          href="https://www.google.com/maps/place/Sapucaia+do+Sul,+RS"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="
-                            flex  
-                            items-center
-                            gap-2
-                            hover:underline
-                            hover:scale-[1.05]	
-                            transition-all">
-                          <MapPin className="h-5 w-5 text-primary" />
+                      </p>
+                    </a>
+      
+                    <div className="flex items-center gap-3 hover:scale-[1.05] transition-all">
+                      <a
+                        href="https://www.google.com/maps/place/Sapucaia+do+Sul,+RS"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="
+                          flex  
+                          items-center
+                          gap-2
+                          hover:underline
+                          hover:scale-[1.05]	
+                          transition-all">
+                        <MapPin className="h-5 w-5 text-primary" />
+                        <p className="tracking-tighter">
                           {t("resume.locationShort")}
-                        </a>
-                      </div>
+                        </p>
+                        
+                      </a>
                     </div>
                   </div>
-
-                  <div className="space-y-4">
-                    <h3 className="font-medium text-lg border-b pb-2">
-                      {t("resume.moreInformation")}
-                    </h3>
-
-                    {!captchaVerified ? (
-                      <div className="w-full items-center">
-                        <div className="w-full flex justify-center">
-                          <ReCAPTCHA 
-                            size="compact"
-                            theme="dark"
-                            onChange={handleCaptchaSuccess}
-                            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!} />
-                        </div>
-
-                        <div className="
-                          flex flex-row 
-                          text-[12px]
-                          text-muted-foreground 
-                          text-justify
-                          items-center
-                          gap-1">
-                          <Shield/>
-                          {t('resume.captchaDescription')}
-                        </div>
-                      </div>
-                    ) : (
-                      /* TODO: this should be retrieved from the backend */
-
-                      <motion.div
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.3 }}
-                        className="space-y-3">
-                        
-                        {/* phone */}
-                        <a 
-                          href={`tel:+${contactInfo.phone?.replace(/\D/g, '')}`} 
-                          className="
-                            flex  
-                            items-center
-                            gap-2
-                            hover:underline
-                            hover:scale-[1.05]	
-                            transition-all">
-                          <Phone className="h-5 w-5 text-primary" />
-                          {contactInfo.phone}
-                        </a>
-
-                        {/* whatsapp */}
-                        <div className="flex items-center gap-3">
-                          <a 
-                            href={`https://wa.me/${contactInfo.phone?.replace(/\D/g, '')}`}
-                            target="_blank"
-                            className="
-                              flex items-center 
-                              gap-2 
-                              hover:scale-[1.05] hover:underline
-                              transition-all">
-                            <FaWhatsapp className="h-5 w-5 text-primary"/>
-                          
-                            {t('resume.whatsappDirect')}
-                          </a>
-                        </div>
-                      </motion.div>
-                    )}
-                  </div>
                 </div>
-              </motion.div>
-            )}
-          </div>
-        </CardContent>
+
+                <div className="space-y-4">
+                  <h3 className="font-medium text-lg border-b pb-2">
+                    {t("resume.moreInformation")}
+                  </h3>
+
+                  {!captchaVerified ? (
+                    <div className="w-full items-center">
+                      <div className="w-full flex justify-center">
+                        <ReCAPTCHA 
+                          size="compact"
+                          theme="dark"
+                          onChange={handleCaptchaSuccess}
+                          sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!} />
+                      </div>
+
+                      <div className="
+                        flex flex-row 
+                        text-[12px]
+                        text-muted-foreground 
+                        text-justify
+                        items-center
+                        gap-1">
+                        <Shield/>
+                        {t('resume.captchaDescription')}
+                      </div>
+                    </div>
+                  ) : (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="space-y-3">
+                      
+                      {/* phone */}
+                      <a 
+                        href={`tel:+${contactInfo.phone?.replace(/\D/g, '')}`} 
+                        className="
+                          flex  
+                          items-center
+                          gap-2
+                          hover:underline
+                          hover:scale-[1.05]	
+                          transition-all">
+                        <Phone className="h-5 w-5 text-primary" />
+                        <p className="tracking-tighter">
+                          {contactInfo.phone}
+                        </p>
+                      </a>
+
+                      {/* whatsapp */}
+                      <div className="flex items-center gap-3">
+                        <a 
+                          href={`https://wa.me/${contactInfo.phone?.replace(/\D/g, '')}`}
+                          target="_blank"
+                          className="
+                            flex items-center 
+                            gap-2 
+                            hover:scale-[1.05] hover:underline
+                            transition-all">
+                          <FaWhatsapp className="h-5 w-5 text-primary"/>
+                          <p className="tracking-tighter">
+                            {t('resume.whatsappDirect')}
+                          </p>
+                        </a>
+                      </div>
+                    </motion.div>
+                  )}
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </div>
       </div>
     </Card>
   )

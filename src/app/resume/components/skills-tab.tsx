@@ -8,6 +8,8 @@ import SkillCard from "./skill-card";
 import { get } from "http";
 
 export type NotableProject = {
+  id: boolean;
+  title: string;
   description: string;
   hook?: string;
   preview?: string;
@@ -136,7 +138,11 @@ export default function SkillsTab() {
   );
 
   return (
-    <Card className="w-full flex mx-auto rounded-2xl">
+    <Card className="w-full flex flex-col mx-auto rounded-2xl">
+
+      <p className="text-center text-2xl overflow-show font-semibold text-foreground mt-10 mb-4">
+        Check my experience with a skill or technology
+      </p>
       <motion.div
         className="w-[80%] items-center flex-col justify-center mx-auto"
         initial={{ opacity: 0 }}
@@ -146,6 +152,7 @@ export default function SkillsTab() {
       
         {/* search bar */}
         <div className="mb-10 relative max-w-md mx-auto">
+
           <div className="relative">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5" />
             <input
@@ -215,7 +222,8 @@ export default function SkillsTab() {
                         {categories[category]?.description || ""}
                       </p>
                     </div>
-
+                    
+                    {/* TODO: work on this*/}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                       {
                         skills.map(

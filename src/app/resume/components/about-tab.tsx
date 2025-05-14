@@ -1,9 +1,12 @@
 "use client";
 
 import { Card } from "@/components/ui/card";
+import { useLanguage } from "@/context/language-content";
 import { motion } from "framer-motion";
 
 export default function AboutTab() {
+  const { t } = useLanguage();
+
   return (
     <Card className="w-full flex mx-auto rounded-2xl">
       <motion.div
@@ -13,7 +16,7 @@ export default function AboutTab() {
         exit={{ opacity: 0 }}
         transition={{ duration: 0.5 }}>
         <h2 className="flex justify-center md:text-3xl font-bold my-6">
-          About Me
+          {t('about.title')}
         </h2>
 
         <motion.p
@@ -21,22 +24,15 @@ export default function AboutTab() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}>
-          
-          I am a Computer Engineering student at the Federal University of Rio Grande do Sul (UFRGS), currently in
-          my 5th semester with an expected graduation in 2026. I am seeking a challenging position as a developer
-          where I can apply my problem-solving skills while expanding my experience through a fresh professional
-          perspective.
+          {t('about.resumeDescription')}
         </motion.p>
-        
+
         <motion.p
           className="text-lg leading-relaxed"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}>
-          
-          I am adaptable, a quick learner, and feel comfortable working both independently and in collaborative
-          team environments. With experience as a freelance developer and in technical support, I have developed
-          strong skills in programming, problem-solving, and client communication.
+          {t('about.resumeDescription2')}
         </motion.p>
 
         {/* language section */}
@@ -46,55 +42,55 @@ export default function AboutTab() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}>
           <h3 className="text-xl font-semibold mb-3">
-            Languages
+            {t('about.languages')}
           </h3>
           
           <div className="flex flex-wrap gap-4">
             {/* portuguese */}
-            <div className="flex items-center gap-2 rounded-full bg-accent px-2">
+            <div className="flex items-center gap-2 rounded-full border-2 px-2">
               {/* level indicator - icon */}
               <div className="w-3 h-3 rounded-full bg-green-500"/>
 
               {/* language name */}
               <span className="font-medium text-primary">
-                Portuguese
+                {t('about.portuguese')}
               </span>
               
               {/* knowledge level */}
-              <span className="text-sm text-gray-400 text-destructive">
-                (Native)
+              <span className="text-sm text-muted text-destructive">
+                {t('about.portugueseLevel')}
               </span>
             </div>
             
             {/* english */}
-            <div className="flex items-center gap-2 rounded-full bg-accent px-2">
+            <div className="flex items-center gap-2 rounded-full border-2 px-2">
               {/* level indicator - icon */}
               <div className="w-3 h-3 rounded-full bg-green-500"/>
 
               {/* language name */}
               <span className="font-medium text-primary">
-                English
+                {t('about.english')}
               </span>
 
               {/* knowledge level */}
-              <span className="text-sm text-gray-400 text-destructive">
-                (C2 - Advanced)
+              <span className="text-sm text-muted text-destructive">
+                {t('about.englishLevel')}
               </span>
             </div>
 
             {/* spanish */}
-            <div className="flex items-center gap-2 rounded-full bg-accent px-2">
+            <div className="flex items-center gap-2 rounded-full border-2 px-2">
               {/* level indicator - icon */}
               <div className="w-3 h-3 rounded-full bg-yellow-500"/>
 
               {/* language name */}
               <span className="font-medium text-primary">
-                Spanish
+                {t('about.spanish')}
               </span>
 
               {/* knowledge level */}
-              <span className="text-sm text-gray-400 text-destructive">
-                (Intermediate)
+              <span className="text-sm text-muted text-destructive">
+                {t('about.spanishLevel')}
               </span>
             </div>
           </div>

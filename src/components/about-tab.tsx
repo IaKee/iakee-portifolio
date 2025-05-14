@@ -8,20 +8,40 @@ export default function AboutTab() {
   const { t } = useLanguage();
 
   const skills = Array.isArray(t('about.skills')) ? t('about.skills') : [];
+  const descriptionRaw = Array.isArray(t('about.description')) ? t('about.description') : [];
+  const description = descriptionRaw as unknown as string[];
 
   return(
     <main>
-      <section id="about" className="w-full py-12 md:py-24 lg:py-32 bg-muted/50">
+      <section id="about" className="w-full py-12 w-full py-[8%] bg-muted/50">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+              <h2 className="text-3xl font-bold mb-6 tracking-tighter sm:text-4xl md:text-5xl">
                 {t('about.title')}
               </h2>
 
-              <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                {t('about.description')}
-              </p>
+              <ul className="
+                max-w-[900px] 
+                list-disc 
+                pl-5 
+                text-left 
+                text-muted-foreground 
+                md:text-xl/relaxed 
+                lg:text-base/relaxed 
+                xl:text-xl/relaxed 
+                marker:text-xl 
+                marker:text-primary">
+                {
+                  description.map(
+                    (paragraph, index) => (
+                      <li key={index}>
+                        {paragraph}
+                      </li>
+                    )
+                  )
+                }
+              </ul>
             </div>
           </div>
 
@@ -81,20 +101,26 @@ export default function AboutTab() {
             </div>
 
             <div className="space-y-4 text-center">
-              <p className="md:text font-semibold">
+              <p className="md:text font-semibold text-[80%]">
                 {t('about.usedToolsTitle')}
               </p>
               
-              <div className="mx-auto w-[90%] max-w-mdc space-y-2">
-                <img 
-                  className = "w-full h-auto object-contain"
-                  src={`https://github-readme-stats.vercel.app/api/top-langs?username=iakee&show_icons=true&locale=${t("about.locale")}&layout=compact`}
-                  alt="If you are reading this, my stats tab is broken."/>
-                
-                <p className="text-sm text-muted-foreground">
-                  {t('about.usedToolsDescription')}
-                </p>
-              </div>
+              <a href="https://github.com/iakee" target="_blank" rel="noopener noreferrer">
+                <div className="mx-auto w-[70%] max-w-mdc space-y-2">
+                  <img 
+                    className = "w-full h-auto object-contain"
+                    src={`https://github-readme-stats.vercel.app/api/top-langs?username=iakee&show_icons=true&locale=${t("about.locale")}&layout=compact`}
+                    alt="If you are reading this, my stats tab is broken =/"/>
+
+                  <div className="text-sm text-muted-foreground text-[80%]">
+                    {t('about.usedToolsDescription')}
+                    <p className="text-sm text-muted-foreground/30 text-[80%]">
+                      {t('about.usedToolsDescription2')}
+                    </p>
+                  </div>
+
+                </div>
+              </a>
 
             </div>
 

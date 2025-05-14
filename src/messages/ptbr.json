@@ -1,55 +1,71 @@
 {
     "about": {
-        "title": "Sobre mim",
-        "description": "Sou um estudante de Engenharia de Computação na Universidade Federal do Rio Grande do Sul (UFRGS) com experiência em desenvolvimento freelancer. Sou apaixonado por resolver problemas e criar aplicações eficientes e amigáveis ao usuário. Sou adaptável, um aprendiz rápido e confortável trabalhando tanto de forma independente quanto em ambientes de equipe colaborativos.",
+        "title": "Sobre Mim",
+        "description": [
+            "Sou estudante de Sistemas de Informação na Unisinos com experiência em desenvolvimento full-stack e trabalho freelancer.", 
+            "Busco constantemente maneiras criativas de resolver problemas e melhorias para aplicações.", 
+            "Sou adaptável, aprendo rápido e me sinto confortável trabalhando tanto independentemente quanto em ambientes colaborativos."
+        ],
+        "resumeDescription": "Sou estudante de Sistemas de Informação na Unisinos, atualmente no 5º semestre com previsão de formatura em 2026. Busco uma posição desafiadora como desenvolvedor onde possa aplicar minhas habilidades de resolução de problemas enquanto amplio minha experiência através de uma nova perspectiva profissional.",
+        "resumeDescription2": "Sou adaptável, aprendo rápido e me sinto confortável trabalhando tanto independentemente quanto em equipe. Com experiência como desenvolvedor freelancer e em suporte técnico, desenvolvi fortes habilidades em programação, resolução de problemas e comunicação com o usuário final.",
         "skill1Title": "Desenvolvimento de Software",
-        "skill1Description": "Tenho experiência na construção de aplicações autônomas e módulos integrados, com foco em detalhes e experiência do usuário.",
+        "skill1Description": "Tenho experiência na construção de aplicativos independentes e módulos integrados, com foco em detalhes e experiência do usuário.",
         "skill2Title": "Suporte Técnico",
-        "skill2Description": "Forneço solução de problemas, instalações e assistência técnica para aplicativos de software, garantindo operação suave e satisfação do usuário.",
+        "skill2Description": "Forneço solução de problemas, instalações e assistência técnica para aplicativos de software, garantindo um funcionamento suave e satisfação do usuário.",
         "skill3Title": "Desenvolvimento Web",
-        "skill3Description": "Crio sites responsivos e dinâmicos usando tecnologias modernas, garantindo uma experiência de usuário perfeita em todos os dispositivos.",
-        "usedToolsTitle": "Aqui estão as linguagens de programação mais usadas nos meus projetos recentes",
-        "usedToolsDescription": "Dinamicamente gerado pelos meus repositórios públicos, infelizmente os repositorios privados que trabalhei não puderam ser incluídos nessas métricas.",
-        "locale": "pt-br"
+        "skill3Description": "Crio sites responsivos e dinâmicos usando tecnologias modernas, garantindo usabilidade suave em todos os dispositivos.",
+        "usedToolsTitle": "Aqui estão as linguagens mais usadas em meus projetos recentes",
+        "usedToolsDescription": "Gerado dinamicamente a partir de meus repositórios públicos.",
+        "usedToolsDescription2": "Projetos de código fechado não foram incluídos nestas métricas.",
+        "locale": "pt-br",
+        "languages": "Idiomas",
+        "portuguese": "Português",
+        "portugueseLevel": "Nativo",
+        "english": "Inglês",
+        "englishLevel": "C2 - Avançado",
+        "spanish": "Espanhol",
+        "spanishLevel": "B1 - Intermediário"
     },
     "header": {
         "name": "Giordano Souza",
-        "resume": "Meu currículo",
+        "home": "Início",
+        "resume": "Currículo",
         "projects": "Projetos",
-        "skills": "Habilidades e competências",
-        "about": "Sobre mim",
+        "skills": "Habilidades",
+        "theme": "Tema",
         "actionbutton": "Contato"
     },
     "hero": {
-        "availableLabel": "Disponível para trabalho",
+        "workStatus": "Disponível para contratação",
+        "workHours": "Fuso horário flexível",
         "title": "Desenvolvedor Criativo & Solucionador de Problemas",
-        "summary": "Eu construo aplicações web inovadoras com tecnologias modernas. Transformando problemas complexos em soluções elegantes.",
-        "actionButton1": "Vamos trabalhar juntos?",
-        "actionButton2": "Acessar CV",
-        "actionButton3": "Conheça mais sobre mim",
+        "summary": "Construo aplicações web inovadoras com tecnologias modernas. Transformando problemas complexos em soluções elegantes.",
+        "actionButton1": "Vamos trabalhar juntos",
+        "actionButton2": "Baixar CV",
+        "actionButton3": "Saiba mais sobre mim",
         "actionButton4": "Veja meu trabalho"
     },
     "featured":
     {
-        "title": "Projetos em destaque",
-        "description": "Aqui estão meus principais projetos, dentre acadêmicos, profissionais e pessoais, cada um com seus próprios desafios e soluções únicas.",
-        "actionButton1": "Ver todos os meus projetos",
+        "title": "Projetos em Destaque",
+        "description": "Aqui estão meus projetos mais notáveis, entre acadêmicos, profissionais e pessoais, cada um com seus desafios e soluções únicas.",
+        "actionButton1": "Ver todos meus projetos",
         "actionButton2": "Sugerir ou encomendar um projeto",
         "projects": 
         {
             "runelingual":
             {
                 "title": "RuneLingual",
-                "description": "Plugin de tradução autocontido para OSRS. Desenvolvido utilizando a poderosa API do cliente RuneLite.",
+                "description": "Plugin de tradução completo para OSRS. Desenvolvido com a API RuneLite.",
                 "tags": [
                     "Java", 
-                    "Codigo Aberto",
+                    "Código Aberto",
                     "Spring Boot",
-                    "RuneLite API", 
+                    "API RuneLite", 
                     "Old School RuneScape", 
                     "Tradução"
                 ],
-                "actionButton1": "Código fonte",
+                "actionButton1": "Código Fonte",
                 "actionHook1": "https://github.com/IaKee/RuneLingual",
                 "actionButton2": "Discord",
                 "actionHook2": "https://discord.gg/sXnnzQ8kma"
@@ -57,53 +73,78 @@
             "syncwizard":
             {
                 "title": "SyncWizard",
-                "description": "Uma aplicação de sincronização de arquivos minimalista baseada em UNIX.",
+                "description": "Serviço leve de sincronização de arquivos baseado em UNIX.",
                 "tags": [
                     "C++", 
-                    "Codigo Aberto",
+                    "Código Aberto",
                     "Sincronização de Arquivos",
-                    "Servidor-Cliente", 
-                    "Arquitetura UNIX"
+                    "Arquitetura Cliente-Servidor", 
+                    "UNIX"
                 ],
-                "actionButton1": "Código fonte",
+                "actionButton1": "Código Fonte",
                 "actionHook1": "https://github.com/IaKee/File-Synchronization",
-                "actionButton2": "Demo",
+                "actionButton2": "Demonstração",
                 "actionHook2": ""
             },
             "iam":
             {
                 "title": "IaKee's Avatar Manager (IAM)",
-                "description": "Software gerenciador de avatares para streamers. Possui instalador, modificador, desinstalador, lançador e módulos independentes.",
+                "description": "Software de gerenciamento de avatares para streamers com instalador, modificador, desinstalador, launcher e módulos independentes",
                 "tags": [
                     "Python", 
                     "Tcl/Tk",
                     "Windows",
                     "Desenvolvimento de Software"
                 ],
-                "actionButton1": "Demonstação",
+                "actionButton1": "Demonstração",
                 "actionHook1": ""
             },
             "portfolio":
             {
-                "title": "Portifolio Website",
-                "description": "Meu site pessoal de portfólio (este aqui). Com meus projetos, habilidades e experiências.",
+                "title": "Website de Portfólio",
+                "description": "Meu portfólio pessoal (este site). Apresenta minhas habilidades, projetos e experiência.",
                 "tags": [
                     "JavaScript", 
                     "React",
                     "Next.js"
                 ],
-                "actionButton1": "Codigo fonte",
+                "actionButton1": "Código",
                 "actionHook1": "https://github.com/IaKee/portfolio"
+            },
+            "chatbot":
+            {
+                "title": "Chatbot",
+                "description": "Serviço de chat orientado a sockets com integração à API OpenAI.",
+                "tags": [
+                    "C++", 
+                    "API OpenAI",
+                    "IA",
+                    "Programação de redes"
+                ],
+                "actionButton1": "Código",
+                "actionHook1": "https://github.com/IaKee/chatbot"
+            },
+            "nundertale":
+            {
+                "title": "nUndertale",
+                "description": "Uma recriação cômica do jogo Undertale.",
+                "tags": [
+                    "C++", 
+                    "Desenvolvimento de Jogos",
+                    "Design de Jogos"
+                ],
+                "actionButton1": "Código",
+                "actionHook1": "https://github.com/IaKee/nundertale"
             }
         }
     },
     "hover":{
         "github": {
             "title": "GitHub - IaKee",
-            "description": "Confira meus projetos mais recentes e contribuições no meu GitHub.",
+            "description": "Confira meus projetos e contribuições mais recentes no meu perfil do GitHub.",
             "stats": [
                 {
-                    "label": "Repositorios",
+                    "label": "Repositórios",
                     "value": "20+"
                 },
                 {
@@ -118,7 +159,7 @@
         },
         "fiverr": {
             "title": "Fiverr - giordano_gi",
-            "description": "Desenvolvedor e designer no Fiverr. Trabalho transformando ideias dos meus clientes em realidade.",
+            "description": "Desenvolvedor e designer no Fiverr. Ajudo clientes a transformar ideias em realidade.",
             "stats": [
                 {
                     "label": "Vendas",
@@ -129,15 +170,548 @@
                     "value": "20+"
                 },
                 {
-                    "label": "Nota do serviço",
+                    "label": "Classificação",
                     "value": "4.6/5"
                 }
 
             ]
+        },
+        "linkedin": {
+            "title": "LinkedIn - Giordano Souza",
+            "description": "Bacharelado em Sistemas de Informação (Em andamento). Saiba mais sobre minha carreira e conecte-se comigo no LinkedIn.",
+            "stats": [
+                {
+                    "label": "Conexões",
+                    "value": "90+"
+                }
+            ]
+        }
+    },
+    "contact": {
+        "title": "Entre em contato",
+        "description": "Estou sempre aberto a novas oportunidades e colaborações. Sinta-se à vontade para entrar em contato.",
+        "contactInfoTitle": "Informações de Contato",
+        "contactInfoDescription": "Sinta-se à vontade para entrar em contato através do formulário ou diretamente por e-mail ou redes sociais.",
+        "contactStatusTitle": "Status atual",
+        "workStatus": "Atualmente estou aberto a novas oportunidades e colaborações.",
+        "flexible": "Sou flexível com fusos horários e posso trabalhar remotamente com eficiência.",
+        "formTitle": "Envie-me uma mensagem",
+        "form": {
+            "senderName": "Nome",
+            "senderNameDescription": "Seu nome aqui...",
+            "senderEmail": "Email",
+            "senderEmailDescription": "Seu email aqui...",
+            "subject": "Assunto",
+            "subjectDescription": "Assunto da mensagem aqui...",
+            "message": "Mensagem",
+            "messageDescription": "Conteúdo da mensagem aqui...",
+            "submitButton": "Enviar mensagem",
+            "submitLoading": "Enviando...",
+            "thankYou": "Obrigado pela sua mensagem! ",
+            "thankYouDescription": "Entrarei em contato o mais breve possível."
         }
     },
     "footer": {
         "name": "Giordano Souza",
         "reserved": "Todos os direitos reservados."
+    },
+    "resume": {
+        "selfEvaluation": "Autoavaliação",
+        "fullName": "Giordano Souza de Paula",
+        "mainName": "Giordano Souza",
+        "professionalTitle": "Estudante de Engenharia da Computação & Desenvolvedor",
+        "locationShort": "Sapucaia do Sul/RS - Brasil",
+        "contactMessage": "Olá Giordano! Vi seu perfil e gostaria de entrar em contato. Quando seria um bom momento para uma ligação?",
+        "scheduleCall": "Agendar uma ligação",
+        "revealContact": "Revelar informações de contato",
+        "hideContact": "Fechar informações de contato",
+        "mainInformation": "Informações de contato",
+        "moreInformation": "Mais opções",
+        "captchaDescription": "Por favor, preencha a verificação captcha acima para revelar mais informações de contato.",
+        "whatsappDirect": "Fale comigo no WhatsApp",
+        "workExperience": "Experiência Profissional",
+        "searchPlaceholder": "Busque por uma habilidade ou experiência específica...",
+        "searchResults": "Resultados encontrados:",
+        "searchResultsEmpty": "Nenhum resultado encontrado para ",
+        "download": "Baixar CV (PDF)",
+        "downloadDescription": "Última atualização em maio de 2025",
+        "sections": {
+            "about": "Sobre",
+            "experience": "Experiência",
+            "skills": "Habilidades",
+            "projects": "Projetos",
+            "education": "Formação"
+        },
+        "skills": [
+            { 
+                "name": "Python", 
+                "selfEvaluation": 9,
+                "icon": {
+                    "title": "FaPython",
+                    "package": "react-icons/fa" 
+                },
+                "notableProjects": 
+                [
+                    {
+                        "title": "IaKee's Avatar Manager (IAM)",
+                        "description": "Um gerenciador de avatares intuitivo e autônomo para vários avatares de stream, overlays e trackers.",
+                        "hook": "",
+                        "preview": ""
+                    },
+                    {
+
+                        "title": "IaKee's Installer System",
+                        "description": "Um sistema de instalação leve baseado em UNIX para vários aplicativos. Suporta payloads de instalação locais e online.",
+                        "hook": "",
+                        "preview": ""
+                    },
+                    {
+                        "title": "Serviço de chat leve",
+                        "description": "Um serviço de chat baseado em sockets para pequenos grupos.",
+                        "hook": "",
+                        "preview": ""
+                    }
+                ],
+                "category": "linguagens"
+            },
+            { 
+                "name": "Java", 
+                "selfEvaluation": 8,
+                "icon": {
+                    "title": "FaJava",
+                    "package": "react-icons/fa" 
+                },
+                "notableProjects": 
+                [
+                    {
+                        "title": "RuneLingual",
+                        "description": "Plugin de tradução completo para OSRS. Desenvolvido com a API RuneLite.",
+                        "hook": "",
+                        "preview": ""
+                    },
+                    {
+                        "title": "Editor de música baseado em texto",
+                        "description": "Um editor de música baseado em texto com GUI simples e intuitiva.",
+                        "hook": "",
+                        "preview": ""
+                    }
+                ],
+                "category": "linguagens"
+            },
+            { 
+                "name": "C/C++", 
+                "selfEvaluation": 8,
+                "icon": {
+                    "title": "SiCplusplus",
+                    "package": "react-icons/si" 
+                },
+                "notableProjects": 
+                [
+                    {
+                        "title": "SyncWizard",	
+                        "description": "Um serviço leve de sincronização de arquivos baseado em UNIX.",
+                        "hook": "",
+                        "preview": ""
+                    },
+                    {
+                        "title": "Simulador de física baseado em OpenGL",
+                        "description": "",
+                        "hook": "",
+                        "preview": ""
+                    },
+                    {
+                        "title": "nUndertale",	
+                        "description": "Uma recriação cômica do jogo Undertale.",
+                        "hook": "",
+                        "preview": ""
+                    }
+                ],
+                "category": "linguagens"
+            },
+            { 
+                "name": "PHP", 
+                "selfEvaluation": 6,
+                "icon": {
+                    "title": "FaPhp",
+                    "package": "react-icons/fa" 
+                },
+                "notableProjects": 
+                [
+                    {
+                        "title": "Uma versão anterior deste portfólio",
+                        "description": "",
+                        "hook": "",
+                        "preview": ""
+                    },
+                    {
+                        "title": "Aplicação web baseada em Laravel",
+                        "description": "",
+                        "hook": "",
+                        "preview": ""
+                    }
+                ],
+                "category": "linguagens"
+            },
+            { 
+                "name": "Assembly",
+                "selfEvaluation": 7, 
+                "icon": {
+                    "title": "GiProcessor",
+                    "package": "react-icons/gi" 
+                },
+                "notableProjects": 
+                [
+                    {
+                        "title": "Implementação de uma arquitetura de CPU didática personalizada",
+                        "description": "",
+                        "hook": "",
+                        "preview": ""
+                    },
+                    {
+                        "title": "Visualizador de arquivos baseado em DOS",	
+                        "description": "",
+                        "hook": "",
+                        "preview": ""
+                    }
+                ],
+                "category": "linguagens"
+            },
+            { 
+                "name": "Tkinter/Tcl", 
+                "selfEvaluation": 8,
+                "icon": {
+                    "title": "FaFeatherAlt",
+                    "package": "react-icons/fa" 
+                },
+                "notableProjects": 
+                [
+                    {
+                        "title": "IaKee's Avatar Manager (IAM)",	
+                        "description": "",
+                        "hook": "",
+                        "preview": ""
+                    },
+                    {
+                        "title": "Sistema de instalação",
+                        "description": "",
+                        "hook": "",
+                        "preview": ""
+                    }
+                ],
+                "category": "frameworks"
+            },
+            { 
+                "name": "Django", 
+                "selfEvaluation": 6,
+                "icon": {
+                    "title": "SiDjango",
+                    "package": "react-icons/si" 
+                },
+                "notableProjects": 
+                [
+                    {
+                        "title": "Uma versão anterior deste portfólio",
+                        "description": "",
+                        "hook": "",
+                        "preview": ""
+                    },
+                    {
+                        "title": "Sistema de login para uma aplicação web",
+                        "description": "",
+                        "hook": "",
+                        "preview": ""
+                    }
+                ],
+                "category": "frameworks"
+            },
+            { 
+                "name": "Laravel", 
+                "selfEvaluation": 5,
+                "icon": {
+                    "title": "FaLaravel",
+                    "package": "react-icons/fa" 
+                },
+                "notableProjects": 
+                [
+                    {
+                        "title": "Uma versão anterior deste portfólio",
+                        "description": "",
+                        "hook": "",
+                        "preview": ""
+                    },
+                    {
+                        "title": "Aplicação web de lista de tarefas",
+                        "description": "",
+                        "hook": "",
+                        "preview": ""
+                    }       
+                ],
+                "category": "frameworks"
+            },
+            { 
+                "name": "Pandas", 
+                "selfEvaluation": 4,
+                "icon": {
+                    "title": "SiPandas",
+                    "package": "react-icons/si" 
+                },
+                "notableProjects": 
+                [
+                    {
+                        "title": "Análise de dados para estatísticas de jogadores de futebol",
+                        "description": "",
+                        "hook": "",
+                        "preview": ""
+                    }
+                ],
+                "category": "ferramentas"
+            },
+            { 
+                "name": "Git", 
+                "selfEvaluation": 6, 
+                "icon": {
+                    "title": "FaGitAlt",
+                    "package": "react-icons/fa" 
+                },
+                "notableProjects": 
+                [
+                    {
+                        "title": "Controle de versão para todos meus projetos",
+                        "description": "",
+                        "hook": "",
+                        "preview": ""
+                    },
+                    {
+                        "title": "RuneLingual",
+                        "description": "RuneLingual, um projeto open-source com múltiplos contribuidores",
+                        "hook": "",
+                        "preview": ""
+                    }
+                ],
+                "category": "ferramentas"
+            },
+            { 
+                "name": "SQL", 
+                "selfEvaluation": 5, 
+                "icon": {
+                    "title": "FaDatabase",
+                    "package": "react-icons/fa" 
+                },
+                "notableProjects": 
+                [
+                    {
+                        "title": "Rede social teórica",
+                        "description": "Modelagem de banco de dados e implementação para uma rede social teórica",
+                        "hook": "",
+                        "preview": ""
+                    }
+                ],
+                "category": "linguagens"
+            },
+            { 
+                "name": "Photoshop", 
+                "selfEvaluation": 7,
+                "icon": {
+                    "title": "SiAdobephotoshop",
+                    "package": "react-icons/si" 
+                },
+                "notableProjects": 
+                [
+                    {
+                        "title": "Projetei múltiplas overlays para Twitch",
+                        "description": "",
+                        "hook": "",
+                        "preview": ""
+                    },
+                    {
+                        "title": "Ilustrei sprites para comissões de IAM para streamers",
+                        "description": "",
+                        "hook": "",
+                        "preview": ""
+                    }
+                ],
+                "category": "ferramentas"
+            },
+            { 
+                "name": "WordPress", 
+                "selfEvaluation": 5,
+                "icon": {
+                    "title": "FaWordpress",
+                    "package": "react-icons/fa" 
+                },
+                "notableProjects": 
+                [
+                    {
+                        "title": "Uma versão anterior deste portfólio",
+                        "description": "",
+                        "hook": "",
+                        "preview": ""
+                    },
+                    {
+                        "title": "Site de e-commerce",
+                        "description": "Um site de e-commerce rico em recursos para fins de teste",
+                        "hook": "",
+                        "preview": ""
+                    }
+                ],
+                "category": "CMS"
+            },
+            { 
+                "name": "MS Office", 
+                "selfEvaluation": 9,
+                "icon": {
+                    "title": "TbBrandOffice",
+                    "package": "react-icons/tb" 
+                }, 
+                "notableProjects": 
+                [
+                    {
+                        "title": "Criei múltiplas planilhas para gerenciamento de leads",
+                        "description": "Criei múltiplas planilhas para gerenciamento de leads para Saenz Global LLC",
+                        "hook": "",
+                        "preview": ""
+                    },
+                    {
+                        "title": "Desenvolvi SOPs e modelos de fatura personalizados",
+                        "description": "Desenvolvi SOPs e modelos de fatura personalizados para Saenz Global LLC",
+                        "hook": "",
+                        "preview": ""
+                    }
+                ],
+                "category": "ferramentas"
+            }
+        ],
+        "skillLevels": 
+        {
+            "begginer": "Iniciante",
+            "intermediate": "Intermediário",
+            "advanced": "Proficiente",
+            "expert": "Avançado"
+        },
+        "categories": {
+            "languages": {
+                "label": "Linguagens",
+                "description": "Linguagens de programação com as quais tenho experiência."
+            },
+            "frameworks": {
+                "label": "Frameworks",
+                "description": "Frameworks e bibliotecas com os quais tenho experiência."
+            },
+            "tools": {
+                "label": "Ferramentas",
+                "description": "Ferramentas e softwares com os quais tenho experiência."
+            },
+            "cms": {
+                "label": "CMS",
+                "description": "Sistemas de Gerenciamento de Conteúdo com os quais tenho experiência."
+            }
+        },
+        "professionalExperience": 
+        [
+            {
+                "title": "Assistente de TI | Administrador de Projetos de Telhados",
+                "company": "Saenz Global LLC",
+                "period": "OUT/2024 – MAR/2025",
+                "hook": "https://www.saenzglobal.com/about",
+                "icon": "/sg.png",
+                "roleFunctions": 
+                [
+                    "Suporte a operações de TI, garantindo funcionalidade das ferramentas internas.",
+                    "Desenvolvi múltiplas automações com Zapier para conectar ferramentas internas e CRMs de clientes, permitindo um fluxo de trabalho mais eficiente.",
+                    "Forneci suporte técnico para a equipe administrativa, auxiliando com instalações de software, manutenção de automações e documentação.",
+                    "Gerenciei documentos (contatos, faturas e orçamentos), CRMs, caixas de email, cronogramas e materiais para projetos de construção.",
+                    "Trabalhei com leads de contratantes desde o primeiro contrato até o pagamento final, garantindo que cronogramas e documentos estivessem atualizados."
+                ]
+            },
+            {
+                "title": "Desenvolvedor Freelancer",
+                "company": "Fiverr",
+                "period": "NOV/2021 – AGO/2024",
+                "hook": "https://www.fiverr.com/giordano_gi",
+                "roleFunctions": 
+                [
+                    "Desenvolvi aplicações visuais independentes e módulos integrados para streamers.",
+                    "Projetei personagens dinamicamente animados e suas interações com hardware de streamers (teclado, mouse, microfone, joysticks, etc.).",
+                    "Mantive documentação detalhada e alta organização em meu software.",
+                    "Gerenciei todo o ciclo de desenvolvimento como freelancer, desde comunicação com clientes, levantamento de requisitos e vendas, garantindo satisfação do cliente."
+                ]
+            },
+            {
+                "title": "Suporte Técnico",
+                "company": "Veloce.Tech",
+                "period": "DEZ/2020 – MAR/2021",
+                "hook": "https://www.veloce.tech/",
+                "roleFunctions": 
+                [
+                    "Forneci suporte técnico para um conjunto de aplicativos POS (Ponto de Venda) da Veloce, lidando com solução de problemas, instalações, documentação e solicitações técnicas.",
+                    "Forneci treinamento e suporte a novas equipes de usuários, incluindo vendas e equipe administrativa.",
+                    "Colaborei com a equipe de desenvolvimento para resolver problemas e melhorar a funcionalidade do produto suportado."
+                ]
+            }
+        ],
+        "education": 
+        [
+            {
+                "institution": "Universidade do Vale do Rio dos Sinos (Unisinos)",
+                "degree": "Bacharelado em Sistemas de Informação",
+                "period": "Previsão de formatura em 2026",
+                "hook": "https://www.unisinos.br/",
+                "icon": "",
+                "courses": [
+                    "Redes",
+                    "Sistemas de Banco de Dados",
+                    "Engenharia de Software",
+                    "Desenvolvimento Web",
+                    "Análise de Sistemas de Informação"
+                ]
+            },
+            {
+                "institution": "Universidade Federal do Rio Grande do Sul (UFRGS)",
+                "degree": "Bacharelado em Engenharia da Computação",
+                "period": "5º semestre - Transferido em 2025",
+                "hook": "https://www.ufrgs.br/",
+                "icon": "",
+                "courses":
+                [
+                    "Estruturas de dados", 
+                    "Algoritmos", 
+                    "Programação Orientada a Objetos",
+                    "Fundamentos de Banco de Dados",
+                    "Engenharia de Software" 
+                ]
+            },
+            {
+                "institution": "Escola Técnica Liberato Salzano Vieira da Cunha",
+                "degree": "Curso Técnico em Eletrotécnica",
+                "period": "2017",
+                "details": "Integrado ao ensino médio",
+                "courses": 
+                [
+                    "Eletricidade", 
+                    "Automação", 
+                    "Segurança no Trabalho", 
+                    "Empreendedorismo"
+                ]   
+            }
+        ]
+    },
+    "prefill": {
+        "scheduleCall": "Olá Giordano, gostaria de agendar uma ligação.",
+        "orderProject": "Olá Giordano, gostaria de encomendar um projeto.",
+        "workTogether": "Olá Giordano, gostaria de trabalhar junto.",
+        "demonstration": "Olá Giordano, gostaria de uma demonstração de um projeto."
+    },
+    "theme": {
+        "light": "Claro",
+        "dark": "Escuro"
+    },
+    "missing": {
+        "title": "Esta página está em construção.",
+        "description": "Por favor, volte mais tarde.",
+        "estimatedTime": "Tempo estimado para conclusão: Junho de 2025",
+        "alternative": "Enquanto isso, você pode conferir meu Currículo e Projetos nos links abaixo.",
+        "resume": "Currículo",
+        "home": "Início",
+        "notableProjects": "Projetos Notáveis"
     }
 }
