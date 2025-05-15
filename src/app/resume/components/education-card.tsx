@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { useState } from "react"
+import Image from "next/image"
 import { ChevronDown, ChevronUp, Building } from "lucide-react"
 import { useLanguage } from "@/context/language-content";
 import { FaExternalLinkAlt } from "react-icons/fa";
@@ -21,6 +22,7 @@ interface CourseCardProps {
 export default function ExperienceCard({ course, index }: CourseCardProps) {
   
   const [isExpanded, setIsExpanded] = useState(false);
+  const prefix = process.env.NODE_ENV === "production" ? "/iakee-portifolio" : "";
 
   return (
     <motion.div
@@ -43,8 +45,8 @@ export default function ExperienceCard({ course, index }: CourseCardProps) {
             justify-center">
             {
               course.icon
-                ? <img 
-                    src={course.icon} 
+                ? <Image 
+                    src={`${prefix}/${course.icon}`} 
                     alt={course.institution} 
                     className="flex h-8 w-8 rounded-full bg:primary-foreground border-primary border-3" /> 
                 : <Building className="flex h-8 w-8 rounded-full bg:primary-foreground border-primary border-3" />

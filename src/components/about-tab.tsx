@@ -3,6 +3,7 @@
 import { Code } from "lucide-react";
 import { Progress } from "./ui/progress";
 import { useLanguage } from '@/context/language-content'
+import Image from "next/image";
 
 export default function AboutTab() {
   const { t } = useLanguage();
@@ -10,6 +11,7 @@ export default function AboutTab() {
   const skills = Array.isArray(t('about.skills')) ? t('about.skills') : [];
   const descriptionRaw = Array.isArray(t('about.description')) ? t('about.description') : [];
   const description = descriptionRaw as unknown as string[];
+  
 
   return(
     <main>
@@ -107,7 +109,7 @@ export default function AboutTab() {
               
               <a href="https://github.com/iakee" target="_blank" rel="noopener noreferrer">
                 <div className="mx-auto w-[70%] max-w-mdc space-y-2">
-                  <img 
+                  <Image 
                     className = "w-full h-auto object-contain"
                     src={`https://github-readme-stats.vercel.app/api/top-langs?username=iakee&show_icons=true&locale=${t("about.locale")}&layout=compact`}
                     alt="If you are reading this, my stats tab is broken =/"/>

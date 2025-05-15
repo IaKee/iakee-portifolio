@@ -17,6 +17,8 @@ import { useLanguage } from '@/context/language-content'
 export default function HeroSection() {
   const { locale, t } = useLanguage();
 
+  const prefix = process.env.NODE_ENV === "production" ? "/iakee-portifolio" : "";
+
   var rawStats = t('hover.github.stats')
   const githubStats = Array.isArray(rawStats) 
     ? rawStats as Array<{ label: string, value: string }> 
@@ -161,7 +163,7 @@ export default function HeroSection() {
             <div className="flex items-center justify-center">
               <div className="relative aspect-square w-full max-w-[400px] max-h-[400px] overflow-hidden rounded-xl bg-muted">
                 <Image
-                  src="/opc3.png?height=400&width=400"
+                  src={`${prefix}/opc3.png?height=400&width=400`}
                   alt="portrait"
                   width={400}
                   height={400}

@@ -41,6 +41,7 @@ export default function HoverPreview({
 
   const triggerRef = useRef<HTMLDivElement>(null)
   const tooltipRef = useRef<HTMLDivElement>(null)
+  const prefix = process.env.NODE_ENV === "production" ? "/iakee-portifolio" : "";
    
   const updatePosition = () => {
     if(isHovered && triggerRef.current && tooltipRef.current) {
@@ -170,7 +171,7 @@ export default function HoverPreview({
                 {image && (
                   <div className="relative w-full h-32 mb-3 overflow-hidden rounded-md">
                     <Image
-                      src={image || "/placeholder.svg"}
+                      src={`${prefix}/${image}`}
                       alt={title}
                       fill
                       className="object-cover"

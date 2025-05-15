@@ -3,6 +3,7 @@ import { ExternalLink } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 import ProjectTab from "./project-tab";
+import Image from "next/image";
 
 // Definindo a interface com tipos explícitos
 interface NotableProject {
@@ -25,6 +26,9 @@ export default function ProjectBrowser({
   activeProjectId,
   activeProject
 }: ProjectBrowserProps) {
+
+  const prefix = process.env.NODE_ENV === "production" ? "/iakee-portifolio" : "";
+
   return (
     <div className="flex flex-col">
       <div className="flex overflow-x-auto hide-scrollbar border-b border-[#333] mb-2">
@@ -57,8 +61,8 @@ export default function ProjectBrowser({
             <div className="flex flex-col gap-3">
               {activeProject.preview && (
                 <div className="relative w-full h-32 rounded overflow-hidden">
-                  <img
-                    src={activeProject.preview}
+                  <Image
+                    src={`${prefix}/${activeProject.preview}`}
                     alt={`Preview de ${activeProject.title}`}
                     className="object-cover"
                     onError={(e) => {

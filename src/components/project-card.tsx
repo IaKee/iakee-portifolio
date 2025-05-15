@@ -37,6 +37,9 @@ export default function ProjectCard(
   const [isHovered, setIsHovered] = useState(false)
 
   const { t } = useLanguage();
+  
+  const prefix = process.env.NODE_ENV === "production" ? "/iakee-portifolio" : "";
+
   return (
     <motion.div
       whileHover={{ scale: 1.03 }}
@@ -61,7 +64,7 @@ export default function ProjectCard(
           {
             image ? 
             <Image
-              src = {image}
+              src = {`${prefix}/${image}`}
               alt = {title}
               fill
               className={`object-cover transition-transform duration-500 ${isHovered ? "scale-110" : "scale-100"}`}/>

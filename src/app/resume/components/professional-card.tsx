@@ -12,6 +12,8 @@ import ReCAPTCHA from "react-google-recaptcha"
 
 export default function ProfessionalCard() {
   const { t } = useLanguage();
+  const prefix = process.env.NODE_ENV === "production" ? "/iakee-portifolio" : "";
+
   const [revealContact, setRevealContact] = useState(false);
   const [captchaVerified, setCaptchaVerified] = useState(false);
   const [loadedContact, setLoadedContact] = useState(false);
@@ -55,7 +57,7 @@ export default function ProfessionalCard() {
             {/* profile image */}
             <div className="h-32 w-32 rounded-full overflow-hidden border-4 border-primary/10 flex-shrink-0">
             <Image
-              src="/opc3.png"
+              src={`${prefix}/opc3.png`}
               alt={t("resume.fullName")}
               width={128}
               height={128}

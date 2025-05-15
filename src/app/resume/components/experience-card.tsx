@@ -5,6 +5,7 @@ import { useState } from "react"
 import { ChevronDown, ChevronUp, Building } from "lucide-react"
 import { useLanguage } from "@/context/language-content";
 import { FaExternalLinkAlt } from "react-icons/fa";
+import Image from "next/image";
 
 interface ExperienceCardProps {
   experience: {
@@ -21,6 +22,7 @@ interface ExperienceCardProps {
 export default function ExperienceCard({ experience, index }: ExperienceCardProps) {
   
   const [isExpanded, setIsExpanded] = useState(false);
+  const prefix = process.env.NODE_ENV === "production" ? "/iakee-portifolio" : "";
 
   return (
     <motion.div
@@ -43,8 +45,8 @@ export default function ExperienceCard({ experience, index }: ExperienceCardProp
             justify-center">
             {
               experience.icon
-                ? <img 
-                    src={experience.icon} 
+                ? <Image 
+                    src={`${prefix}/${experience.icon}`}
                     alt={experience.company} 
                     className="flex h-8 w-8 rounded-full bg:primary-foreground border-primary border-3" /> 
                 : <Building className="flex h-8 w-8 rounded-full bg:primary-foreground border-primary border-3" />
