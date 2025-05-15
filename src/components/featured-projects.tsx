@@ -32,7 +32,7 @@ const FeaturedProjects = forwardRef<HTMLDivElement>((props, ref) => {
               title = {t('featured.projects.runelingual.title')}
               description = {t('featured.projects.runelingual.description')}
               image = "/runelingual-preview.webp?height=300&width=400"
-              tags = {t('featured.projects.runelingual.tags')}
+              tags = {t('featured.projects.runelingual.tags') as unknown as string[]}
               actionButton1 = {t('featured.projects.runelingual.actionButton1')}
               actionHook1 = {t('featured.projects.runelingual.actionHook1')}
               actionButton2 = {t('featured.projects.runelingual.actionButton2')}
@@ -42,7 +42,7 @@ const FeaturedProjects = forwardRef<HTMLDivElement>((props, ref) => {
               title = {t('featured.projects.syncwizard.title')}
               description = {t('featured.projects.syncwizard.description')}
               image = "/syncwizard.png?height=300&width=400"
-              tags = {t('featured.projects.syncwizard.tags')}
+              tags = {t('featured.projects.syncwizard.tags') as unknown as string[]}
               actionButton1 = {t('featured.projects.syncwizard.actionButton1')}
               actionHook1 = {t('featured.projects.syncwizard.actionHook1')}
               actionButton2 = ""
@@ -52,7 +52,7 @@ const FeaturedProjects = forwardRef<HTMLDivElement>((props, ref) => {
               title = {t('featured.projects.iam.title')}
               description = {t('featured.projects.iam.description')}
               image = "/tarico.png?height=300&width=400"
-              tags = {t('featured.projects.iam.tags')}
+              tags = {t('featured.projects.iam.tags') as unknown as string[]}
               actionButton1 = {t('featured.projects.iam.actionButton1')}
               actionHook1 = {t('featured.projects.iam.actionHook1')}
               actionButton2 = ""
@@ -62,7 +62,7 @@ const FeaturedProjects = forwardRef<HTMLDivElement>((props, ref) => {
               title = {t('featured.projects.portfolio.title')}
               description = {t('featured.projects.portfolio.description')}
               image = "/portifolio.png?height=300&width=400"
-              tags = {t('featured.projects.portfolio.tags')}
+              tags = {t('featured.projects.portfolio.tags') as unknown as string[]}
               actionButton1 = {t('featured.projects.portfolio.actionButton1')}
               actionHook1 = {t('featured.projects.portfolio.actionHook1')}
               actionButton2 = ""
@@ -72,7 +72,7 @@ const FeaturedProjects = forwardRef<HTMLDivElement>((props, ref) => {
               title = {t('featured.projects.chatbot.title')}
               description = {t('featured.projects.chatbot.description')}
               image = ""
-              tags = {t('featured.projects.chatbot.tags')}
+              tags = {t('featured.projects.chatbot.tags') as unknown as string[]}
               actionButton1 = {t('featured.projects.chatbot.actionButton1')}
               actionHook1 = {t('featured.projects.chatbot.actionHook1')}
               actionButton2 = ""
@@ -82,7 +82,7 @@ const FeaturedProjects = forwardRef<HTMLDivElement>((props, ref) => {
               title = {t('featured.projects.nundertale.title')}
               description = {t('featured.projects.nundertale.description')}
               image = "/nundertale.png?height=300&width=400"
-              tags = {t('featured.projects.nundertale.tags')}
+              tags = {t('featured.projects.nundertale.tags') as unknown as string[]}
               actionButton1 = {t('featured.projects.nundertale.actionButton1')}
               actionHook1 = {t('featured.projects.nundertale.actionHook1')}
               actionButton2 = ""

@@ -17,7 +17,7 @@ interface ProjectCardProps {
   title: string
   description: string
   image: string
-  tags: any,
+  tags: string[],
   actionButton1: string, 
   actionHook1: string,
   actionButton2: string,

@@ -216,7 +216,7 @@ export default function SkillCard(
             {
               isExpanded 
               ? (
-                <ProjectBrowser projects={skill.notableProjects} activeProjectId={null} activeProject={null} />
+                <></>
               ) 
               : (
                 // TODO: change this to expand project on click

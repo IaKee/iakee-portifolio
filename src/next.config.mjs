@@ -2,11 +2,14 @@ let userConfig = undefined
 try {
   userConfig = await import('./v0-user-next.config')
 } catch (e) {
-  // ignore error
+  console.log(e)
 }
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
+  basePath: '/portfolio',
+  trailingSlash: true,
   eslint: {
     ignoreDuringBuilds: true,
   },
@@ -22,6 +25,8 @@ const nextConfig = {
     parallelServerCompiles: true,
   },
 }
+
+module.exports = nextConfig
 
 mergeConfig(nextConfig, userConfig)
 

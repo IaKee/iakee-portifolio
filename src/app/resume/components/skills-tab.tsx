@@ -1,24 +1,31 @@
+"use client"
+
 import { useLanguage } from "@/context/language-content";
 import { motion } from "framer-motion";
-import SkillBubble from "./skill-bubble";
 import { use, useEffect, useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Search } from "lucide-react";
 import SkillCard from "./skill-card";
 import { get } from "http";
+import { IconPackage } from "./dynamic-fa-icon";
 
 export type NotableProject = {
-  id: boolean;
+  id: number;
   title: string;
   description: string;
   hook?: string;
   preview?: string;
 };
 
+export interface SkillIcon {
+  title: string;
+  package: IconPackage;
+}
+
 export type Skill = {
   name: string;
   selfEvaluation: number;
-  icon: SIcon;
+  icon?: SkillIcon;
   package: string;
   notableProjects: NotableProject[];
   category: string;

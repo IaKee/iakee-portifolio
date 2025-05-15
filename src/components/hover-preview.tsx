@@ -88,7 +88,7 @@ export default function HoverPreview({
 
   useLayoutEffect(() => {
     updatePosition()
-  }, [isHovered])
+  }, [isHovered, updatePosition])
 
   useEffect(() => {
     if (isHovered) {
@@ -99,7 +99,7 @@ export default function HoverPreview({
         window.removeEventListener("resize", updatePosition)
       }
     }
-  }, [isHovered])
+  }, [isHovered, updatePosition])
 
   return (
     <div

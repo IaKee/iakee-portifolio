@@ -8,6 +8,7 @@ import * as z from "zod"
 import { Loader2, CheckCircle } from "lucide-react"
 import emailjs from "emailjs-com"
 import { motion, AnimatePresence } from "framer-motion"
+import dynamic from "next/dynamic"
 
 import { Button } from "@/components/ui/button"
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
@@ -47,18 +48,9 @@ export default function ContactForm() {
   })
   const inputRef = useRef<HTMLTextAreaElement | null>(null)
 
-  const searchParams = useSearchParams()
-  const prefillMessage = searchParams.get("prefillMessage")
+  const PrefillHandler = dynamic(() => import("./prefill-handler"), { ssr: false })
 
   const { t } = useLanguage()
-
-  useEffect(() => {
-    const prefill = prefillMessage || (typeof window !== "undefined" ? localStorage.getItem("prefillMessage") : null)
-
-    if (prefill) {
-      form.setValue("message", prefill)
-    }
-  }, [form, prefillMessage])
 
   useEffect(() => {
     const prefill = typeof window !== "undefined" && window.localStorage.getItem("prefillMessage")
@@ -246,6 +238,8 @@ export default function ContactForm() {
                 </Button>
               </form>
             </Form>
+            
+            {typeof window !== "undefined" && <PrefillHandler form={form} />}
           </motion.div>
         )}
       </AnimatePresence>

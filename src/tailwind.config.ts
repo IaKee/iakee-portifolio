@@ -1,19 +1,9 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-    darkMode: "class",
-    content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "*.{js,ts,jsx,tsx,mdx}"
-  ],
-		safelist: [
-    'text-red-500',
-    'text-orange-500',
-    'text-yellow-500',
-    'text-blue-500',
-    'text-green-500',
+	content: [
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
 		container:
@@ -122,7 +112,7 @@ const config: Config = {
 			}
 		}
 	},
-  plugins: [require("tailwindcss-animate")],
+  plugins: [/*require("tailwindcss-animate")*/],
 };
 
 export default config;

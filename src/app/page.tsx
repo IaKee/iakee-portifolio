@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef } from "react"
-import { useSearchParams } from "next/navigation"
 import { animate } from "framer-motion"
 
 import Header from "@/components/header"
@@ -17,7 +16,6 @@ export default function Home() {
   const contactRef = useRef<HTMLDivElement>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
-  const searchParams = useSearchParams();
   
   useEffect(
     () => {

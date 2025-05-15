@@ -2,10 +2,7 @@ import type { Metadata } from 'next'
 import '@/styles/globals.css'
 
 import { LanguageProvider } from '@/context/language-content'
-import { Inter } from 'next/font/google'
-import { ReactNode } from 'react'
-const inter = Inter({ subsets: ['latin'] })
-
+import { ReactNode } from 'react';
 
 export const metadata: Metadata = {
   title: `Giordano's Portfolio`,	

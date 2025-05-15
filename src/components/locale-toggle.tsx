@@ -4,6 +4,7 @@ import Cookies from 'js-cookie';
 import { Button } from '@/components/ui/button';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { useLanguage } from '@/context/language-content';
+import Image from 'next/image';
 
 export default function LanguageToggle() {
   const { locale, setLocale } = useLanguage();
@@ -13,21 +14,21 @@ export default function LanguageToggle() {
     setLocale(newLanguage);
   };
 
-  var ptbr = 
+  const ptbr = 
     <>
       Português 
       {
-        <img 
+        <Image
           src={'https://flagcdn.com/w20/br.png'} 
           alt='BR' 
           className="ml-auto"/> 
       }
     </>
-  var en = 
+  const en = 
     <>
       English 
       { 
-        <img 
+        <Image
           src={'https://flagcdn.com/w20/us.png'} 
           alt='US' 
           className="ml-auto"/> 
