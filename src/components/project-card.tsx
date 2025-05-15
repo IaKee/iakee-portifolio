@@ -64,7 +64,7 @@ export default function ProjectCard(
           {
             image ? 
             <Image
-              src = {`${prefix}/${image}`}
+              src = {`${image}`}
               alt = {title}
               fill
               className={`object-cover transition-transform duration-500 ${isHovered ? "scale-110" : "scale-100"}`}/>
