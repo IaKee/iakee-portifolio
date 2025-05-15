@@ -11,8 +11,8 @@ module.exports = withImage()
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  basePath: '/iakee-portifolio',
-  assetPrefix: '/iakee-portifolio/',
+  basePath: '',
+  assetPrefix: '',
   trailingSlash: true,
   eslint: {
     ignoreDuringBuilds: true,
@@ -30,8 +30,6 @@ const nextConfig = {
   },
 }
 module.exports = nextConfig
-
-
 
 mergeConfig(nextConfig, userConfig)
 
