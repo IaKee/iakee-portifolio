@@ -148,7 +148,7 @@ export default function SkillsTab() {
     <Card className="w-full flex flex-col mx-auto rounded-2xl">
 
       <p className="text-center text-2xl overflow-show font-semibold text-foreground mt-10 mb-4">
-        Check my experience with a skill or technology
+        {t('resume.skillsTitle')}
       </p>
       <motion.div
         className="w-[80%] items-center flex-col justify-center mx-auto"
@@ -254,19 +254,6 @@ export default function SkillsTab() {
               )
             )
         }
-
-        {/* Legenda discreta no rodapé */}
-        <div className="mt-8 flex flex-wrap justify-center gap-4 text-sm text-gray-400">
-          <span className="inline-flex items-center gap-1">
-            <span className="w-3 h-3 rounded-full bg-green-500"></span> Avançado
-          </span>
-          <span className="inline-flex items-center gap-1">
-            <span className="w-3 h-3 rounded-full bg-yellow-500"></span> Intermediário
-          </span>
-          <span className="inline-flex items-center gap-1">
-            <span className="w-3 h-3 rounded-full bg-blue-500"></span> Básico
-          </span>
-        </div>
       </motion.div>
 
     </Card>

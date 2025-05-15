@@ -25,6 +25,7 @@ type UnderConstructionProps = {
 
 export default function UnderConstruction() {
   const router = useRouter();
+  const prefix = process.env.NODE_ENV === "production" ? "/iakee-portifolio" : "";
   const { t } = useLanguage();
 
   return (
@@ -92,7 +93,7 @@ export default function UnderConstruction() {
         </div>
 
         <div className="flex flex-col sm:flex-row gap-2 justify-center">
-          <Link href="/">
+          <Link href={`${prefix}/`}>
             <Button 
               className="
                 gap-2 
@@ -139,7 +140,7 @@ export default function UnderConstruction() {
             </Button>
           </Link>
 
-          <Link href="/">
+          <Link href={`${prefix}/`}>
             <Button className="
               gap-2 
               cursor-pointer 

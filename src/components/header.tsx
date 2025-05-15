@@ -11,6 +11,7 @@ import { IoTerminal } from "react-icons/io5";
 
 export default function Header() {
   const { t } = useLanguage();
+  const prefix = process.env.NODE_ENV === "production" ? "/iakee-portifolio" : "";
 
   return(
     <header className="sticky top-0 z-40 w-full border-b bg-background
@@ -20,7 +21,7 @@ export default function Header() {
           
           {/* title logo and text */}
           <a 
-            href="/"
+            href={`${prefix}/`}
             className="
             flex 
             items-center 
@@ -92,7 +93,7 @@ export default function Header() {
             <LanguageToggle />  
               
             {/* contact - main button */}
-            <Link href="#contact" target="_blank" >
+            <Link href="#contact">
               <Button
                 size="lg"
                 className="

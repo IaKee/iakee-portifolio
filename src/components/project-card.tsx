@@ -126,7 +126,7 @@ export default function ProjectCard(
                     onClick={
                       () => {
                         localStorage.setItem("prefillMessage", t("prefill.demonstration"))
-                        window.location.href = "/"
+                        window.location.href = `${prefix}/`
                       }
                     }>
                     <TbBrandGithubFilled className="h-5 w-5" />

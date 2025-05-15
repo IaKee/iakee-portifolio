@@ -242,6 +242,7 @@
             "projects": "Projetos",
             "education": "Formação"
         },
+        "skillsTitle": "Confira minha experiencia com alguma ferramenta especifica:",
         "skills": [
             { 
                 "name": "Python", 

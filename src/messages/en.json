@@ -242,6 +242,7 @@
             "projects": "Projects",
             "education": "Education"
         },
+        "skillsTitle": "Check my experience with a skill or technology:",
         "skills": [
             { 
                 "name": "Python", 
