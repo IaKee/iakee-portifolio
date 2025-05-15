@@ -8,7 +8,8 @@ try {
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  basePath: '/portfolio',
+  basePath: '/iakee-portifolio',
+  assetPrefix: '/iakee-portifolio/',
   trailingSlash: true,
   eslint: {
     ignoreDuringBuilds: true,
