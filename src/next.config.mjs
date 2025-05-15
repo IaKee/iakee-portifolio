@@ -5,6 +5,9 @@ try {
   console.log(e)
 }
 
+const withImage = require('next-images')
+module.exports = withImage()
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
@@ -26,8 +29,9 @@ const nextConfig = {
     parallelServerCompiles: true,
   },
 }
-
 module.exports = nextConfig
+
+
 
 mergeConfig(nextConfig, userConfig)
 
