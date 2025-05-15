@@ -132,7 +132,7 @@ export default function ProfessionalCard() {
               onClick={
                 () => {
                   localStorage.setItem("prefillMessage", t("resume.contactMessage"))
-                  window.location.href = `${prefix}/`
+                  window.location.href = `/`
                 }
               }>
                   

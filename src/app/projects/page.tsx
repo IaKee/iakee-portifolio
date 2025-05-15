@@ -93,7 +93,7 @@ export default function UnderConstruction() {
         </div>
 
         <div className="flex flex-col sm:flex-row gap-2 justify-center">
-          <Link href={`${prefix}/`}>
+          <a href={`${prefix}/`}>
             <Button 
               className="
                 gap-2 
@@ -108,9 +108,9 @@ export default function UnderConstruction() {
               <FaHome className="w-4 h-4" />
               {t('missing.home')}
             </Button>
-          </Link>
+          </a>
 
-          <Link href="github.com/iakee">
+          <a href="github.com/iakee">
             <Button className="
               gap-2 
               cursor-pointer 
@@ -123,7 +123,7 @@ export default function UnderConstruction() {
               <TbBrandGithubFilled className="w-4 h-4" />
               GitHub
             </Button>
-          </Link>
+          </a>
 
           <Link href="/resume">
             <Button className="
@@ -140,7 +140,7 @@ export default function UnderConstruction() {
             </Button>
           </Link>
 
-          <Link href={`${prefix}/`}>
+          <a href={`${prefix}/`}>
             <Button className="
               gap-2 
               cursor-pointer 
@@ -158,7 +158,7 @@ export default function UnderConstruction() {
               <AiOutlineFundProjectionScreen className="w-4 h-4" />
               {t('missing.notableProjects')}
             </Button>
-          </Link>
+          </a>
         </div>
       </div>
     </div>
