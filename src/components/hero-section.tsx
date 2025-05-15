@@ -36,8 +36,8 @@ export default function HeroSection() {
 
   const handleDownload = () => {
     const path = locale === 'ptbr'
-      ? '/resume/Curriculo - Giordano Souza.pdf'
-      : '/resume/Resume - Giordano Souza.pdf';
+      ? `${prefix}/resume/Curriculo - Giordano Souza.pdf`
+      : `${prefix}/resume/Resume - Giordano Souza.pdf`;
 
     const link = document.createElement('a');
     link.href = path;

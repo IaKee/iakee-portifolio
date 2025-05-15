@@ -17,6 +17,7 @@ export default function ResumePage() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [hoveredSection, setHoveredSection] = useState<string | null>(null);
   const { locale, t } = useLanguage();
+  const prefix = process.env.NODE_ENV === "production" ? "/iakee-portifolio" : "";
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition(
@@ -37,8 +38,8 @@ export default function ResumePage() {
 
   const handleDownload = () => {
     const path = locale === 'ptbr'
-      ? '/resume/Curriculo - Giordano Souza.pdf'
-      : '/resume/Resume - Giordano Souza.pdf';
+      ? `${prefix}/resume/Curriculo - Giordano Souza.pdf`
+      : `${prefix}/resume/Resume - Giordano Souza.pdf`;
 
     const link = document.createElement('a');
     link.href = path;
