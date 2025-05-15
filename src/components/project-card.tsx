@@ -38,7 +38,7 @@ export default function ProjectCard(
 
   const { t } = useLanguage();
   
-  const prefix = process.env.NODE_ENV === "production" ? "/iakee-portifolio" : "";
+  const prefix = process.env.NODE_ENV === "production" ? "" : "";
 
   return (
     <motion.div

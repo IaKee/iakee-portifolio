@@ -22,7 +22,7 @@ interface CourseCardProps {
 export default function ExperienceCard({ course, index }: CourseCardProps) {
   
   const [isExpanded, setIsExpanded] = useState(false);
-  const prefix = process.env.NODE_ENV === "production" ? "/iakee-portifolio" : "";
+  const prefix = process.env.NODE_ENV === "production" ? "" : "";
 
   return (
     <motion.div

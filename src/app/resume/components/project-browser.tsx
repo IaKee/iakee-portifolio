@@ -27,7 +27,7 @@ export default function ProjectBrowser({
   activeProject
 }: ProjectBrowserProps) {
 
-  const prefix = process.env.NODE_ENV === "production" ? "/iakee-portifolio" : "";
+  const prefix = process.env.NODE_ENV === "production" ? "" : "";
 
   return (
     <div className="flex flex-col">

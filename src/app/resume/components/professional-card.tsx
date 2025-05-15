@@ -12,7 +12,7 @@ import ReCAPTCHA from "react-google-recaptcha"
 
 export default function ProfessionalCard() {
   const { t } = useLanguage();
-  const prefix = process.env.NODE_ENV === "production" ? "/iakee-portifolio" : "";
+  const prefix = process.env.NODE_ENV === "production" ? "" : "";
 
   const [revealContact, setRevealContact] = useState(false);
   const [captchaVerified, setCaptchaVerified] = useState(false);

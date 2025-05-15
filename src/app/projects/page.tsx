@@ -25,7 +25,7 @@ type UnderConstructionProps = {
 
 export default function UnderConstruction() {
   const router = useRouter();
-  const prefix = process.env.NODE_ENV === "production" ? "/iakee-portifolio" : "";
+  const prefix = process.env.NODE_ENV === "production" ? "" : "";
   const { t } = useLanguage();
 
   return (

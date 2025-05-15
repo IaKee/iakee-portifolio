@@ -11,7 +11,7 @@ import { IoTerminal } from "react-icons/io5";
 
 export default function Header() {
   const { t } = useLanguage();
-  const prefix = process.env.NODE_ENV === "production" ? "/iakee-portifolio" : "";
+  const prefix = process.env.NODE_ENV === "production" ? "" : "";
 
   return(
     <header className="sticky top-0 z-40 w-full border-b bg-background

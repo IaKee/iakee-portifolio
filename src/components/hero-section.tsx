@@ -17,7 +17,7 @@ import { useLanguage } from '@/context/language-content'
 export default function HeroSection() {
   const { locale, t } = useLanguage();
 
-  const prefix = process.env.NODE_ENV === "production" ? "/iakee-portifolio" : "";
+  const prefix = process.env.NODE_ENV === "production" ? "" : "";
 
   var rawStats = t('hover.github.stats')
   const githubStats = Array.isArray(rawStats) 

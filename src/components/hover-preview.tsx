@@ -41,7 +41,7 @@ export default function HoverPreview({
 
   const triggerRef = useRef<HTMLDivElement>(null)
   const tooltipRef = useRef<HTMLDivElement>(null)
-  const prefix = process.env.NODE_ENV === "production" ? "/iakee-portifolio" : "";
+  const prefix = process.env.NODE_ENV === "production" ? "" : "";
    
   const updatePosition = () => {
     if(isHovered && triggerRef.current && tooltipRef.current) {

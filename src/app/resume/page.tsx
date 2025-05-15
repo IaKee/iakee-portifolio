@@ -17,7 +17,7 @@ export default function ResumePage() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [hoveredSection, setHoveredSection] = useState<string | null>(null);
   const { locale, t } = useLanguage();
-  const prefix = process.env.NODE_ENV === "production" ? "/iakee-portifolio" : "";
+  const prefix = process.env.NODE_ENV === "production" ? "" : "";
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition(
