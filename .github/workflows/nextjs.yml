@@ -28,6 +28,10 @@ jobs:
   # Build job
   build:
     runs-on: ubuntu-latest
+    env:
+      EMAIL_API_KEY: ${{ secrets.EMAIL_API_KEY }}
+      EMAIL_SERVICE_KEY: ${{ secrets.EMAIL_SERVICE_KEY }}
+      EMAIL_TEMPLATE_KEY: ${{ secrets.EMAIL_TEMPLATE_KEY }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
