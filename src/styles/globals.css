@@ -9,6 +9,10 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+  .animate-underline {
+    text-decoration: underline;
+    transition: all;
+  }
 }
 
 @layer base {

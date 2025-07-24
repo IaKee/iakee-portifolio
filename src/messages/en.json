@@ -32,6 +32,7 @@
         "resume": "Resume",
         "projects": "Projects",
         "skills": "Skills",
+        "playground": "Playground",
         "theme": "Theme",
         "actionbutton": "Contact"
     },
@@ -714,5 +715,62 @@
         "resume": "Resume",
         "home": "Home",
         "notableProjects": "Notable Projects"
+    },
+    "playground": {
+        "title": "Playground",
+        "description": "A showcase of visual effects and interactive objects. Feel free to explore and provide feedback.",
+        "searchPrefill": "Search for a specific effect or object",
+        "style": {
+            "button": "Style settings"
+        },
+        "buttons": {
+            "title": "Buttons",
+            "description": "A collection of buttons with different styles and functionalities.",
+            "tags": [
+                "Buttons", 
+                "UI Components", 
+                "React"
+            ],
+            "showDetails": "Show details",
+            "hideDetails": "Hide details",
+            "variant": {
+                "title": "Variants",
+                "description": "Different styling options for button components",
+                "default": "Default", 
+                "destructive": "Destructive", 
+                "secondary": "Secondary", 
+                "ghost": "Ghost",
+                "outline": "Outline"
+            },
+            "size": {
+                "title": "Sizes",
+                "description": "Different sizes for button components",
+                "default": "Default",
+                "sm": "Small",
+                "lg": "Large"
+            },
+            "state": {
+                "title": "States",
+                "description": "Different states for button components",
+                "default": "Default",
+                "disabled": "Disabled",
+                "outlineDisabled": "Disabled outline"
+            },
+            "iconsAndEffects": {
+                "title": "Icons and Effects",
+                "description": "Different icons and effects for button components",
+                "send": "Send something",
+                "download": "Download something",
+                "next": "Next step",
+                "like": "Like something",
+                "load": "Load something",
+                "loading": "I'm loading something",
+                "shrinkClick": "Shrink on click",
+                "colorHover": "Change color on hover",
+                "pulse": "Pulse",
+                "glow": "Glow"
+            },
+            "hints": "Hints"
+        }
     }
 }

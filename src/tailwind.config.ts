@@ -104,12 +104,37 @@ const config: Config = {
 					to: {
 						height: '0'
 					}
+				},
+				'spin-ping': {
+          '0%': { transform: 'rotate(0deg) scale(1)', opacity: '1' },
+          '50%': { transform: 'rotate(180deg) scale(1.25)', opacity: '0.75' },
+          '100%': { transform: 'rotate(360deg) scale(1)', opacity: '1' },
+        },
+				'text-hint-ping': {
+					'0%': { 
+						transform: 'scale(1)', 
+						opacity: '0.8',
+						textDecoration: 'none'
+					},
+					'50%': { 
+						transform: 'scale(1.05)',
+						opacity: '1',
+						textDecoration: 'underline'
+					},
+					'100%': { 
+						transform: 'scale(1)', 
+						opacity: '.8',
+						textDecoration: 'none'
+					}
 				}
 			},
 			animation:
 			{
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'spin': 'spin 1s linear infinite',
+				'spin-ping': 'spin-ping 1s linear infinite',
+				'text-hint-ping': 'text-hint-ping 1s ease-in-out infinite'
 			}
 		}
 	},

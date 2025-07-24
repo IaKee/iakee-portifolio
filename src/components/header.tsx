@@ -73,7 +73,7 @@ export default function Header() {
             </Link>
 
             <Link 
-              href="#skills" 
+              href="/projects" 
               className="
                 font-small 
                 hover:underline 
@@ -81,6 +81,17 @@ export default function Header() {
                 transition-all
                 underline-offset-4">
               {t('header.skills')}
+            </Link>
+
+            <Link 
+              href="/playground" 
+              className="
+                font-small 
+                hover:underline 
+                hover:scale-[1.1]
+                transition-all
+                underline-offset-4">
+              {t('header.playground')}
             </Link>
           </nav>
           

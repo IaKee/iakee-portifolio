@@ -14,65 +14,81 @@ export default function LanguageToggle() {
     setLocale(newLanguage);
   };
 
-  const ptbr = 
-    <>
-      Português 
-      {
-        <Image
-          src={'https://flagcdn.com/w20/br.png'} 
-          alt='BR' 
-          className="ml-auto"/> 
-      }
-    </>
-  const en = 
-    <>
-      English 
-      { 
-        <Image
-          src={'https://flagcdn.com/w20/us.png'} 
-          alt='US' 
-          className="ml-auto"/> 
-      }
-    </>
-
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button 
+        <Button
           variant="outline"
           className="
             flex 
             items-center 
-            rounded-full 
             gap-2 
-            border-2
-            border-primary
-            hover:bg-primary/32
-            hover:scale-[1.05]
-            cursor-pointer
-            transition-all">
-          
-          {locale === 'en' ? en : ptbr}
+            rounded-full 
+            border-2 
+            border-primary 
+            hover:bg-primary/32 
+            hover:scale-[1.05] 
+            cursor-pointer 
+            transition-all 
+            px-4 
+            py-2">
+      
+          <span className="flex items-center gap-2">
+            {locale === 'en' ? 'English' : 'Português'}
+            <Image
+              src={
+                locale === 'en'
+                  ? 'https://flagcdn.com/w40/us.png'
+                  : 'https://flagcdn.com/w40/br.png'
+              }
+              alt={locale === 'en' ? 'US Flag' : 'BR Flag'}
+              width={24}
+              height={16}
+              className="rounded-sm"/>
+          </span>
         </Button>
       </DropdownMenuTrigger>
 
-      {/* dropdown menu content */}
       <DropdownMenuContent 
-        align="end"
-        className="bg-primary-foreground rounded-xl">
+        align="end" 
+        className="
+          bg-primary-foreground 
+          rounded-xl">
         
-        {/* portuguese button */}
-        <DropdownMenuItem 
-          onClick = {() => changeLocale('ptbr')}
-          className="flex items-center justify-between rounded-xl">
-          {ptbr}
+        <DropdownMenuItem
+          onClick={() => changeLocale('ptbr')}
+          className="
+            flex 
+            items-center 
+            justify-between 
+            gap-2
+            rounded-full">
+          
+          Português
+          <Image
+            src="https://flagcdn.com/w40/br.png"
+            alt="BR Flag"
+            width={24}
+            height={16}
+            className="rounded-sm"/>
         </DropdownMenuItem>
-        
-        {/* english button */}
-        <DropdownMenuItem 
+
+        <DropdownMenuItem
           onClick={() => changeLocale('en')}
-          className="flex items-center justify-between rounded-xl">
-          {en}
+          className="
+            flex 
+            items-center 
+            justify-between 
+            gap-2
+            rounded-full">
+          
+          English
+          <Image
+            src="https://flagcdn.com/w40/us.png"
+            alt="US Flag"
+            width={24}
+            height={16}
+            className="rounded-sm"/>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
