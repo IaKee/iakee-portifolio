@@ -5,7 +5,7 @@ export async function GET(req: NextRequest) {
   try {
     const redis = await getRedisClient()
     const now = Date.now()
-    const ip = req.headers.get("x-forwarded-for") || req.ip || "unknown"
+    const ip = req.headers.get("x-forwarded-for") || "unknown" || "localhost"
     const ipKey = `viewed:${ip}`
 
     // time ranges
