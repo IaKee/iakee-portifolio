@@ -198,6 +198,8 @@
         "flexible": "I'm flexible with time zones and can efficiently work remotely.",
         "formTitle": "Send me a message",
         "form": {
+            "copyEmailButton": "Copy my email to clipboard",
+            "copiedEmailButton": "Email copied to clipboard!",
             "senderName": "Name",
             "senderNameDescription": "Your name here...",
             "senderEmail": "Email",
@@ -225,7 +227,7 @@
                     "short": "Email is too short",
                     "long": "Email is too long",
                     "none": "Please provide your email.",
-                    "noneTooltip": "An email is required to send a message.",
+                    "invalidTooltip": "An email is required to send a message.",
                     "shortTooltip": "Email must be at least 5 characters long.",
                     "longTooltip": "Email must be less than 100 characters long."
                 },

@@ -16,47 +16,30 @@ import { toast } from "@/hooks/use-toast"
 import { useLanguage } from "@/context/language-content"
 import { IoSend } from "react-icons/io5"
 import { TranslatedFormMessage } from "./translated-form-message"
-import {Tooltip} from "@heroui/react";
-
-const formSchema = z.object({
-  name: z.string()
-    .min(2, {message: "form.error.shortName"})
-    .max(50, {message: "form.error.longName"}),
-  email: z.string()
-    .email({message: "form.error.invalidEmail"}),
-  subject: z.string()
-    .min(5, {message: "form.error.shortSubject"})
-    .max(100, {message: "form.error.longSubject"}),
-  message: z.string()
-    .min(10, {message: "form.error.shortMessage"})
-    .max(500, {message: "form.error.longMessage"}),
-})
-
-function ErrorTooltipWrapper({
-  children,
-  errorMessage
-}: {
-  children: React.ReactNode,
-  errorMessage?: string
-}) {
-  const { t } = useLanguage()
-  return (
-    <Tooltip
-      content={errorMessage ? t(errorMessage) : ""}
-      showArrow
-      placement="top"
-      isDisabled={!errorMessage}
-      className="rounded-full bg-red-500 text-sm"
-    >
-      {children}
-    </Tooltip>
-  )
-}
-
+import { ErrorTooltipWrapper } from "./error-tooltip-wrapper"
+import { FaCopy } from "react-icons/fa"
 
 export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [showThankYou, setShowThankYou] = useState(false)
+  const [showCopyEmail, setShowCopyEmail] = useState(true)
+  const [showCopiedEmail, setShowCopiedEmail] = useState(false)
+  
+  const { t } = useLanguage()
+  
+  const formSchema = z.object({
+    name: z.string()
+      .min(2, {message: "contact.form.error.name.short"})
+      .max(50, {message: "contact.form.error.name.long"}),
+    email: z.string()
+      .email({message: "contact.form.error.email.invalid"}),
+    subject: z.string()
+      .min(5, {message: "contact.form.error.subject.short"})
+      .max(100, {message: "contact.form.error.subject.long"}),
+    message: z.string()
+      .min(10, {message: "contact.form.error.message.short"})
+      .max(500, {message: "contact.form.error.message.long"}),
+  })
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -71,8 +54,6 @@ export default function ContactForm() {
 
   const PrefillHandler = dynamic(() => import("./prefill-handler"), { ssr: false })
 
-  const { t } = useLanguage()
-
   useEffect(
     () => {
       const prefill = typeof window !== "undefined" && window.localStorage.getItem("prefillMessage")
@@ -85,9 +66,9 @@ export default function ContactForm() {
   )
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    const { t } = useLanguage()
     
     setIsSubmitting(true)
+    setShowCopyEmail(false) // reset copy email state in case of it working again
 
     try {
       const response = await fetch(
@@ -102,11 +83,12 @@ export default function ContactForm() {
       if (!response.ok) 
       {
         toast(
-        {
-          title: t("form.error.response.title"),
-          description: t("form.error.response.description"),
-        }
-      )
+          {
+            title: t("form.error.response.title"),
+            description: t("form.error.response.description"),
+          }
+        )
+        setShowCopyEmail(true)
         throw new Error('Could not send the email form!')
       }
 
@@ -128,6 +110,7 @@ export default function ContactForm() {
           description: t("form.error.send.description"),
         }
       )
+      setShowCopyEmail(true)
       console.error(error)
     } 
     finally {
@@ -139,6 +122,28 @@ export default function ContactForm() {
     return form.formState.errors[fieldName]
       ? "ring-2 ring-red-500 border-2 border-red-500"
       : "ring-0 ring-transparent"
+  }
+
+  async function copyEmailToClipboard() {
+    try {
+      await navigator.clipboard.writeText(t('contact2.iakee@gmail.com'))
+      setShowCopiedEmail(true)
+      toast(
+        {
+          title: t("contact.form.emailCopiedTitle"),
+          description: t("contact.form.emailCopiedDescription"),
+        }
+      )
+    } 
+    catch {
+      toast(
+        {
+          title: t("contact.form.emailCopyErrorTitle"),
+          description: t("contact.form.emailCopyErrorDescription"),
+        }
+      )
+    }
+    setTimeout(() => setShowCopiedEmail(false), 1500)
   }
 
   return (
@@ -207,7 +212,8 @@ export default function ContactForm() {
                                 {t("contact.form.senderName")}
                               </FormLabel>
 
-                              <ErrorTooltipWrapper errorMessage={form.formState.errors.name?.message}>
+                              <ErrorTooltipWrapper errorMessage={
+                                t(`${form.formState.errors.name?.message + "Tooltip"}`)}>
                                 <FormControl className="rounded-2xl">
                                   <Input
                                     placeholder={t("contact.form.senderNameDescription")}
@@ -233,7 +239,8 @@ export default function ContactForm() {
                                 {t("contact.form.senderEmail")}
                               </FormLabel>
 
-                              <ErrorTooltipWrapper errorMessage={form.formState.errors.email?.message}>
+                              <ErrorTooltipWrapper errorMessage={
+                                t(`${form.formState.errors.email?.message + "Tooltip"}`)}>
                                 <FormControl className="rounded-2xl">
                                   <Input
                                     placeholder={t("contact.form.senderEmailDescription")}
@@ -260,7 +267,8 @@ export default function ContactForm() {
                               {t("contact.form.subject")}
                             </FormLabel>
                         
-                            <ErrorTooltipWrapper errorMessage={form.formState.errors.subject?.message}>
+                            <ErrorTooltipWrapper errorMessage={
+                              t(`${form.formState.errors.subject?.message + "Tooltip"}`)}>
                               <FormControl className="rounded-2xl">
                                 <Input
                                   placeholder={t("contact.form.subjectDescription")}
@@ -286,7 +294,8 @@ export default function ContactForm() {
                               {t("contact.form.message")}
                             </FormLabel>
                             
-                            <ErrorTooltipWrapper errorMessage={form.formState.errors.message?.message}>
+                            <ErrorTooltipWrapper errorMessage={
+                              t(`${form.formState.errors.message?.message + "Tooltip"}`)}>
                               <FormControl className="rounded-2xl">
                                 <Textarea
                                   placeholder={t("contact.form.messageDescription")}
@@ -307,7 +316,6 @@ export default function ContactForm() {
                         )
                       } />
 
-                    {/* TODO: copy email button */}
                     <Button
                       type="submit"
                       className="w-full gap-2 rounded-full cursor-pointer"
@@ -321,11 +329,47 @@ export default function ContactForm() {
                           </>
                       
                         : <>
-                            {t("contact.form.submitButton")}
                             <IoSend className="ml-1" />
+                            {t("contact.form.submitButton")}
                           </>
                       }
                     </Button>
+                    {
+                      showCopiedEmail
+                        ? <Button
+                            type="button"
+                            variant="outline"
+                            className="
+                              w-full 
+                              gap-2 
+                              rounded-full 
+                              text-muted
+                              hover:bg-muted-secondary
+                              hover:text-muted
+                              transition-all">
+                            <FaCopy className="animate-spin"/>
+                            {t("contact.form.copiedEmailButton")}
+                          </Button>
+                        : showCopyEmail && 
+                          <Button
+                            type="button"
+                            variant="outline"
+                            className="
+                              w-full 
+                              gap-2 
+                              rounded-full 
+                              cursor-pointer 
+                              animate-pulse-border 
+                              animate-pulse
+                              active:scale-95
+                              transition-all"
+                            onClick={copyEmailToClipboard}>
+                            
+                            <FaCopy />
+                            {t("contact.form.copyEmailButton")}
+                          </Button>
+                    }
+                    
                   </form>
                 </Form>
 
