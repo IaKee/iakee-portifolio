@@ -209,12 +209,77 @@
             "submitButton": "Send message",
             "submitLoading": "Sending...",
             "thankYou": "Thank you for your message! ",
-            "thankYouDescription": "I'll get back to you as soon as possible."
+            "thankYouDescription": "I'll get back to you as soon as possible.",
+            "error": {
+                "name": {
+                    "invalid": "Invalid name",
+                    "short": "Name is too short",
+                    "long": "Name is too long",
+                    "none": "Please provide your name.",
+                    "noneTooltip": "A name is required to send a message.",
+                    "shortTooltip": "Name must be at least 2 characters long.",
+                    "longTooltip": "Name must be less than 50 characters long."
+                },
+                "email": {
+                    "invalid": "Invalid email",
+                    "short": "Email is too short",
+                    "long": "Email is too long",
+                    "none": "Please provide your email.",
+                    "noneTooltip": "An email is required to send a message.",
+                    "shortTooltip": "Email must be at least 5 characters long.",
+                    "longTooltip": "Email must be less than 100 characters long."
+                },
+                "subject": {
+                    "invalid": "Invalid subject",
+                    "short": "Subject is too short",
+                    "long": "Subject is too long",
+                    "none": "Please provide a subject.",
+                    "noneTooltip": "A subject is required to send a message.",
+                    "shortTooltip": "Subject must be at least 5 characters long.",
+                    "longTooltip": "Subject must be less than 100 characters long."
+                },
+                "message": {
+                    "invalid": "Invalid message",
+                    "short": "Message is too short",
+                    "long": "Message is too long",
+                    "none": "Please provide a message.",
+                    "noneTooltip": "A message is required to send a message.",
+                    "shortTooltip": "Message must be at least 10 characters long.",
+                    "longTooltip": "Please consider emailing me directly."
+                },
+                "response": {
+                    "title": "Error handling your request.",
+                    "description": "Could not connect to my server. Please email me directly."
+                },
+                "send": {
+                    "title": "Could not send your message.",
+                    "description": "It seems somewhing went wrong with my server. Please email me directly."
+                }
+            },
+            "success": {
+                "title": "Message sent successfully!",
+                "description": "Thank you! I'll get back to you as soon as possible!"
+            }
         }
     },
     "footer": {
-        "name": "Giordano Souza",
-        "reserved": "All rights reserved."
+        "updated": "Updated",
+        "main": "Thank you for visiting my portfolio!",
+        "licensing": "Open source - under MIT license.",
+        "loadingViews": "Loading stats...",
+        "error": {
+            "fetching": "Error fetching stats."
+        },
+        "activeUsers": "visitors online",
+        "totalUsers": "total visits",
+        "advanced": {
+            "online": "on",
+            "total": "to",
+            "week": "wk",
+            "month": "mo",
+            "year": "yr"
+        }
+
     },
     "resume": {
         "selfEvaluation": "Self-evaluation",

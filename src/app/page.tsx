@@ -11,6 +11,7 @@ import FeaturedProjects from "@/components/featured-projects"
 import Footer from "@/components/footer"
 import ContactTab from "@/components/contact-tab"
 import { ChatButton } from "@/components/chat-button";
+import { ViewCounter } from "./resume/components/view-counter";
 
 export default function Home() {
   const contactRef = useRef<HTMLDivElement>(null);
@@ -86,6 +87,8 @@ export default function Home() {
       <FeaturedProjects ref={projectsRef} />
 
       <ContactTab ref = {contactRef} />
+
+      {/*<ViewCounter />*/}
 
       <Footer />
       

@@ -11,7 +11,7 @@ module.exports = withImage()
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
+  //output: 'export',
   basePath: '',
   assetPrefix: '',
   trailingSlash: true,
