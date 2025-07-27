@@ -21,7 +21,7 @@ export default function SiteStatsWidget() {
             setShowAdvanced(false)
             setClickCount(0)
           }, 
-          1500000) // hides advanced stats after 15 seconds - TODO: remove 00
+          15000) // hides advanced stats after 15 seconds
 
         return () => clearTimeout(timer)
       }

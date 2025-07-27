@@ -15,23 +15,7 @@ export function ChatButton() {
   return (
     <button
       onClick={handleWhatsAppClick}
-      className="
-        fixed 
-        bottom-6 
-        right-6 
-        bg-green-500 
-        hover:bg-green-600 
-        text-white 
-        rounded-full 
-        p-4 
-        shadow-lg 
-        transition-all 
-        duration-300 
-        hover:scale-110 
-        z-50 
-        flex 
-        items-center 
-        justify-center">
+      className="right-6 bottom-6 z-50 fixed flex justify-center items-center bg-green-500 hover:bg-green-600 shadow-lg p-4 rounded-full text-white hover:scale-110 transition-all duration-300">
       <MessageCircle size={28} />
     </button>
   )

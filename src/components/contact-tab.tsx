@@ -38,11 +38,11 @@ const ContactTab = forwardRef<HTMLDivElement>((props, ref) => {
           </div>
         </div>
         
-        <div className="mx-auto grid max-w-5xl gap-6 py-12 lg:grid-cols-2">
+        <div className="mx-auto grid max-w-5xl gap-6 pt-12 lg:grid-cols-2">
           <div>
             <div className="space-y-12">
               <div className="space-y-2">
-                <h3 className="text-xl font-bold">
+                <h3 className="text-xl font-bold underline">
                   {t('contact.contactInfoTitle')}
                 </h3>
               
@@ -50,29 +50,62 @@ const ContactTab = forwardRef<HTMLDivElement>((props, ref) => {
                   {t('contact.contactInfoDescription')}
                   
                   <div className="grid gap-2">
-                    <div className="flex items-center gap-2">
-                      <IoIosMail className="h-5 w-5 text-primary" />
+                    <div className="
+                      flex 
+                      group
+                      items-center 
+                      justify-left
+                      hover:rounded-full
+                      hover:bg-primary
+                      hover:text-background
+                      hover:px-2
+                      hover:py-1 
+                      group-hover:text-semibold
+                      w-fit
+                      mx-2
+                      gap-2">
+                      <IoIosMail className="h-5 w-5 text-primary group-hover:text-background " />
                     
                       <a 
                         href="mailto:contact2.iakee@gmail.com" 
-                        className="text-sm hover:underline">
+                        className="
+                          text-sm 
+                          hover:underline
+                          group-hover:font-semibold">
                         contact2.iakee@gmail.com
                       </a>
                     </div>
                   
-                    <div className="flex items-center gap-2">
-                      <FaLinkedin className="h-5 w-5 text-primary" />
+                    <div className="
+                      flex 
+                      group
+                      items-center 
+                      justify-left
+                      hover:rounded-full
+                      hover:bg-primary
+                      hover:text-background
+                      hover:px-2
+                      hover:py-1 
+                      group-hover:text-semibold
+                      w-fit
+                      mx-2
+                      gap-2">
+                      <FaLinkedin className="h-5 w-5 text-primary group-hover:text-background" />
                     
                       <a 
                         href="https://linkedin.com/in/giordanogi" 
                         target="_blank" 
                         rel="noreferrer" 
-                        className="text-sm hover:underline">
+                        className="text-sm hover:underline group-hover:font-semibold">
                         linkedin.com/in/giordanogi
                       </a>
                     </div>
                 </div>
                 
+                <h3 className="text-sm font-semibold text-foreground mt-2">
+                  {t('contact.contactInfoDescription2')}
+                </h3>
+
                 </div>
               </div>
             

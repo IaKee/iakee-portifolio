@@ -22,7 +22,7 @@ import { FaCopy } from "react-icons/fa"
 export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [showThankYou, setShowThankYou] = useState(false)
-  const [showCopyEmail, setShowCopyEmail] = useState(true)
+  const [showCopyEmail, setShowCopyEmail] = useState(false)
   const [showCopiedEmail, setShowCopiedEmail] = useState(false)
   
   const { t } = useLanguage()
@@ -350,19 +350,18 @@ export default function ContactForm() {
                             <FaCopy className="animate-spin"/>
                             {t("contact.form.copiedEmailButton")}
                           </Button>
-                        : showCopyEmail && 
-                          <Button
+                        : <Button
                             type="button"
                             variant="outline"
-                            className="
+                            className={`
                               w-full 
                               gap-2 
                               rounded-full 
                               cursor-pointer 
-                              animate-pulse-border 
-                              animate-pulse
+                              ${showCopyEmail ? "animate-pulse-border" : ""} 
+                              ${showCopyEmail ? "animate-pulse" : ""}
                               active:scale-95
-                              transition-all"
+                              transition-all`}
                             onClick={copyEmailToClipboard}>
                             
                             <FaCopy />

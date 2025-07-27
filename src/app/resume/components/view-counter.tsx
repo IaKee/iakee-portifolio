@@ -1,20 +1,17 @@
 'use client';
 
 import useSWR from 'swr';
-import { Eye } from 'lucide-react'; // Apenas um ícone para deixar mais bonito (opcional)
+import { Eye } from 'lucide-react';
 
 // Função fetcher para o SWR usar
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 export function ViewCounter() {
-  // O SWR vai:
-  // 1. Chamar '/api/views' na primeira renderização (disparando o contador).
-  // 2. Revalidar (buscar de novo) os dados a cada 10 segundos.
   const { data, error } = useSWR<{ views: number }>(
     '/api/views',
     fetcher,
     {
-      refreshInterval: 10000, // 10 segundos em milissegundos
+      refreshInterval: 10000,
     }
   );
 

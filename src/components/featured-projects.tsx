@@ -13,21 +13,21 @@ const FeaturedProjects = forwardRef<HTMLDivElement>((props, ref) => {
 
   return(
     <main ref={ref}>
-      <section id="projects" className="w-full py-[8%]">
-        <div className="container px-4 md:px-6">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center">
+      <section id="projects" className="py-[8%] w-full">
+        <div className="px-4 md:px-6 container">
+          <div className="flex flex-col justify-center items-center space-y-4 text-center">
             <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+              <h2 className="font-bold text-3xl sm:text-4xl md:text-5xl tracking-tighter">
                 {t('featured.title')}
               </h2>
 
-              <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+              <p className="max-w-[900px] text-muted-foreground lg:text-base/relaxed md:text-xl/relaxed xl:text-xl/relaxed">
                 {t('featured.description')}
               </p>
             </div>
           </div>
 
-          <div className="mx-auto grid max-w-5xl items-stretch gap-6 py-12 md:grid-cols-2 lg:grid-cols-3">
+          <div className="items-stretch gap-6 grid md:grid-cols-2 lg:grid-cols-3 mx-auto py-12 max-w-5xl">
             <ProjectCard
               title = {t('featured.projects.runelingual.title')}
               description = {t('featured.projects.runelingual.description')}
@@ -112,7 +112,7 @@ const FeaturedProjects = forwardRef<HTMLDivElement>((props, ref) => {
                   }
                 }>
                 
-                <MdWork className="h-4 w-4" />
+                <MdWork className="w-4 h-4" />
                 {t('featured.actionButton2')} 
               </Button>
           </div>

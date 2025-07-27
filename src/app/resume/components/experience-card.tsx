@@ -26,7 +26,7 @@ export default function ExperienceCard({ experience, index }: ExperienceCardProp
 
   return (
     <motion.div
-      className="rounded-xl p-5 border"
+      className="p-5 border rounded-xl"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.2 }}>
@@ -34,47 +34,41 @@ export default function ExperienceCard({ experience, index }: ExperienceCardProp
       <div className="flex justify-between items-start">
         
         {/* role details */}
-        <div className="flex gap-4 items-center">
+        <div className="flex items-center gap-4">
           
           {/* company logo */}
-          <div className="
-            flex 
-            h-12
-            w-12 
-            items-center 
-            justify-center">
+          <div className="flex justify-center items-center w-12 h-12">
             {
               experience.icon
                 ? <Image 
                     src={`${prefix}/${experience.icon}`}
                     alt={experience.company} 
-                    className="flex h-8 w-8 rounded-full bg:primary-foreground border-primary border-3" /> 
-                : <Building className="flex h-8 w-8 rounded-full bg:primary-foreground border-primary border-3" />
+                    width={5}
+                    height={5}
+                    className="flex border-3 border-primary rounded-full w-8 h-8 bg:primary-foreground" /> 
+                : <Building className="flex border-3 border-primary rounded-full w-8 h-8 bg:primary-foreground" />
             }
           </div>
           
           <div onClick={() => setIsExpanded(true)}>
-            <h3 className="text-xl font-bold">
+            <div className="font-bold text-xl">
               {experience.title}
-            </h3>
-            <p>
-              {experience.company}
-            </p>
+            </div>
             
-            <p className="text-sm">
+            <div>
+              {experience.company}
+            <div/>
+            
+            <div className="text-sm">
               {experience.period}
-            </p>
+            </div>
           </div>
         </div>
+        </div>
         
-        <div className="flex gap-1 justify-end items-center">
+        <div className="flex justify-end items-center gap-1">
           <motion.a
-            className="
-              flex
-              p-2 
-              rounded-full
-              hover:scale-[1.5]
-              transition-all"
+            className="flex p-2 rounded-full hover:scale-[1.5] transition-all"
             href={experience.hook}
             target="_blank">
             <FaExternalLinkAlt size={14}/>
@@ -102,7 +96,7 @@ export default function ExperienceCard({ experience, index }: ExperienceCardProp
           paddingTop: isExpanded ? 25 : 0}        }
         transition={{ duration: 0.3 }}
         style={{ overflow: "hidden" }}>
-        <ul className="list-disc list-inside space-y-2">
+        <ul className="space-y-2 list-disc list-inside">
           {
             experience.roleFunctions.map(
               (item, i) => (

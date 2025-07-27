@@ -11,6 +11,7 @@ import ExperiencesTab from "./components/experiences-tab";
 import { FaDownload } from "react-icons/fa";
 import SkillsTab from "./components/skills-tab";
 import EducationTab from "./components/education-tab";
+import { ResumeDownloadDialog } from "./components/resume-download-dialog";
 
 export default function ResumePage() {
   const [activeSection, setActiveSection] = useState("about")
@@ -128,30 +129,7 @@ export default function ResumePage() {
 
           {/* download button and description*/}
           <div>
-            <motion.button
-              onClick={handleDownload}
-              className='
-                px-4 
-                py-2 
-                flex
-                items-center
-                gap-2 
-                rounded-full 
-                text-sm 
-                md:text-base 
-                capitalize 
-                transition-all
-                text-primary-foreground
-                bg-primary
-                cursor-pointer'
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}>
-              
-              {/* does not respect hovering colors, as it is not a selectable tab */}
-              <FaDownload className="h-4 w-4"/>
-              {t('resume.download')}
-
-            </motion.button>
+            <ResumeDownloadDialog/>
             
             <p className="text-xs text-muted-foreground text-center mt-2">
               {t('resume.downloadDescription')}

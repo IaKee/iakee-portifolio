@@ -12,22 +12,12 @@ export default function Footer() {
   const { t } = useLanguage();
 
   return (
-    <footer className="w-full border-t max-h-12">
-      <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
+    <footer className="border-t w-full max-h-12">
+      <div className="flex md:flex-row flex-col justify-between items-center gap-4 md:h-24 container">
         
         {/* updated message - left side */}
         <span  
-          className="
-            flex
-            flex-row
-            items-center
-            gap-2
-            text-xs 
-            bg-muted
-            font-semibold 
-            px-2
-            py-1 
-            rounded-full">
+          className="flex flex-row items-center gap-2 bg-muted px-2 py-1 rounded-full font-semibold text-xs">
             <FaCalendar />
             {t('footer.updated')}
             &nbsp;
@@ -35,7 +25,7 @@ export default function Footer() {
         </span>
 
         {/* licensing message */}
-        <p className="flex flex-row items-center text-sm text-muted-foreground">
+        <p className="flex flex-row items-center text-muted-foreground text-sm">
           {t('footer.main')} - {t('footer.licensing')}
         </p>
 
@@ -44,7 +34,7 @@ export default function Footer() {
           <SiteStatsWidget />
           
           {/* vertical separator */}
-          <div className="w-px h-4 bg-muted-foreground/30" />
+          <div className="bg-muted-foreground/30 w-px h-4" />
 
           {/* social links */}
           <Link 
@@ -53,7 +43,7 @@ export default function Footer() {
             rel="noreferrer" 
             className="hover:text-foreground"
           >
-            <TbBrandGithubFilled className="h-5 w-5" />
+            <TbBrandGithubFilled className="w-5 h-5" />
             <span className="sr-only">GitHub</span>
           </Link>
 
@@ -63,7 +53,7 @@ export default function Footer() {
             rel="noreferrer" 
             className="hover:text-foreground"
 >
-            <FaLinkedinIn className="h-5 w-5" />
+            <FaLinkedinIn className="w-5 h-5" />
             <span className="sr-only">LinkedIn</span>
           </Link>
 
@@ -73,7 +63,7 @@ export default function Footer() {
             rel="noreferrer" 
             className="hover:text-foreground"
           >
-            <TbBrandFiverr className="h-5 w-5" />
+            <TbBrandFiverr className="w-5 h-5" />
             <span className="sr-only">Fiverr</span>
           </Link>
         </div>

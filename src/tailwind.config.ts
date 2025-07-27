@@ -125,6 +125,14 @@ const config: Config = {
 						transform: 'scale(1)', 
 						opacity: '.8',
 						textDecoration: 'none'
+					},
+					'flip': {
+						'0%, 100%': { transform: 'rotateY(0deg)' },
+						'50%': { transform: 'rotateY(180deg)' }
+					},
+					'flip-reverse': {
+						'0%': { transform: 'rotateY(180deg)' },
+						'100%': { transform: 'rotateY(0deg)' },
 					}
 				}
 			},
@@ -134,7 +142,9 @@ const config: Config = {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'spin': 'spin 1s linear infinite',
 				'spin-ping': 'spin-ping 1s linear infinite',
-				'text-hint-ping': 'text-hint-ping 1s ease-in-out infinite'
+				'text-hint-ping': 'text-hint-ping 1s ease-in-out infinite',
+				'flip': 'card-flip 1.5s ease-in-out infinite',
+				'flip-reverse': 'flip-reverse 0.6s ease-in-out forwards',
 			}
 		}
 	},

@@ -15,25 +15,15 @@ export default function AboutTab() {
 
   return(
     <main>
-      <section id="about" className="w-full py-12 w-full py-[8%] bg-muted/50">
-        <div className="container px-4 md:px-6">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center">
+      <section id="about" className="bg-muted/50 py-[8%] py-12 w-full w-full">
+        <div className="px-4 md:px-6 container">
+          <div className="flex flex-col justify-center items-center space-y-4 text-center">
             <div className="space-y-2">
-              <h2 className="text-3xl font-bold mb-6 tracking-tighter sm:text-4xl md:text-5xl">
+              <h2 className="mb-6 font-bold text-3xl sm:text-4xl md:text-5xl tracking-tighter">
                 {t('about.title')}
               </h2>
 
-              <ul className="
-                max-w-[900px] 
-                list-disc 
-                pl-5 
-                text-left 
-                text-muted-foreground 
-                md:text-xl/relaxed 
-                lg:text-base/relaxed 
-                xl:text-xl/relaxed 
-                marker:text-xl 
-                marker:text-primary">
+              <ul className="pl-5 max-w-[900px] text-muted-foreground marker:text-primary lg:text-base/relaxed md:text-xl/relaxed xl:text-xl/relaxed marker:text-xl text-left list-disc">
                 {
                   description.map(
                     (paragraph, index) => (
@@ -47,14 +37,14 @@ export default function AboutTab() {
             </div>
           </div>
 
-          <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-2 lg:gap-12">
+          <div className="items-center gap-6 lg:gap-12 grid lg:grid-cols-2 mx-auto py-12 max-w-5xl">
             <div className="flex flex-col justify-center space-y-4">
-              <ul className="grid gap-6">
+              <ul className="gap-6 grid">
               
                 {/* Key professional skills */}
                 <li className="flex items-center gap-3">
-                  <div className="flex aspect-square h-10 items-center justify-center rounded-full bg-primary/10">
-                    <Code className="h-5 w-5 text-primary" />
+                  <div className="flex justify-center items-center bg-primary/10 rounded-full h-10 aspect-square">
+                    <Code className="w-5 h-5 text-primary" />
                   </div>
 
                   <div>
@@ -62,15 +52,15 @@ export default function AboutTab() {
                       {t('about.skill1Title')}
                     </h3>
 
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-muted-foreground text-sm">
                       {t('about.skill1Description')}
                     </p>
                   </div>
                 </li>
 
                 <li className="flex items-center gap-3">
-                  <div className="flex aspect-square h-10 items-center justify-center rounded-full bg-primary/10">
-                    <Code className="h-5 w-5 text-primary" />
+                  <div className="flex justify-center items-center bg-primary/10 rounded-full h-10 aspect-square">
+                    <Code className="w-5 h-5 text-primary" />
                   </div>
 
                   <div>
@@ -78,15 +68,15 @@ export default function AboutTab() {
                       {t('about.skill2Title')}
                     </h3>
 
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-muted-foreground text-sm">
                       {t('about.skill2Description')}
                     </p>
                   </div>
                 </li>
 
                 <li className="flex items-center gap-3">
-                  <div className="flex aspect-square h-10 items-center justify-center rounded-full bg-primary/10">
-                    <Code className="h-5 w-5 text-primary" />
+                  <div className="flex justify-center items-center bg-primary/10 rounded-full h-10 aspect-square">
+                    <Code className="w-5 h-5 text-primary" />
                   </div>
 
                   <div>
@@ -94,7 +84,7 @@ export default function AboutTab() {
                       {t('about.skill3Title')}
                     </h3>
 
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-muted-foreground text-sm">
                       {t('about.skill3Description')}
                     </p>
                   </div>
@@ -103,21 +93,21 @@ export default function AboutTab() {
             </div>
 
             <div className="space-y-4 text-center">
-              <p className="md:text font-semibold text-[80%]">
+              <p className="font-semibold text-[80%] md:text">
                 {t('about.usedToolsTitle')}
               </p>
               
               <a href="https://github.com/iakee" target="_blank" rel="noopener noreferrer">
-                <div className="mx-auto w-[70%] max-w-mdc space-y-2">
+                <div className="space-y-2 mx-auto w-[70%] max-w-mdc">
                   <Image 
                     className = "w-full h-auto object-contain !relative"
                     src={`https://github-readme-stats.vercel.app/api/top-langs?username=iakee&show_icons=true&locale=${t("about.locale")}&layout=compact`}
                     alt="If you are reading this, my stats tab is broken =/"
                     layout="fill"/>
 
-                  <div className="text-sm text-muted-foreground text-[80%]">
+                  <div className="text-[80%] text-muted-foreground text-sm">
                     {t('about.usedToolsDescription')}
-                    <p className="text-sm text-muted-foreground/30 text-[80%]">
+                    <p className="text-[80%] text-muted-foreground/30 text-sm">
                       {t('about.usedToolsDescription2')}
                     </p>
                   </div>

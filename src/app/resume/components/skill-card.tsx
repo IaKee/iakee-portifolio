@@ -123,19 +123,10 @@ export default function SkillCard(
         transition: { duration: 0.2 },
       }}
       onMouseEnter={resetInactivityTimer}
-      className="
-        relative 
-        bg-[#252525] 
-        rounded-xl 
-        overflow-hidden 
-        border 
-        border-[#333] 
-        hover:border-[#444] 
-        transition-all 
-        duration-300">
+      className="relative bg-[#252525] border border-[#333] hover:border-[#444] rounded-xl overflow-hidden transition-all duration-300">
       <div className="p-5">
         
-        <div className="flex items-center justify-between mb-3">
+        <div className="flex justify-between items-center mb-3">
           <div className="flex items-center gap-3 mb-3">
             {/* language icon */}
             <div
@@ -177,12 +168,12 @@ export default function SkillCard(
             {/* skill name and expertise level */}
             <div>
               {/* title */}
-              <h3 className="text-lg font-bold">
+              <h3 className="font-bold text-lg">
                 {skill.name}
               </h3>
 
               {/* subtitle */}
-              <p className="text-sm text-gray-400">
+              <p className="text-gray-400 text-sm">
                 {expertiseLevel}
               </p>
 
@@ -193,25 +184,21 @@ export default function SkillCard(
           { 
             isExpanded && (
               <button 
-                className="
-                  hover:bg-secondary
-                  p-1
-                  rounded-full
-                  transition-all"  
+                className="hover:bg-secondary p-1 rounded-full transition-all"  
                 onClick={
                   () => {
                     setIsExpanded(false);
                   }
                 }>
                 
-                <X className="flex items-center justify-center w-5 h-5"/>
+                <X className="flex justify-center items-center w-5 h-5"/>
               </button>
             )
           }
         </div>
 
         {/* skill contents and projects */}
-        <div className="mt-3 relative min-h-[120px]">
+        <div className="relative mt-3 min-h-[120px]">
           <AnimatePresence mode="wait">
             {
               isExpanded 
@@ -225,7 +212,7 @@ export default function SkillCard(
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  className="text-sm text-gray-300 line-clamp-3 cursor-pointer">
+                  className="text-gray-300 text-sm line-clamp-3 cursor-pointer">
 
                   {/* list of notable projects */}
                   <ul className="flex flex-col gap-1">
@@ -237,15 +224,7 @@ export default function SkillCard(
                             initial={{ opacity: 0, x: -10 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: i * 0.05 + 0.3 }}
-                            className="
-                              flex 
-                              rounded-full
-                              px-2
-                              items-center 
-                              gap-2
-                              hover:py-1
-                              hover:bg-accent/50
-                              transition-all">
+                            className="flex items-center gap-2 hover:bg-accent/50 px-2 hover:py-1 rounded-full transition-all">
                             
                             {/* topic icon */}
                             <div className={`
@@ -259,12 +238,7 @@ export default function SkillCard(
                               
                             
                             {/* topic label */}
-                            <span className="
-                              hover:underline 
-                              hover:scale-[1.05] 
-                              origin-left 
-                              transition-all 
-                              cursor-pointer">
+                            <span className="hover:underline hover:scale-[1.05] origin-left transition-all cursor-pointer">
                               {project.title}
                             </span>
                           
@@ -315,13 +289,7 @@ export default function SkillCard(
 
         {/* skill evaluation progressbar */}
         <motion.div
-          className="
-            w-full 
-            h-1 
-            mt-4 
-            bg-[#333] 
-            rounded-full 
-            overflow-hidden"
+          className="bg-[#333] mt-4 rounded-full w-full h-1 overflow-hidden"
           initial={{ width: 0 }}
           animate={{ width: "100%" }}
           transition={{ duration: 1, delay: index * 0.05 + 0.3 }}>
@@ -336,8 +304,8 @@ export default function SkillCard(
         </motion.div>
 
         {/* numeric indicator */}
-        <div className="text-right mt-1">
-          <span className="flex flex-row justify-end text-xs text-gray-400">
+        <div className="mt-1 text-right">
+          <span className="flex flex-row justify-end text-gray-400 text-xs">
             {/* TODO: this */}
             {t('resume.selfEvaluation')}
             <p>: </p> 
@@ -347,36 +315,15 @@ export default function SkillCard(
       </div>
 
       {/* side navigation buttons */}
+      {/* TODO: finish implementing this feature*/}
       {/*
         hasMultipleProjects && isExpanded && (
           <>
             <button
-              className="
-                absolute 
-                left-0 
-                top-0 
-                bottom-0 
-                w-8 
-                flex 
-                items-center 
-                justify-center 
-                opacity-0 
-                hover:opacity-100 
-                transition-opacity 
-                group"
+              className="group top-0 bottom-0 left-0 absolute flex justify-center items-center opacity-0 hover:opacity-100 w-8 transition-opacity"
               onClick={() => navigateProjects("prev")}>
               
-              <div className="'
-                w-6 
-                h-6 
-                rounded-full 
-                bg-black 
-                bg-opacity-50 
-                group-hover:bg-opacity-70 
-                flex 
-                items-center 
-                justify-center 
-                transition-all">
+              <div className="flex justify-center items-center bg-black bg-opacity-50 group-hover:bg-opacity-70 rounded-full w-6 h-6 transition-all '">
                 
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -395,31 +342,10 @@ export default function SkillCard(
             </button>
             
             <button
-              className="
-                absolute 
-                right-0 
-                top-0 
-                bottom-0 
-                w-8 flex 
-                items-center 
-                justify-center 
-                opacity-0 
-                hover:opacity-100 
-                transition-opacity 
-                group"
+              className="group top-0 right-0 bottom-0 absolute flex justify-center items-center opacity-0 hover:opacity-100 w-8 transition-opacity"
               onClick={() => navigateProjects("next")}>
               
-              <div className="
-                w-6 
-                h-6 
-                rounded-full 
-                bg-black 
-                bg-opacity-50 
-                group-hover:bg-opacity-70 
-                flex 
-                items-center 
-                justify-center 
-                transition-all">
+              <div className="flex justify-center items-center bg-black bg-opacity-50 group-hover:bg-opacity-70 rounded-full w-6 h-6 transition-all">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
