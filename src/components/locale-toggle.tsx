@@ -19,19 +19,7 @@ export default function LanguageToggle() {
       <DropdownMenuTrigger asChild>
         <Button
           variant="outline"
-          className="
-            flex 
-            items-center 
-            gap-2 
-            rounded-full 
-            border-2 
-            border-primary 
-            hover:bg-primary/32 
-            hover:scale-[1.05] 
-            cursor-pointer 
-            transition-all 
-            px-4 
-            py-2">
+          className="flex items-center gap-2 hover:bg-primary/32 px-4 py-2 border-2 border-primary rounded-full hover:scale-[1.05] transition-all cursor-pointer">
       
           <span className="flex items-center gap-2">
             {locale === 'en' ? 'English' : 'Português'}
@@ -44,25 +32,19 @@ export default function LanguageToggle() {
               alt={locale === 'en' ? 'US Flag' : 'BR Flag'}
               width={24}
               height={16}
-              className="rounded-sm"/>
+              className="rounded-sm"
+              style={{ height: 'auto' }}/>
           </span>
         </Button>
       </DropdownMenuTrigger>
 
       <DropdownMenuContent 
         align="end" 
-        className="
-          bg-primary-foreground 
-          rounded-xl">
+        className="bg-primary-foreground rounded-xl">
         
         <DropdownMenuItem
           onClick={() => changeLocale('ptbr')}
-          className="
-            flex 
-            items-center 
-            justify-between 
-            gap-2
-            rounded-full">
+          className="flex justify-between items-center gap-2 rounded-full">
           
           Português
           <Image
@@ -75,12 +57,7 @@ export default function LanguageToggle() {
 
         <DropdownMenuItem
           onClick={() => changeLocale('en')}
-          className="
-            flex 
-            items-center 
-            justify-between 
-            gap-2
-            rounded-full">
+          className="flex justify-between items-center gap-2 rounded-full">
           
           English
           <Image

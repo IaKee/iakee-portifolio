@@ -47,20 +47,10 @@ export default function ProjectCard(
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}>
     
-      <Card className="
-        h-full 
-        flex 
-        flex-col 
-        overflow-hidden 
-        border-2
-        rounded-4xl 
-        bg-muted/15
-        hovershadow-2xl
-        hover:shadow-[0_0_10px_rgba(255,255,255,0.2)]
-        transition-all">
+      <Card className="flex flex-col bg-muted/15 hover:shadow-[0_0_10px_rgba(255,255,255,0.2)] border-2 rounded-4xl h-full overflow-hidden transition-all hovershadow-2xl">
         
         {/* project preview image */}
-        <div className="relative aspect-video overflow-hidden">
+        <div className="relative aspect-video overflow-hidden" style={{ position: 'relative' }}>
           {
             image ? 
             <Image
@@ -100,12 +90,7 @@ export default function ProjectCard(
         </CardContent>
         
         {/* action buttons */}
-        <CardFooter className="
-          mt-auto 
-          flex 
-          justify-center 
-          items-center 
-          gap-2">
+        <CardFooter className="flex justify-center items-center gap-2 mt-auto">
           
 
           {/* main action button */}
@@ -115,21 +100,14 @@ export default function ProjectCard(
                 <Link href="">
                   <Button 
                     variant={actionButton2 && actionHook2 ? "outline" : "default"}
-                    className="
-                      rounded-full 
-                      cursor-pointer 
-                      hover:ring-2 
-                      hover:bg-bg 
-                      hover:ring-primary 
-                      hover:ring-offset-2 
-                      transition-all"
+                    className="hover:bg-bg rounded-full hover:ring-2 hover:ring-primary hover:ring-offset-2 transition-all cursor-pointer"
                     onClick={
                       () => {
                         localStorage.setItem("prefillMessage", t("prefill.demonstration"))
                         window.location.href = `${prefix}/`
                       }
                     }>
-                    <TbBrandGithubFilled className="h-5 w-5" />
+                    <TbBrandGithubFilled className="w-5 h-5" />
                     {actionButton1}
                   </Button>
                 </Link>)
@@ -137,15 +115,8 @@ export default function ProjectCard(
                 <Link href={actionHook1} target="_blank" rel="noreferrer">
                   <Button 
                     variant={actionButton2 && actionHook2 ? "outline" : "default"}
-                    className="
-                      rounded-full 
-                      cursor-pointer 
-                      hover:ring-2 
-                      hover:bg-bg 
-                      hover:ring-primary 
-                      hover:ring-offset-2 
-                      transition-all" >
-                    <TbBrandGithubFilled className="h-5 w-5" />
+                    className="hover:bg-bg rounded-full hover:ring-2 hover:ring-primary hover:ring-offset-2 transition-all cursor-pointer" >
+                    <TbBrandGithubFilled className="w-5 h-5" />
                     {actionButton1}
                   </Button>
                 </Link>
@@ -155,8 +126,8 @@ export default function ProjectCard(
           { /* secondary action button */
             actionButton2 && actionHook2 && (
               <Link href={actionHook2} target="_blank" rel="noreferrer">
-                <Button size="sm" className="rounded-full cursor-pointer hover:ring-2 hover:ring-primary hover:ring-offset-2 transition-all">
-                  <ExternalLink className="h-5 w-5" />
+                <Button size="sm" className="rounded-full hover:ring-2 hover:ring-primary hover:ring-offset-2 transition-all cursor-pointer">
+                  <ExternalLink className="w-5 h-5" />
                   {actionButton2}
                 </Button>
               </Link>

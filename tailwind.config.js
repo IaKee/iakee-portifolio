@@ -1,10 +1,11 @@
-import type { Config } from "tailwindcss";
-
-const config: Config = {
+/** @type {import('tailwindcss').Config} */
+export default {
+	darkMode: ['selector', '[data-mode="dark"]', '.dark'],
   content: [
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/**/*.{js,ts,jsx,tsx,mdx}',
-		'./*.txt'
+    './pages/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
+    './app/**/*.{ts,tsx}',
+    './src/**/*.{ts,tsx}'
   ],
   theme: {
 		container:
@@ -148,7 +149,5 @@ const config: Config = {
 			}
 		}
 	},
-  plugins: [/*require("tailwindcss-animate")*/],
-};
-
-export default config;
+  plugins: [require("tailwindcss-animate")],
+}

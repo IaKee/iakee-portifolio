@@ -217,14 +217,18 @@
         "theme": "Theme"
     },
     "hero": {
+        "introTitleHello": "Hi, I'm",
+        "introTitleName": "Giordano",
         "actionButton1": "Let's work together",
         "actionButton2": "Download CV",
         "actionButton3": "Know more about me",
         "actionButton4": "See my work",
-        "summary": "I build innovative web applications with modern technologies. Turning complex problems into elegant solutions.",
-        "title": "Creative Developer & Problem Solver",
+        "summary": "I build innovative web applications using modern technologies, transforming challenges into scalable solutions.",
+        "mainTitle": "Fullstack Developer",
         "workHours": "Timezone flexible",
-        "workStatus": "Available for hire"
+        "workStatus": "Available for hire",
+        "watchShort": "30-sec introduction video",
+        "watchLong": "5-min introduction video"
     },
     "hover": {
         "fiverr": {

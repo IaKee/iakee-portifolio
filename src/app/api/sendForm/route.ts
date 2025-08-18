@@ -1,4 +1,3 @@
-// src/app/api/sendForm/route.ts
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 import emailjs from '@emailjs/nodejs'

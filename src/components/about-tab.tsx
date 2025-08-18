@@ -100,10 +100,12 @@ export default function AboutTab() {
               <a href="https://github.com/iakee" target="_blank" rel="noopener noreferrer">
                 <div className="space-y-2 mx-auto w-[70%] max-w-mdc">
                   <Image 
-                    className = "w-full h-auto object-contain !relative"
-                    src={`https://github-readme-stats.vercel.app/api/top-langs?username=iakee&show_icons=true&locale=${t("about.locale")}&layout=compact`}
-                    alt="If you are reading this, my stats tab is broken =/"
-                    layout="fill"/>
+                    className = "w-full object-contain !relative"
+                    width={350}
+                    height={165}
+                    style={{ height: 'auto' }}
+                    src={`https://github-readme-stats.vercel.app/api/top-langs?username=iakee&show_icons=true&locale=${t("about.locale")}`}
+                    alt="Github stats"/>
 
                   <div className="text-[80%] text-muted-foreground text-sm">
                     {t('about.usedToolsDescription')}

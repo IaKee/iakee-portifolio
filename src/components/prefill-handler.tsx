@@ -13,7 +13,7 @@ export default function PrefillHandler({ form }: PrefillHandlerProps) {
   const prefillMessage = searchParams.get("prefillMessage")
 
   useEffect(() => {
-    const prefill = prefillMessage || (typeof window !== "undefined" ? localStorage.getItem("prefillMessage") : null)
+    const prefill = prefillMessage || localStorage.getItem("prefillMessage")
     if (prefill) {
       form.setValue("message", prefill)
     }

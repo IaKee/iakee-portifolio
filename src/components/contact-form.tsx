@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect, useRef } from "react"
+import { useState, useEffect, useRef, Suspense } from "react"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import * as z from "zod"
@@ -147,17 +147,7 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="
-      w-[90%] 
-      mx-auto 
-      space-y-4 
-      bg-muted 
-      rounded-2xl 
-      p-4 relative 
-      min-h-[400px] 
-      flex 
-      items-center 
-      justify-center">
+    <div className="relative flex justify-center items-center space-y-4 bg-muted mx-auto p-4 rounded-2xl w-[90%] min-h-[400px]">
       <AnimatePresence mode="wait">
         {
           showThankYou 
@@ -167,7 +157,7 @@ export default function ContactForm() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.5 }}
-                className="text-center space-y-4 p-6">
+                className="space-y-4 p-6 text-center">
                 
                 {/* sucess screen contents */}
                 <motion.div
@@ -175,10 +165,10 @@ export default function ContactForm() {
                   animate={{ scale: 1 }}
                   transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
                   className="mx-auto">  
-                  <CheckCircle className="w-20 h-20 text-green-500 mx-auto" />
+                  <CheckCircle className="mx-auto w-20 h-20 text-green-500" />
                 </motion.div>
                 
-                <h3 className="text-2xl font-bold">
+                <h3 className="font-bold text-2xl">
                   {t("contact.form.thankYou")}
                 </h3>
                 
@@ -199,7 +189,7 @@ export default function ContactForm() {
                   <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-2">
                     
                     {/* name + email label + input fields */}
-                    <div className="grid gap-4 sm:grid-cols-2">
+                    <div className="gap-4 grid sm:grid-cols-2">
                     
                       {/* name */}
                       <FormField
@@ -208,7 +198,7 @@ export default function ContactForm() {
                         render={
                           ({ field }) => (
                             <FormItem>
-                              <FormLabel className="text-foreground font-semibold pb-2">
+                              <FormLabel className="pb-2 font-semibold text-foreground">
                                 {t("contact.form.senderName")}
                               </FormLabel>
 
@@ -318,13 +308,13 @@ export default function ContactForm() {
 
                     <Button
                       type="submit"
-                      className="w-full gap-2 rounded-full cursor-pointer"
+                      className="gap-2 rounded-full w-full cursor-pointer"
                       disabled={isSubmitting}>
                       
                       {
                         isSubmitting 
                         ? <>
-                            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                            <Loader2 className="mr-2 w-4 h-4 animate-spin" />
                             {t("contact.form.submitLoading")}
                           </>
                       
@@ -339,14 +329,7 @@ export default function ContactForm() {
                         ? <Button
                             type="button"
                             variant="outline"
-                            className="
-                              w-full 
-                              gap-2 
-                              rounded-full 
-                              text-muted
-                              hover:bg-muted-secondary
-                              hover:text-muted
-                              transition-all">
+                            className="gap-2 hover:bg-muted-secondary rounded-full w-full text-muted hover:text-muted transition-all">
                             <FaCopy className="animate-spin"/>
                             {t("contact.form.copiedEmailButton")}
                           </Button>
@@ -372,7 +355,9 @@ export default function ContactForm() {
                   </form>
                 </Form>
 
-                {typeof window !== "undefined" && <PrefillHandler form={form} />}
+                <Suspense fallback={null}>
+                  <PrefillHandler form={form} />
+                </Suspense>
               </motion.div>
         }
       </AnimatePresence>

@@ -12,8 +12,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) 
 {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className='font-sans'>
+    <html lang="en" className='dark' suppressHydrationWarning>
+      <head>
+        {/* Add any additional head elements here */}
+      </head>
+      <body>
         <LanguageProvider>
           {children}
         </LanguageProvider>
