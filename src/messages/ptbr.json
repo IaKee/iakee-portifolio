@@ -1,9 +1,11 @@
 {
     "about": {
         "description": [
-            "Sou estudante de Sistemas de Informação na Unisinos com experiência em desenvolvimento full-stack e trabalho freelancer.",
-            "Busco constantemente maneiras criativas de resolver problemas e melhorias para aplicações.",
-            "Sou adaptável, aprendo rápido e me sinto confortável trabalhando tanto independentemente quanto em ambientes colaborativos."
+            "Busco crescer em um ambiente profissional, onde eu possa aprender e desenvolver habilidades em tecnologias de stacks modernos",
+            "Sou adaptável, aprendo rápido e estou aberto a novos desafios",
+            "Atualmente estou cursando Sistemas de Informação na Unisinos, de forma remota",
+            "Tenho experiencia com trabalho freelance e suporte técnico",
+            "Sou familiarizado com metodologias ágeis e sistemas de versionamento"
         ],
         "english": "Inglês",
         "englishLevel": "C2 - Avançado",
@@ -27,8 +29,8 @@
         "usedToolsTitle": "Aqui estão as linguagens mais usadas em meus projetos recentes"
     },
     "contact": {
-        "contactInfoDescription": "Sinta-se à vontade para entrar em contato através do formulário ou diretamente por e-mail ou redes sociais.",
         "constactInfoDescription2": "Eu responderei o mais rápido possível.",
+        "contactInfoDescription": "Sinta-se à vontade para entrar em contato através do formulário ou diretamente por e-mail ou redes sociais.",
         "contactInfoTitle": "Informações de Contato",
         "contactStatusTitle": "Status atual",
         "description": "Estou sempre aberto a novas oportunidades e colaborações. Sinta-se à vontade para entrar em contato.",
@@ -221,10 +223,14 @@
         "actionButton2": "Baixar CV",
         "actionButton3": "Saiba mais sobre mim",
         "actionButton4": "Veja meu trabalho",
-        "summary": "Construo aplicações web inovadoras com tecnologias modernas. Transformando problemas complexos em soluções elegantes.",
-        "title": "Desenvolvedor Criativo & Solucionador de Problemas",
-        "workHours": "Fuso horário flexível",
-        "workStatus": "Disponível para contratação"
+        "introTitleHello": "Olá, eu sou",
+        "introTitleName": "Giordano",
+        "mainTitle": "Desenvolvedor Full-Stack",
+        "summary": "Construo aplicações web inovadoras com tecnologias modernas, transformando desafios em soluçoes escaláveis",
+        "watchLong": "Video de introdução de 5-min",
+        "watchShort": "Video de introdução de 30-sec",
+        "workHours": "Flexível a diferentes fusos",
+        "workStatus": "Disponível para trabalho"
     },
     "hover": {
         "fiverr": {
@@ -376,7 +382,7 @@
             "completeDesc": "Versão extensiva com todos meus projetos em detalhe",
             "description": "Escolha seu campo de interesse",
             "explanationBenefit": "Sem disperdício de tempo, possibilitando mais oportunidades impactantes!",
-            "explanationDetailed": "Para facilitar que esses profissionais encontrem as informações que preciso, disponibilizo diferentes versões do meu currículo.",
+            "explanationDetailed": "Para facilitar que esses profissionais encontrem as informações que preciso, disponibilo diferentes versões do meu currículo.",
             "explanationText": "Nem todos recrutadores tem muito tempo para ler um currículo completo",
             "explanationTitle": "Por que existem diferentes versões?",
             "frontend": "Foco em Front-End",
@@ -532,6 +538,138 @@
                 "selfEvaluation": 9
             },
             {
+                "category": "frameworks",
+                "icon": {
+                    "package": "react-icons/fa",
+                    "title": "FaReact"
+                },
+                "name": "React",
+                "notableProjects": [
+                    {
+                        "description": "Site de portfólio construído com React e Next.js.",
+                        "hook": "",
+                        "preview": "",
+                        "title": "Site de Portfólio"
+                    },
+                    {
+                        "description": "Site da revenda Southside Autos e painel CMS.",
+                        "hook": "",
+                        "preview": "",
+                        "title": "Southside Autos"
+                    }
+                ],
+                "selfEvaluation": 8
+            },
+            {
+                "category": "frameworks",
+                "icon": {
+                    "package": "react-icons/fa",
+                    "title": "FaNodeJs"
+                },
+                "name": "Node.js",
+                "notableProjects": [
+                    {
+                        "description": "Integraçoes de API backend no projeto Southside Autos.",
+                        "hook": "",
+                        "preview": "",
+                        "title": "Southside Autos"
+                    },
+                    {
+                        "description": "Integrações de API backend para o portfólio profissional.",
+                        "hook": "",
+                        "preview": "",
+                        "title": "Portfólio Profissional"
+                    }
+                ],
+                "selfEvaluation": 7
+            },
+            {
+                "category": "frameworks",
+                "icon": {
+                    "package": "react-icons/si",
+                    "title": "SiNextdotjs"
+                },
+                "name": "Next.js",
+                "notableProjects": [
+                    {
+                        "description": "Site de Portfólio construído com Next.js.",
+                        "hook": "",
+                        "preview": "",
+                        "title": "Site de Portfólio"
+                    },
+                    {
+                        "description": "",
+                        "hook": "",
+                        "preview": "",
+                        "title": "Site da revenda Southside Autos e painel CMS"
+                    }
+                ],
+                "selfEvaluation": 7
+            },
+            {
+                "category": "languages",
+                "icon": {
+                    "package": "react-icons/fa",
+                    "title": "FaHtml5"
+                },
+                "name": "HTML",
+                "notableProjects": [
+                    {
+                        "description": "Site de Portfólio e vários projetos web.",
+                        "hook": "",
+                        "preview": "",
+                        "title": "Site de Portfólio"
+                    },
+                    {
+                        "description": "",
+                        "hook": "",
+                        "preview": "",
+                        "title": "Southside Autos"
+                    },
+                    {
+                        "description": "",
+                        "hook": "",
+                        "preview": "",
+                        "title": "Mini-Mart"
+                    }
+                ],
+                "selfEvaluation": 8
+            },
+            {
+                "category": "languages",
+                "icon": {
+                    "package": "react-icons/fa",
+                    "title": "FaCss3Alt"
+                },
+                "name": "CSS",
+                "notableProjects": [
+                    {
+                        "description": "",
+                        "hook": "",
+                        "preview": "",
+                        "title": "Estilizando componentes web com CSS"
+                    }
+                ],
+                "selfEvaluation": 7
+            },
+            {
+                "category": "tools",
+                "icon": {
+                    "package": "react-icons/si",
+                    "title": "SiTailwindcss"
+                },
+                "name": "Tailwind CSS",
+                "notableProjects": [
+                    {
+                        "description": "",
+                        "hook": "",
+                        "preview": "",
+                        "title": "Estilizando componentes web com Tailwind CSS"
+                    }
+                ],
+                "selfEvaluation": 7
+            },
+            {
                 "category": "linguagens",
                 "icon": {
                     "package": "react-icons/fa",
@@ -550,6 +688,18 @@
                         "hook": "",
                         "preview": "",
                         "title": "Editor de música baseado em texto"
+                    },
+                    {
+                        "description": "",
+                        "hook": "",
+                        "preview": "",
+                        "title": "OneInventoryManyRegrets (MC Fabric Mod)"
+                    },
+                    {
+                        "description": "",
+                        "hook": "",
+                        "preview": "",
+                        "title": "Miningo (MC Fabric Mod)"
                     }
                 ],
                 "selfEvaluation": 8
@@ -601,7 +751,7 @@
                         "description": "",
                         "hook": "",
                         "preview": "",
-                        "title": "Aplicação web baseada em Laravel"
+                        "title": "Aplicação web de lista de tarefas"
                     }
                 ],
                 "selfEvaluation": 6
@@ -678,6 +828,40 @@
             {
                 "category": "frameworks",
                 "icon": {
+                    "package": "react-icons/si",
+                    "title": "SiPayloadcms"
+                },
+                "name": "PayloadCMS",
+                "notableProjects": [
+                    {
+                        "description": "",
+                        "hook": "",
+                        "preview": "",
+                        "title": "Southside Autos, aplicação fullstack para uma concessionária de carros teórica"
+                    }
+                ],
+                "selfEvaluation": 7
+            },
+            {
+                "category": "cms",
+                "icon": {
+                    "package": "react-icons/si",
+                    "title": "SiPayloadcms"
+                },
+                "name": "PayloadCMS",
+                "notableProjects": [
+                    {
+                        "description": "",
+                        "hook": "",
+                        "preview": "",
+                        "title": "Southside Autos, aplicação fullstack para uma concessionária de carros teórica"
+                    }
+                ],
+                "selfEvaluation": 7
+            },
+            {
+                "category": "frameworks",
+                "icon": {
                     "package": "react-icons/fa",
                     "title": "FaLaravel"
                 },
@@ -739,6 +923,23 @@
                 "selfEvaluation": 6
             },
             {
+                "category": "tools",
+                "icon": {
+                    "package": "react-icons/fa",
+                    "title": "FaDocker"
+                },
+                "name": "Docker",
+                "notableProjects": [
+                    {
+                        "description": "",
+                        "hook": "",
+                        "preview": "",
+                        "title": "Containerização de aplicações"
+                    }
+                ],
+                "selfEvaluation": 5
+            },
+            {
                 "category": "linguagens",
                 "icon": {
                     "package": "react-icons/fa",
@@ -754,6 +955,29 @@
                     }
                 ],
                 "selfEvaluation": 5
+            },
+            {
+                "category": "languages",
+                "icon": {
+                    "package": "react-icons/io",
+                    "title": "IoLogoJavascript"
+                },
+                "name": "JavaScript",
+                "notableProjects": [
+                    {
+                        "description": "",
+                        "hook": "",
+                        "preview": "",
+                        "title": "Site pessoal de portfólio"
+                    },
+                    {
+                        "description": "",
+                        "hook": "",
+                        "preview": "",
+                        "title": "Site da Southside Autos e painel do CMS"
+                    }
+                ],
+                "selfEvaluation": 6
             },
             {
                 "category": "ferramentas",

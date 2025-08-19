@@ -90,12 +90,12 @@ export default function ProfessionalCard() {
 
               {/* badges */}
               <div className="flex flex-row gap-2">
-                <Badge className="flex flex-row items-center gap-1 px-2 py-1 text-muted text-xs" variant="outline">
+                <Badge className="flex flex-row items-center gap-1 px-2 py-1 text-muted-foreground text-xs" variant="outline">
                     <MdEventAvailable />
                       {t('hero.workStatus')}
                     </Badge>
 
-                    <Badge className="flex flex-row items-center gap-1 px-2 py-1 text-muted text-xs" variant="outline">
+                    <Badge className="flex flex-row items-center gap-1 px-2 py-1 text-muted-foreground text-xs" variant="outline">
                       <RiTimeZoneFill />
                       {t('hero.workHours')}
                     </Badge>

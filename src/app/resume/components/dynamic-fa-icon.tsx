@@ -7,6 +7,7 @@ export type IconPackage =
   | "react-icons/si" 
   | "react-icons/hi" 
   | "react-icons/gi" 
+  | "react-icons/io"
   | "react-icons/tb";
 
 type Props = {
@@ -21,6 +22,7 @@ const packageMap: Record<IconPackage, () => Promise<unknown>> = {
   "react-icons/si": () => import("react-icons/si"),
   "react-icons/hi": () => import("react-icons/hi"),
   "react-icons/gi": () => import("react-icons/gi"),
+  "react-icons/io": () => import("react-icons/io"),
   "react-icons/tb": () => import("react-icons/tb"),
 };
 

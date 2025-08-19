@@ -40,27 +40,6 @@ export default function PlaygroundShowcase() {
       tags: t('playground.buttons.tags') as unknown as string[],
       id: "0",
       components: [<ButtonsShowCaseTab />]
-    },
-    {
-      title: "Projeto 1",
-      description: "Descrição do projeto 1 com tags",
-      tags: ["react", "nextjs"],
-      id: "1",
-      components: [<Button variant="default">Botão Padrão</Button>, <Button variant="destructive">Botão Perigo</Button>]
-    },
-    {
-      title: "Projeto 2",
-      description: "Descrição do projeto 2 com outras tags",
-      tags: ["typescript", "api"],
-      id: "2",
-      components: [<ul className="list-disc pl-5"><li>Item 1</li><li>Item 2</li></ul>]
-    },
-    {
-      title: "Teste 3",
-      description: "Mais um exemplo",
-      tags: ["design", "css"],
-      id: "3",
-      components: [<p className="text-sm italic text-muted-foreground">Componente de exemplo</p>]
     }
   ]
 
@@ -77,7 +56,7 @@ export default function PlaygroundShowcase() {
               (item, i) => item.id === results[i].id)) {
                 return prev;
               }
-          return results; // se diferente, atualiza
+          return results;
         }
       );
     }, 
@@ -117,12 +96,7 @@ export default function PlaygroundShowcase() {
           
           
           { /* playground components */}
-          <div className="
-            flex 
-            flex-col 
-            w-full 
-            p-5 
-            gap-4">
+          <div className="flex flex-col gap-4 p-5 w-full">
             {
               filteredContent.map(
                 (item) => (

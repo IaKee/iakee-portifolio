@@ -305,10 +305,11 @@ export default function SkillCard(
 
         {/* numeric indicator */}
         <div className="mt-1 text-right">
-          <span className="flex flex-row justify-end text-gray-400 text-xs">
-            {/* TODO: this */}
-            {t('resume.selfEvaluation')}
-            <p>: </p> 
+          <span className="flex flex-row justify-end text-muted-foreground text-xs">
+            <span className="flex flex-row mr-1">
+              {t('resume.selfEvaluation')}
+              <p>: </p> 
+            </span>
             {skill.selfEvaluation}/10
           </span>
         </div>

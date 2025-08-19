@@ -219,18 +219,18 @@
         "theme": "Theme"
     },
     "hero": {
-        "introTitleHello": "Hi, I'm",
-        "introTitleName": "Giordano",
         "actionButton1": "Let's work together",
         "actionButton2": "Download CV",
         "actionButton3": "Know more about me",
         "actionButton4": "See my work",
-        "summary": "I build innovative web applications using modern technologies, transforming challenges into scalable solutions.",
+        "introTitleHello": "Hi, I'm",
+        "introTitleName": "Giordano",
         "mainTitle": "Fullstack Developer",
-        "workHours": "Timezone flexible",
-        "workStatus": "Available for hire",
+        "summary": "I build innovative web applications using modern technologies, transforming challenges into scalable solutions",
+        "watchLong": "5-min introduction video",
         "watchShort": "30-sec introduction video",
-        "watchLong": "5-min introduction video"
+        "workHours": "Timezone flexible",
+        "workStatus": "Available for hire"
     },
     "hover": {
         "fiverr": {
@@ -538,6 +538,138 @@
                 "selfEvaluation": 9
             },
             {
+                "category": "frameworks",
+                "icon": {
+                    "package": "react-icons/fa",
+                    "title": "FaReact"
+                },
+                "name": "React",
+                "notableProjects": [
+                    {
+                        "description": "Portfolio Website built with React and Next.js.",
+                        "hook": "",
+                        "preview": "",
+                        "title": "Portfolio Website"
+                    },
+                    {
+                        "description": "Southside Autos Website and CMS dashboard.",
+                        "hook": "",
+                        "preview": "",
+                        "title": "Southside Autos"
+                    }
+                ],
+                "selfEvaluation": 8
+            },
+            {
+                "category": "frameworks",
+                "icon": {
+                    "package": "react-icons/fa",
+                    "title": "FaNodeJs"
+                },
+                "name": "Node.js",
+                "notableProjects": [
+                    {
+                        "description": "Backend API integrations for Southside Autos.",
+                        "hook": "",
+                        "preview": "",
+                        "title": "Southside Autos"
+                    },
+                    {
+                        "description": "Backend API integrations for Professional portfolio.",
+                        "hook": "",
+                        "preview": "",
+                        "title": "Professional portfolio"
+                    }
+                ],
+                "selfEvaluation": 7
+            },
+            {
+                "category": "frameworks",
+                "icon": {
+                    "package": "react-icons/si",
+                    "title": "SiNextdotjs"
+                },
+                "name": "Next.js",
+                "notableProjects": [
+                    {
+                        "description": "Portfolio Website built with Next.js.",
+                        "hook": "",
+                        "preview": "",
+                        "title": "Portfolio Website"
+                    },
+                    {
+                        "description": "",
+                        "hook": "",
+                        "preview": "",
+                        "title": "Southside Autos Website and CMS dashboard"
+                    }
+                ],
+                "selfEvaluation": 7
+            },
+            {
+                "category": "languages",
+                "icon": {
+                    "package": "react-icons/fa",
+                    "title": "FaHtml5"
+                },
+                "name": "HTML",
+                "notableProjects": [
+                    {
+                        "description": "Portfolio Website and various web projects.",
+                        "hook": "",
+                        "preview": "",
+                        "title": "Portfolio Website"
+                    },
+                    {
+                        "description": "",
+                        "hook": "",
+                        "preview": "",
+                        "title": "Southside Autos"
+                    },
+                    {
+                        "description": "",
+                        "hook": "",
+                        "preview": "",
+                        "title": "Mini-Mart"
+                    }
+                ],
+                "selfEvaluation": 8
+            },
+            {
+                "category": "languages",
+                "icon": {
+                    "package": "react-icons/fa",
+                    "title": "FaCss3Alt"
+                },
+                "name": "CSS",
+                "notableProjects": [
+                    {
+                        "description": "",
+                        "hook": "",
+                        "preview": "",
+                        "title": "Styling web components with CSS"
+                    }
+                ],
+                "selfEvaluation": 7
+            },
+            {
+                "category": "tools",
+                "icon": {
+                    "package": "react-icons/si",
+                    "title": "SiTailwindcss"
+                },
+                "name": "Tailwind CSS",
+                "notableProjects": [
+                    {
+                        "description": "",
+                        "hook": "",
+                        "preview": "",
+                        "title": "Styling web components with Tailwind CSS"
+                    }
+                ],
+                "selfEvaluation": 7
+            },
+            {
                 "category": "languages",
                 "icon": {
                     "package": "react-icons/fa",
@@ -556,6 +688,18 @@
                         "hook": "",
                         "preview": "",
                         "title": "Text-based music editor"
+                    },
+                    {
+                        "description": "",
+                        "hook": "",
+                        "preview": "",
+                        "title": "OneInventoryManyRegrets (MC Fabric Mod)"
+                    },
+                    {
+                        "description": "",
+                        "hook": "",
+                        "preview": "",
+                        "title": "Miningo (MC Fabric Mod)"
                     }
                 ],
                 "selfEvaluation": 8
@@ -607,10 +751,10 @@
                         "description": "",
                         "hook": "",
                         "preview": "",
-                        "title": "Laravel-based web application"
+                        "title": "Task (to-do) list application"
                     }
                 ],
-                "selfEvaluation": 6
+                "selfEvaluation": 5
             },
             {
                 "category": "languages",
@@ -684,6 +828,40 @@
             {
                 "category": "frameworks",
                 "icon": {
+                    "package": "react-icons/si",
+                    "title": "SiPayloadcms"
+                },
+                "name": "PayloadCMS",
+                "notableProjects": [
+                    {
+                        "description": "",
+                        "hook": "",
+                        "preview": "",
+                        "title": "Southside Autos, fullstack application for a theoretical car dealership"
+                    }
+                ],
+                "selfEvaluation": 7
+            },
+            {
+                "category": "cms",
+                "icon": {
+                    "package": "react-icons/si",
+                    "title": "SiPayloadcms"
+                },
+                "name": "PayloadCMS",
+                "notableProjects": [
+                    {
+                        "description": "",
+                        "hook": "",
+                        "preview": "",
+                        "title": "Southside Autos, fullstack application for a theoretical car dealership"
+                    }
+                ],
+                "selfEvaluation": 7
+            },
+            {
+                "category": "frameworks",
+                "icon": {
                     "package": "react-icons/fa",
                     "title": "FaLaravel"
                 },
@@ -725,6 +903,23 @@
                 "category": "tools",
                 "icon": {
                     "package": "react-icons/fa",
+                    "title": "FaDocker"
+                },
+                "name": "Docker",
+                "notableProjects": [
+                    {
+                        "description": "",
+                        "hook": "",
+                        "preview": "",
+                        "title": "Containerization of applications"
+                    }
+                ],
+                "selfEvaluation": 5
+            },
+            {
+                "category": "tools",
+                "icon": {
+                    "package": "react-icons/fa",
                     "title": "FaGitAlt"
                 },
                 "name": "Git",
@@ -756,10 +951,33 @@
                         "description": "Modeled DB and implementation for a theoretical social network",
                         "hook": "",
                         "preview": "",
-                        "title": "Theoretical social network"
+                        "title": "Theoretical social network modeling and applications"
                     }
                 ],
                 "selfEvaluation": 5
+            },
+            {
+                "category": "languages",
+                "icon": {
+                    "package": "react-icons/io",
+                    "title": "IoLogoJavascript"
+                },
+                "name": "JavaScript",
+                "notableProjects": [
+                    {
+                        "description": "",
+                        "hook": "",
+                        "preview": "",
+                        "title": "Portfolio Website"
+                    },
+                    {
+                        "description": "",
+                        "hook": "",
+                        "preview": "",
+                        "title": "Southside Autos Website and CMS dashboard"
+                    }
+                ],
+                "selfEvaluation": 6
             },
             {
                 "category": "tools",
@@ -785,7 +1003,7 @@
                 "selfEvaluation": 7
             },
             {
-                "category": "CMS",
+                "category": "cms",
                 "icon": {
                     "package": "react-icons/fa",
                     "title": "FaWordpress"
