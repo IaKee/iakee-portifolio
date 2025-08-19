@@ -4,6 +4,7 @@ import { Code } from "lucide-react";
 import { Progress } from "./ui/progress";
 import { useLanguage } from '@/context/language-content'
 import Image from "next/image";
+import { Card } from "./ui/card";
 
 export default function AboutTab() {
   const { t } = useLanguage();
@@ -14,8 +15,8 @@ export default function AboutTab() {
   
 
   return(
-    <main>
-      <section id="about" className="bg-muted/50 py-[8%] py-12 w-full w-full">
+    <main className="flex justify-center items-center bg-muted w-full h-full">
+      <Card id="about" className="bg-muted my-6 py-12 border-2 border-muted-foreground w-[80%]">
         <div className="px-4 md:px-6 container">
           <div className="flex flex-col justify-center items-center space-y-4 text-center">
             <div className="space-y-2">
@@ -93,7 +94,7 @@ export default function AboutTab() {
             </div>
 
             <div className="space-y-4 text-center">
-              <p className="font-semibold text-[80%] md:text">
+              <p className="my-2 font-semibold text-[80%] md:text">
                 {t('about.usedToolsTitle')}
               </p>
               
@@ -104,7 +105,7 @@ export default function AboutTab() {
                     width={350}
                     height={165}
                     style={{ height: 'auto' }}
-                    src={`https://github-readme-stats.vercel.app/api/top-langs?username=iakee&show_icons=true&locale=${t("about.locale")}`}
+                    src={`https://github-readme-stats.vercel.app/api/top-langs?username=iakee&show_icons=true&locale=${t("about.locale")}&layout=compact`}
                     alt="Github stats"/>
 
                   <div className="text-[80%] text-muted-foreground text-sm">
@@ -121,7 +122,7 @@ export default function AboutTab() {
 
           </div>
         </div>
-      </section>
+      </Card>
     </main>
   )    
 }

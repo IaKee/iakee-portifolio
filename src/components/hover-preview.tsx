@@ -6,6 +6,7 @@ import {
   useState,
   useLayoutEffect,
   useEffect,
+  useCallback,
 } from "react"
 import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
@@ -43,52 +44,56 @@ export default function HoverPreview({
   const tooltipRef = useRef<HTMLDivElement>(null)
   const prefix = process.env.NODE_ENV === "production" ? "" : "";
    
-  const updatePosition = () => {
-    if(isHovered && triggerRef.current && tooltipRef.current) {
-      const triggerRect = triggerRef.current.getBoundingClientRect()
-      const tooltipRect = tooltipRef.current.getBoundingClientRect()
+  // Wrap updatePosition in useCallback to prevent recreation on each render
+  const updatePosition = useCallback(() => {
+    if(!isHovered || !triggerRef.current || !tooltipRef.current) return;
+    
+    const triggerRect = triggerRef.current.getBoundingClientRect()
+    const tooltipRect = tooltipRef.current.getBoundingClientRect()
 
-      const triggerCenter = triggerRect.left + triggerRect.width / 2
-      let x = triggerCenter - tooltipRect.width / 2
+    const triggerCenter = triggerRect.left + triggerRect.width / 2
+    let x = triggerCenter - tooltipRect.width / 2
 
-      if (x < 16) x = 16
-      if (x + tooltipRect.width > window.innerWidth - 16) {
-        x = window.innerWidth - tooltipRect.width - 16
-      }
-
-      const arrowLeft = triggerCenter - x - 8
-
-      let y = 0
-      let placement: Position = "top"
-
-      const spaceAbove = triggerRect.top
-      const spaceBelow = window.innerHeight - triggerRect.bottom
-      const minRequiredSpace = tooltipRect.height + 12
-
-      if (spaceAbove >= minRequiredSpace) {
-        y = triggerRect.top - tooltipRect.height - 12
-        placement = "top"
-      } else if (spaceBelow >= minRequiredSpace) {
-        y = triggerRect.bottom + 12
-        placement = "bottom"
-      } else {
-        y = Math.max(
-          16,
-          triggerRect.top - (tooltipRect.height - triggerRect.height) / 2
-        )
-        if (y < 16) y = 16
-        if (y + tooltipRect.height > window.innerHeight - 16) {
-          y = window.innerHeight - tooltipRect.height - 16
-        }
-        placement = "overlay"
-      }
-
-      setPosition({ x, y, arrowLeft, placement })
+    if (x < 16) x = 16
+    if (x + tooltipRect.width > window.innerWidth - 16) {
+      x = window.innerWidth - tooltipRect.width - 16
     }
-  }
 
+    const arrowLeft = triggerCenter - x - 8
+
+    let y = 0
+    let placement: Position = "top"
+
+    const spaceAbove = triggerRect.top
+    const spaceBelow = window.innerHeight - triggerRect.bottom
+    const minRequiredSpace = tooltipRect.height + 12
+
+    if (spaceAbove >= minRequiredSpace) {
+      y = triggerRect.top - tooltipRect.height - 12
+      placement = "top"
+    } else if (spaceBelow >= minRequiredSpace) {
+      y = triggerRect.bottom + 12
+      placement = "bottom"
+    } else {
+      y = Math.max(
+        16,
+        triggerRect.top - (tooltipRect.height - triggerRect.height) / 2
+      )
+      if (y < 16) y = 16
+      if (y + tooltipRect.height > window.innerHeight - 16) {
+        y = window.innerHeight - tooltipRect.height - 16
+      }
+      placement = "overlay"
+    }
+
+    setPosition({ x, y, arrowLeft, placement })
+  }, [isHovered]) // Only depend on isHovered state
+
+  // This effect will now only re-run when isHovered or updatePosition change
   useLayoutEffect(() => {
-    updatePosition()
+    if (isHovered) {
+      updatePosition()
+    }
   }, [isHovered, updatePosition])
 
   useEffect(() => {
@@ -105,7 +110,7 @@ export default function HoverPreview({
   return (
     <div
       ref={triggerRef}
-      className="relative inline-block"
+      className="inline-block relative"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -138,13 +143,8 @@ export default function HoverPreview({
               left: position.x,
               zIndex: 50,
             }}
-            className="
-              w-64 
-              bg-primary-foreground 
-              rounded-xl
-              shadow-2xl
-              shadow-[0_0_10px_rgba(255,255,255,0.2)]">
-            <Card className="shadow-lg rounded-xl relative">
+            className="bg-primary-foreground shadow-[0_0_10px_rgba(255,255,255,0.2)] shadow-2xl rounded-xl w-64">
+            <Card className="relative shadow-lg rounded-xl">
               {position.placement !== "overlay" && (
                 <div
                   className={`
@@ -169,7 +169,7 @@ export default function HoverPreview({
         
               <CardContent className="p-3">
                 {image && (
-                  <div className="relative w-full h-32 mb-3 overflow-hidden rounded-md">
+                  <div className="relative mb-3 rounded-md w-full h-32 overflow-hidden">
                     <Image
                       src={`${prefix}/${image}`}
                       alt={title}
@@ -183,12 +183,12 @@ export default function HoverPreview({
                   {title}
                 </h3>
 
-                <p className="text-xs text-muted-foreground mt-1 mb-2">
+                <p className="mt-1 mb-2 text-muted-foreground text-xs">
                   {description}
                 </p>
 
                 {stats && (
-                  <div className="grid grid-cols-2 gap-2 mt-2">
+                  <div className="gap-2 grid grid-cols-2 mt-2">
                     {stats.map((stat, index) => {
                       const isLastSingle =
                         stats.length % 2 !== 0 &&
@@ -208,7 +208,7 @@ export default function HoverPreview({
                                 : "col-span-1"
                             }
                           `}>
-                          <p className="text-xs font-medium">
+                          <p className="font-medium text-xs">
                             {stat.label}
                           </p>
 

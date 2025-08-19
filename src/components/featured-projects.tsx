@@ -79,12 +79,12 @@ const FeaturedProjects = forwardRef<HTMLDivElement>((props, ref) => {
               actionHook2 = ""/>
 
             <ProjectCard
-              title = {t('featured.projects.nundertale.title')}
-              description = {t('featured.projects.nundertale.description')}
-              image = "/nundertale.png?height=300&width=400"
-              tags = {t('featured.projects.nundertale.tags') as unknown as string[]}
-              actionButton1 = {t('featured.projects.nundertale.actionButton1')}
-              actionHook1 = {t('featured.projects.nundertale.actionHook1')}
+              title = {t('featured.projects.southside.title')}
+              description = {t('featured.projects.southside.description')}
+              image = ""
+              tags = {t('featured.projects.southside.tags') as unknown as string[]}
+              actionButton1 = {t('featured.projects.southside.actionButton1')}
+              actionHook1 = {t('featured.projects.southside.actionHook1')}
               actionButton2 = ""
               actionHook2 = ""/>
           </div>

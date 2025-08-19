@@ -77,7 +77,7 @@ export default function ProjectCard(
         <CardContent>
           <div className="flex flex-wrap gap-2">
             {/* Iterates over projects listed on language file */}
-            {
+            {Array.isArray(tags) && tags.length > 0 ? (
               tags.map(
                 (tag) => (
                   <Badge key={tag} variant="secondary">
@@ -85,7 +85,11 @@ export default function ProjectCard(
                   </Badge>
                 )
               )
-            }
+            ) : (
+              <Badge variant="outline" className="text-muted-foreground text-sm italic">
+                No tags available
+              </Badge>
+            )}
           </div>
         </CardContent>
         
